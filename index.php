@@ -5,10 +5,7 @@ echo $request;
 echo phpversion();
 switch ($request) {
     case '/' :
-        require __DIR__ . '/View/helloworld.php';
-        break;
-    case '/about' :
-        require __DIR__ . '/View/helloworld.php';
+        require __DIR__ . '/View/hello-world.php';
         break;
     default:
         http_response_code(404);
