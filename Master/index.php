@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" oncontextmenu="return false;">
 <head>
     <meta charset="UTF-8">
@@ -12,12 +11,12 @@
 </head>
 
 <body>
-<div class="row">
-    <nav id="sidebar" class="col-2 pl-2 p-0 bg-light" style="overflow:hidden">
+<div class="row mr-0 ml-0">
+    <nav id="sidebar" class="col-2 p-0 bg-light" style="overflow:hidden">
         <iframe id="navbar" src="SideNavController" name="FraNav" style="border:0px;width:100%;height:100%;"></iframe>
     </nav>
     <div id="content" class="col p-0">
-        <iframe id="content" src="MasterController" name="FraNav" style="border:0px solid black;width:100%;height:100%;"></iframe>
+        <iframe id="content" src="MasterController" name="FraContent" style="border:0px solid black;width:100%;height:100%;"></iframe>
     </div>
 </div>
 
