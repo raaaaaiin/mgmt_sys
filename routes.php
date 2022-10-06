@@ -11,6 +11,12 @@ switch ($removeRoot) {
     case 'login' :
         require __DIR__ . '/Master/Controller/loginController.php';
         break;
+    case 'TopNavController' :
+        require __DIR__ . '/Master/Controller/TopNavController.php';
+        break;
+    case 'SideNavController' :
+        require __DIR__ . '/Master/Controller/SideNavController.php';
+        break;
     case 'MasterController':
         require __DIR__ . '/Master/Controller/MasterController.php';
         break;
