@@ -2,5 +2,5 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$  /Ms/routes.php [QSA,L]
+RewriteRule ^(.+)$  /mgmt_sys/routes.php [QSA,L]
 Options -Indexes
