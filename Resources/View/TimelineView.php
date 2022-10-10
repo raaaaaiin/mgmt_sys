@@ -25,7 +25,9 @@
 
         </div>
         <div class="col-lg-6 h-100">
-
+            <div class="d-flex align-items-center align-content-center justify-content-center">
+                <h1>Timeline Controller</h1>
+            </div>
         </div>
         <div class="col-lg-3 h-100">
 
