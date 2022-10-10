@@ -1,4 +1,5 @@
-<div class="tooltip">
+<body style="background-color:#f8f9fa !important">
+<div class="tooltip" >
     Default fallback
 
     <span class="tooltiptext">If you see this it means that directory doesnt exist in routes</span>
@@ -29,4 +30,4 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
-</style>
+</style></body>

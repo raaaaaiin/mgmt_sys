@@ -20,6 +20,9 @@ switch ($removeRoot) {
     case 'MasterController':
         require __DIR__ . '/Master/Controller/MasterController.php';
         break;
+    case 'DiscoverController':
+        require __DIR__ . '/Master/Controller/DiscoverController.php';
+        break;
     default:
         require __DIR__ . '/View/404.php';
         break;

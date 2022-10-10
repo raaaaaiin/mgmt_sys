@@ -5,7 +5,7 @@
     <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
 </head>
 
-<nav class="navbar navbar-expand-sm bg-light navbar-light h-100">
+<nav class="navbar navbar-expand-sm bg-white navbar-light h-100">
 
 
 <div class="d-flex w-100 justify-content-end align-items-center" >

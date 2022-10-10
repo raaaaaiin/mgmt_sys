@@ -23,7 +23,8 @@ h1 {
     font-family: calibri;
 }
 a {
-    display: block;
+    display: flex;
+    align-items:center;
     text-decoration: none;
     padding: 10px 10px 10px 20px;
     font-size:18px;
@@ -32,6 +33,8 @@ a {
 
 }
 a:hover{
+    display: flex;
+    align-items:center;
     background: #4285f4 !important;
     color:white;
     left:0;
