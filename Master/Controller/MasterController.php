@@ -1,4 +1,5 @@
 <?php
+session_start();
 class MasterController{
     function render(): void
     {
@@ -7,6 +8,6 @@ class MasterController{
 
 }
 
-
+$_SESSION["refresh"] = "Try";
     $display = new MasterController;
 $display->render();

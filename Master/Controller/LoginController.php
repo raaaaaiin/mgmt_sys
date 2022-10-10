@@ -1,4 +1,5 @@
 <?php
+session_start();
 class LoginController{
     function render(): void
     {

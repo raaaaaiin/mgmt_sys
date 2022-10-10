@@ -13,18 +13,21 @@
             -moz-box-shadow:inset 0px 0px 0px 10px blue;
             box-shadow:inset 0px 0px 0px 10px blue;
         }
+        curve{
+
+        }
     </style>
 </head>
 <body>
-<div class="container-fluid h-100 p-0">
+<div class="container-fluid h-100 p-0" style="">
     <div class="row h-100">
-        <div class="col-lg-3 h-50">
+        <div class="col-lg-3 h-100">
 
         </div>
-        <div class="col-lg-6 h-50">
+        <div class="col-lg-6 h-100">
 
         </div>
-        <div class="col-lg-3 h-50">
+        <div class="col-lg-3 h-100">
 
         </div>
     </div>
