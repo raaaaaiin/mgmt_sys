@@ -3,7 +3,7 @@ session_start();
 class TimelineController{
     function render(): void
     {
-        require_once 'Resources/View/TimelineView.php';
+        require_once 'Resources/View/Back/TimelineView.php';
     }
 
 }

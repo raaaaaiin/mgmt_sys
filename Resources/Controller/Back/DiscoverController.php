@@ -3,7 +3,7 @@ session_start();
 class DiscoverController{
     function render(): void
     {
-        require_once 'Resources/View/DiscoverView.php';
+        require_once 'Resources/View/Back/DiscoverView.php';
     }
 }
 

@@ -3,7 +3,7 @@ session_start();
 class LoginController{
     function render(): void
     {
-        require_once 'Resources/View/LoginView.php';
+        require_once 'Resources/View/Auth/LoginView.php';
     }
 }
 

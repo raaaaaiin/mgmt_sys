@@ -4,7 +4,7 @@ class MasterController{
     public $history;
     function render(): void
     {
-        require_once 'Resources/View/MasterView.php';
+        require_once 'Resources/View/Navigations/MasterView.php';
     }
     function checkSelect(){
         if(isset($_SESSION['CurrentSelection'])){

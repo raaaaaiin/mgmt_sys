@@ -315,7 +315,7 @@
     </div>
 </div>
 
-<script type="application/javascript" src="PreRequisites/ParticlesJSON/particles.js"></script>
-<script type="application/javascript" src="PreRequisites/BuildLMS2.js"></script>
+<script type="application/javascript" src="../../../PreRequisites/ParticlesJSON/particles.js"></script>
+<script type="application/javascript" src="../../../PreRequisites/BuildLMS2.js"></script>
 
 </body></html>

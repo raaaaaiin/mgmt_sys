@@ -3,7 +3,7 @@ session_start();
 class NewsfeedController{
     function render(): void
     {
-        require_once 'Resources/View/NewsfeedView.php';
+        require_once 'Resources/View/Back/NewsfeedView.php';
     }
 
 }
