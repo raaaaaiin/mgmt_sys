@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="PreRequisites/bootstrap-4.6.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="Resources/View/CSS/SideNavCss.css">
 </head>
 
