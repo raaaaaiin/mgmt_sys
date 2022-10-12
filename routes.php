@@ -32,6 +32,12 @@ switch ($removeRoot) {
     case 'NewsfeedController':
         require __DIR__ . '/Resources/Controller/Back/NewsfeedController.php';
         break;
+    case 'ItemAddController':
+        require __DIR__ . '/Resources/Controller/Back/Item/ItemAddController.php';
+        break;
+    case 'ItemListController':
+        require __DIR__ . '/Resources/Controller/Back/Item/ItemListController.php';
+        break;
     default:
         require __DIR__ . '/View/index.php';
         break;
