@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="Master/View/CSS/SideNavCss.css">
+    <link rel="stylesheet" href="Resources/View/CSS/SideNavCss.css">
 </head>
 
 <body style=style="background-color:white"">
