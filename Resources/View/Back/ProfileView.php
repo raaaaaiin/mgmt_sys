@@ -320,7 +320,7 @@
 
                                                             <div class=" post_topbar p-0">
                                                                 <div class="row usy-dt w-100" style="align-items: center;">
-                                                                    <img class="col-md-2" height:50px;width:50px;cursor:="" pointer="" data-toggle="tooltip" data-placement="top" wire:click="activeUser" onclick="location='https://www.elibsti.com/profile/12000140442'" src="https://via.placeholder.com/50" data-original-title="" title="">
+                                                                    <img class="col-md-2" height:50px;width:50px;cursor:="" pointer="" data-toggle="tooltip" data-placement="top" src="https://via.placeholder.com/50" data-original-title="" title="">
                                                                     <div class="col-md-10 usy-name m-0">
                                                                         <a href="https://www.elibsti.com/profile/12000140442" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
@@ -368,7 +368,7 @@
 
                                                             <div class=" post_topbar p-0">
                                                                 <div class="row usy-dt w-100" style="align-items: center;">
-                                                                    <img class="col-md-2" height:50px;width:50px;cursor:="" pointer="" data-toggle="tooltip" data-placement="top" wire:click="activeUser" onclick="location='https://www.elibsti.com/profile/12000140442'" src="https://via.placeholder.com/50" data-original-title="" title="">
+                                                                    <img class="col-md-2" height:50px;width:50px;cursor:="" pointer="" data-toggle="tooltip" data-placement="top" src="https://via.placeholder.com/50" data-original-title="" title="">
                                                                     <div class="col-md-10 usy-name m-0">
                                                                         <a href="https://www.elibsti.com/profile/12000140442" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
@@ -410,7 +410,7 @@
 
                                                             <div class=" post_topbar p-0">
                                                                 <div class="row usy-dt w-100" style="align-items: center;">
-                                                                    <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" wire:click="activeUser" onclick="location='https://www.elibsti.com/details/History-of-Europe'" src="https://via.placeholder.com/50x75" data-original-title="" title="">
+                                                                    <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" src="https://via.placeholder.com/50x75" data-original-title="" title="">
                                                                     <div class="col-md-9 usy-name m-0">
                                                                         <a href="https://www.elibsti.com/details/History-of-Europe" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
@@ -467,7 +467,7 @@
 
                                                             <div class=" post_topbar p-0">
                                                                 <div class="row usy-dt w-100" style="align-items: center;">
-                                                                    <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" wire:click="activeUser" onclick="location='https://www.elibsti.com/details/Bionic'" src="https://via.placeholder.com/50x75" data-original-title="" title="">
+                                                                    <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" src="https://via.placeholder.com/50x75" data-original-title="" title="">
                                                                     <div class="col-md-9 usy-name m-0">
                                                                         <a href="https://www.elibsti.com/details/Bionic" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
