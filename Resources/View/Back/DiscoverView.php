@@ -1,19 +1,6 @@
 <html lang="en" oncontextmenu="return false;"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="PreRequisites/bootstrap-4.6.0-dist/css/bootstrap.css">
     <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
-    <script type="application/javascript" src="PreRequisites/bootstrap-4.6.0-dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="PreRequisites/FontAwesome.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="PreRequisites/MySelectDisabled.css">
-    <script type="application/javascript" src="PreRequisites/MyCodesDisabled.js"></script>
-    <link rel="stylesheet" href="PreRequisites/jquery-ui-1.12.1.custom/jquery-ui.css">
-    <script type="application/javascript" src="PreRequisites/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <link href="PreRequisites/FontStyle_Roboto.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="BuildLMS2.css?633fb733dbf5a" type="text/css">
-    <link rel="stylesheet" href="PreRequisites/CSS_AugustCastor/IGC_Buttons.css">
-    <link rel="stylesheet" type="text/css" href="PreRequisites/customSBar.css">
     <link rel="stylesheet" type="text/css" href="PreRequisites/BuildLMS2.css">
     <title>BuildLMS</title>
 </head>
@@ -315,7 +302,5 @@
     </div>
 </div>
 
-<script type="application/javascript" src="../../../PreRequisites/ParticlesJSON/particles.js"></script>
-<script type="application/javascript" src="../../../PreRequisites/BuildLMS2.js"></script>
 <script>window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');</script>
 </body></html>
