@@ -317,5 +317,5 @@
 
 <script type="application/javascript" src="../../../PreRequisites/ParticlesJSON/particles.js"></script>
 <script type="application/javascript" src="../../../PreRequisites/BuildLMS2.js"></script>
-
+<script>window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');</script>
 </body></html>

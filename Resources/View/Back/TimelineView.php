@@ -35,4 +35,5 @@
     </div>
 
 </div>
+<script>window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');</script>
 </body>

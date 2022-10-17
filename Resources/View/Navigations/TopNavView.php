@@ -40,4 +40,5 @@
     $('#sidebarCollapse').click(function() {
         window.parent.parent.hide();
     });
+
 </script>

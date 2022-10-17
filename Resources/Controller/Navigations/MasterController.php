@@ -15,6 +15,7 @@ class MasterController{
     }
 }
 
+
     $display = new MasterController;
 $display->checkSelect();
 $display->render();
