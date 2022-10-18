@@ -209,7 +209,5 @@
 </body>
 
 <script>
-$('input').on('change', function(){
-     $(this).is(":checked") ? $(this).parent().parent().parent().addClass("selectedItem") : $(this).parent().parent().parent().removeClass("selectedItem")
-})
+    window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');
 </script>

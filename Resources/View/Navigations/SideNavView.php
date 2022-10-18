@@ -5,11 +5,11 @@
 </head>
 
 <body style=style="background-color:white"">
-<div class="solid" style="height:65px;background-color:#4285f4 !important">
+<div class="solid" style="height:65px;background-color:#3166e1 !important">
 
     <div class="navigationtop-nav" style="height:100%;display:flex;align-items: center;">
 
-        <span style="font-size:26px; color:white;"><strong class="navbrandgreen">&nbsp;&nbsp;MGMT</strong> sys</span>
+        <span style="font-size:26px; color:white;"><strong class="navbrandgreen" style="color:white">&nbsp;MGMT</strong> sys</span>
     </div>
 </div>
 

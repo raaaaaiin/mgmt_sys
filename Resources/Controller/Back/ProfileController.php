@@ -12,11 +12,11 @@ include 'App\Models\studentparent.php';
 class ProfileController{
     function render(): void
     {
-        $studentlist = new studentparent;
+        /*$studentlist = new studentparent;
         $ha = $studentlist->get();
         foreach($ha as $hotdog){
             echo $hotdog['Student_Code'] . '<br>';
-        }
+        }*/
         require_once 'Resources/View/Back/ProfileView.php';
     }
 
