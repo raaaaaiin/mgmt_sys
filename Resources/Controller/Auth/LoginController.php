@@ -5,6 +5,7 @@ class LoginController{
     {
         require_once 'Resources/View/Auth/LoginView.php';
     }
+
 }
 
 

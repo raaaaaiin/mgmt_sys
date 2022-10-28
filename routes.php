@@ -38,6 +38,9 @@ switch ($removeRoot) {
     case 'ItemListController':
         require __DIR__ . '/Resources/Controller/Back/Item/ItemListController.php';
         break;
+    case 'TemplateTrialController':
+        require __DIR__ . '/Resources/Controller/Back/TemplateTrialController.php';
+        break;
     default:
         require __DIR__ . '/View/index.php';
         break;

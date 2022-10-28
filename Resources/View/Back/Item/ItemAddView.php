@@ -373,15 +373,143 @@
         .formbold-btn:hover {
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
         }
+        .responsive-table li {
+            border-radius: 10px;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        .responsive-table .table-header {
+            background-color:#f9fafe !important;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .responsive-table .table-row {
+            background-color: #fbfdff;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+        .responsive-table .table-row:hover{
+            box-shadow: 0px 0px 9px 0px #1147c1;
+        }
+        .responsive-table .col-1 {
+            flex-basis: 10%;
+        }
+        .responsive-table .col-2 {
+            flex-basis: 40%;
+        }
+        .responsive-table .col-3 {
+            flex-basis: 25%;
+        }
+        .responsive-table .col-4 {
+            flex-basis: 25%;
+        }
+        .responsive-table .selected{
+            background-color:#f3f6fd !important;
+        }
+        .responsive-table .b{
+
+        }
+        .selectedItem{
+            background-color: #f3f6fd !important;
+        }
+        @media all and (max-width: 767px) {
+            .responsive-table .table-header {
+                display: none;
+            }
+            .responsive-table li {
+                display: block;
+            }
+            .responsive-table .col {
+                flex-basis: 100%;
+            }
+            .responsive-table .col {
+                display: flex;
+                padding: 10px 0;
+            }
+            .responsive-table .col:before {
+                color: #6c7a89;
+                padding-right: 10px;
+                content: attr(data-label);
+                flex-basis: 50%;
+                text-align: right;
+            }
+        }
+
+
+
+
+        <!-- check boxes -->
+        .checkContainer  {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            background-color: #e7effc;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .checkContainer :hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .checkContainer  input:checked ~ .checkmark {
+            background-color: #3166e1;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .checkContainer  input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkContainer  .checkmark:after   {
+            left: 5px;
+            top: -2px;
+            width: 7px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        /* end */
     </style>
 
 </head>
 <body>
 <div clas="wrapper">
-    <div class = "container-fluid p-4">
+    <div class="container-fluid p-4">
         <div class="row">
             <div class="col-12 ">
-                <span ><h2 class="ml-4">Add Item</h2></span>
+                <span></span>
                 <div class="row ">
                     <div class="col-lg-6 col-md-12">
                         <div class="formdes-main-wrapper">
@@ -397,7 +525,7 @@
                                         </label>
 
                                         <div class="formdes-mb-5 formdes-file-input">
-                                            <input type="file" name="file" id="file" />
+                                            <input type="file" name="file" id="file">
                                             <label for="file">
                                                 <div>
                                                     <span class="formdes-drop-file"> Drop files here </span>
@@ -408,231 +536,280 @@
                                         </div>
 
 
-                                    <div>
-                                        <button class="formdes-btn w-full">Send File</button>
+                                        <div>
+                                            <button class="formdes-btn w-full">Send File</button>
+                                        </div>
+
+                                    </div></form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="formbold-main-wrapper">
+                            <!-- Author: FormBold Team -->
+                            <!-- Learn More: https://formbold.com -->
+                            <div class="formbold-form-wrapper">
+                                <form action="https://formbold.com/s/FORM_ID" method="POST">
+                                    <div class="formbold-steps">
+                                        <ul>
+                                            <li class="formbold-step-menu1 active">
+                                                <span>1</span>
+                                                Sign Up
+                                            </li>
+                                            <li class="formbold-step-menu2">
+                                                <span>2</span>
+                                                Message
+                                            </li>
+                                            <li class="formbold-step-menu3">
+                                                <span>3</span>
+                                                Confirm
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="formbold-form-step-1 active">
+                                        <div class="formbold-input-flex">
+                                            <div>
+                                                <label for="firstname" class="formbold-form-label"> First name </label>
+                                                <input type="text" name="firstname" placeholder="Andrio" id="firstname" class="formbold-form-input">
+                                            </div>
+                                            <div>
+                                                <label for="lastname" class="formbold-form-label"> Last name </label>
+                                                <input type="text" name="lastname" placeholder="Dolee" id="lastname" class="formbold-form-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="formbold-input-flex">
+                                            <div>
+                                                <label for="dob" class="formbold-form-label"> Date of Birth </label>
+                                                <input type="date" name="dob" id="dob" class="formbold-form-input">
+                                            </div>
+                                            <div>
+                                                <label for="email" class="formbold-form-label"> Email Address </label>
+                                                <input type="email" name="email" placeholder="example@mail.com" id="email" class="formbold-form-input">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="address" class="formbold-form-label"> Address </label>
+                                            <input type="text" name="address" id="address" placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY" class="formbold-form-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="formbold-form-step-2">
+                                        <div>
+                                            <label for="message" class="formbold-form-label"> Message </label>
+                                            <textarea rows="6" name="message" id="message" placeholder="Type your message" class="formbold-form-input"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="formbold-form-step-3">
+                                        <div class="formbold-form-confirm">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                            </p>
+
+                                            <div>
+                                                <button class="formbold-confirm-btn active">
+                                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"></circle>
+                                                        <g clip-path="url(#clip0_1667_1314)">
+                                                            <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"></path>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1667_1314">
+                                                                <rect width="14" height="14" fill="white" transform="translate(4 4)"></rect>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    Yes! I want it.
+                                                </button>
+
+                                                <button class="formbold-confirm-btn">
+                                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"></circle>
+                                                        <g clip-path="url(#clip0_1667_1314)">
+                                                            <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"></path>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1667_1314">
+                                                                <rect width="14" height="14" fill="white" transform="translate(4 4)"></rect>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    No! I don’t want it.
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="formbold-form-btn-wrapper">
+                                        <button class="formbold-back-btn">
+                                            Back
+                                        </button>
+
+                                        <button class="formbold-btn">
+                                            Next Step
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1675_1807)">
+                                                    <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1675_1807">
+                                                        <rect width="16" height="16" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="formbold-main-wrapper">
-                        <!-- Author: FormBold Team -->
-                        <!-- Learn More: https://formbold.com -->
-                        <div class="formbold-form-wrapper">
-                            <form action="https://formbold.com/s/FORM_ID" method="POST">
-                                <div class="formbold-steps">
-                                    <ul>
-                                        <li class="formbold-step-menu1 active">
-                                            <span>1</span>
-                                            Sign Up
-                                        </li>
-                                        <li class="formbold-step-menu2">
-                                            <span>2</span>
-                                            Message
-                                        </li>
-                                        <li class="formbold-step-menu3">
-                                            <span>3</span>
-                                            Confirm
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="formbold-form-step-1 active">
-                                    <div class="formbold-input-flex">
-                                        <div>
-                                            <label for="firstname" class="formbold-form-label"> First name </label>
-                                            <input
-                                                    type="text"
-                                                    name="firstname"
-                                                    placeholder="Andrio"
-                                                    id="firstname"
-                                                    class="formbold-form-input"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label for="lastname" class="formbold-form-label"> Last name </label>
-                                            <input
-                                                    type="text"
-                                                    name="lastname"
-                                                    placeholder="Dolee"
-                                                    id="lastname"
-                                                    class="formbold-form-input"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div class="formbold-input-flex">
-                                        <div>
-                                            <label for="dob" class="formbold-form-label"> Date of Birth </label>
-                                            <input
-                                                    type="date"
-                                                    name="dob"
-                                                    id="dob"
-                                                    class="formbold-form-input"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label for="email" class="formbold-form-label"> Email Address </label>
-                                            <input
-                                                    type="email"
-                                                    name="email"
-                                                    placeholder="example@mail.com"
-                                                    id="email"
-                                                    class="formbold-form-input"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label for="address" class="formbold-form-label"> Address </label>
-                                        <input
-                                                type="text"
-                                                name="address"
-                                                id="address"
-                                                placeholder="Flat 4, 24 Castle Street, Perth, PH1 3JY"
-                                                class="formbold-form-input"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div class="formbold-form-step-2">
-                                    <div>
-                                        <label for="message" class="formbold-form-label"> Message </label>
-                                        <textarea
-                                                rows="6"
-                                                name="message"
-                                                id="message"
-                                                placeholder="Type your message"
-                                                class="formbold-form-input"
-                                        ></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="formbold-form-step-3">
-                                    <div class="formbold-form-confirm">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                                        </p>
-
-                                        <div>
-                                            <button class="formbold-confirm-btn active">
-                                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                                                    <g clip-path="url(#clip0_1667_1314)">
-                                                        <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_1667_1314">
-                                                            <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                Yes! I want it.
-                                            </button>
-
-                                            <button class="formbold-confirm-btn">
-                                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                                                    <g clip-path="url(#clip0_1667_1314)">
-                                                        <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_1667_1314">
-                                                            <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                No! I don’t want it.
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="formbold-form-btn-wrapper">
-                                    <button class="formbold-back-btn">
-                                        Back
-                                    </button>
-
-                                    <button class="formbold-btn">
-                                        Next Step
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_1675_1807)">
-                                                <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"/>
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_1675_1807">
-                                                    <rect width="16" height="16" fill="white"/>
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-    const stepMenuOne = document.querySelector('.formbold-step-menu1')
-    const stepMenuTwo = document.querySelector('.formbold-step-menu2')
-    const stepMenuThree = document.querySelector('.formbold-step-menu3')
 
-    const stepOne = document.querySelector('.formbold-form-step-1')
-    const stepTwo = document.querySelector('.formbold-form-step-2')
-    const stepThree = document.querySelector('.formbold-form-step-3')
 
-    const formSubmitBtn = document.querySelector('.formbold-btn')
-    const formBackBtn = document.querySelector('.formbold-back-btn')
 
-    formSubmitBtn.addEventListener("click", function(event){
-        event.preventDefault()
-        if(stepMenuOne.className == 'formbold-step-menu1 active') {
-            event.preventDefault()
 
-            stepMenuOne.classList.remove('active')
-            stepMenuTwo.classList.add('active')
+    <div clas="wrapper">
+        <div class="container-fluid p-4">
+            <div class="row">
+                <div class="col-12 ">
+                    <span></span>
+                    <div class="row ">
+                        <div class="col-lg-12 col-md-12">
 
-            stepOne.classList.remove('active')
-            stepTwo.classList.add('active')
+                            <div class="formdes-main-wrapper " style="flex-direction: column;">
+                                <div class="col-lg-12 col-md-12 mb-6 h-100">
+                                <label class="formdes-form-label formdes-form-label-2 mt-1 mb-0">
+                                    Add Cover Image
+                                </label><br>
+                                <ul class=" responsive-table p-0">
+                                    <li class="table-header a">
+                                        <div class="col col-1">
+                                            <label class="checkContainer">
+                                                <input type="checkbox" class="d-none">
+                                                <span class="checkmark"></span>
+                                            </label><span class="m-1">All</span></div>
+                                        <div class="col col-4">First Val</div>
+                                        <div class="col col-4">2nd Val</div>
+                                        <div class="col col-4">3rd Val</div>
+                                        <div class="col col-4">4th Val</div>
+                                    </li>
+                                    <li class="table-row b">
+                                        <div class="col col-1">
+                                            <label class="checkContainer">
+                                                <input type="checkbox" class="d-none">
+                                                <span class="checkmark"></span>
+                                            </label> </div>
+                                        <div class="col col-4">First Val</div>
+                                        <div class="col col-4">2nd Val</div>
+                                        <div class="col col-4">3rd Val</div>
+                                        <div class="col col-4">4th Val</div>
+                                    </li>
+                                    <li class="table-row a">
+                                        <div class="col col-1">
+                                            <label class="checkContainer">
+                                                <input type="checkbox" class="d-none">
+                                                <span class="checkmark"></span>
+                                            </label></div>
+                                        <div class="col col-4">First Val</div>
+                                        <div class="col col-4">2nd Val</div>
+                                        <div class="col col-4">3rd Val</div>
+                                        <div class="col col-4">4th Val</div>
+                                    </li>
+                                    <li class="table-row b">
+                                        <div class="col col-1">
+                                            <label class="checkContainer">
+                                                <input type="checkbox" class="d-none">
+                                                <span class="checkmark"></span>
+                                            </label></div>
+                                        <div class="col col-4">First Val</div>
+                                        <div class="col col-4">2nd Val</div>
+                                        <div class="col col-4">3rd Val</div>
+                                        <div class="col col-4">4th Val</div>
+                                    </li>
+                                    <li class="table-row a">
+                                        <div class="col col-1">
+                                            <label class="checkContainer">
+                                                <input type="checkbox" class="d-none">
+                                                <span class="checkmark"></span>
+                                            </label></div>
+                                        <div class="col col-4">First Val</div>
+                                        <div class="col col-4">2nd Val</div>
+                                        <div class="col col-4">3rd Val</div>
+                                        <div class="col col-4">4th Val</div>
+                                    </li>
+                                </ul>
+                                </div>
+                            </div>
 
-            formBackBtn.classList.add('active')
-            formBackBtn.addEventListener("click", function (event) {
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const stepMenuOne = document.querySelector('.formbold-step-menu1')
+            const stepMenuTwo = document.querySelector('.formbold-step-menu2')
+            const stepMenuThree = document.querySelector('.formbold-step-menu3')
+
+            const stepOne = document.querySelector('.formbold-form-step-1')
+            const stepTwo = document.querySelector('.formbold-form-step-2')
+            const stepThree = document.querySelector('.formbold-form-step-3')
+
+            const formSubmitBtn = document.querySelector('.formbold-btn')
+            const formBackBtn = document.querySelector('.formbold-back-btn')
+
+            formSubmitBtn.addEventListener("click", function(event){
                 event.preventDefault()
+                if(stepMenuOne.className == 'formbold-step-menu1 active') {
+                    event.preventDefault()
 
-                stepMenuOne.classList.add('active')
-                stepMenuTwo.classList.remove('active')
+                    stepMenuOne.classList.remove('active')
+                    stepMenuTwo.classList.add('active')
 
-                stepOne.classList.add('active')
-                stepTwo.classList.remove('active')
+                    stepOne.classList.remove('active')
+                    stepTwo.classList.add('active')
 
-                formBackBtn.classList.remove('active')
+                    formBackBtn.classList.add('active')
+                    formBackBtn.addEventListener("click", function (event) {
+                        event.preventDefault()
 
+                        stepMenuOne.classList.add('active')
+                        stepMenuTwo.classList.remove('active')
+
+                        stepOne.classList.add('active')
+                        stepTwo.classList.remove('active')
+
+                        formBackBtn.classList.remove('active')
+
+                    })
+
+                } else if(stepMenuTwo.className == 'formbold-step-menu2 active') {
+                    event.preventDefault()
+
+                    stepMenuTwo.classList.remove('active')
+                    stepMenuThree.classList.add('active')
+
+                    stepTwo.classList.remove('active')
+                    stepThree.classList.add('active')
+
+                    formBackBtn.classList.remove('active')
+                    formSubmitBtn.textContent = 'Submit'
+                } else if(stepMenuThree.className == 'formbold-step-menu3 active') {
+                    document.querySelector('form').submit()
+                }
             })
 
-        } else if(stepMenuTwo.className == 'formbold-step-menu2 active') {
-            event.preventDefault()
-
-            stepMenuTwo.classList.remove('active')
-            stepMenuThree.classList.add('active')
-
-            stepTwo.classList.remove('active')
-            stepThree.classList.add('active')
-
-            formBackBtn.classList.remove('active')
-            formSubmitBtn.textContent = 'Submit'
-        } else if(stepMenuThree.className == 'formbold-step-menu3 active') {
-            document.querySelector('form').submit()
-        }
-    })
 
 
+        </script>
 
-</script>
 <script>window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');</script>
 </body>

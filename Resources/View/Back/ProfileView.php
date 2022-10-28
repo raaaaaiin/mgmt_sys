@@ -531,6 +531,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </main>
                     <div id="sidebar-overlay"></div></div>
@@ -538,6 +539,7 @@
         </div>
     </div>
 </div>
+<?php echo $this->getProfilepicdata() ?>
 <script>
     window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');
 </script>
