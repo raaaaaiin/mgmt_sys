@@ -1,10 +1,14 @@
 <?php
 
+$Params = $_GET;
 $request = $_SERVER['REQUEST_URI'];
 $removeRoot = str_replace('/mgmt_sys/','',$request,);
 $curdir = dirname($_SERVER['REQUEST_URI']);
 $baseUri = str_replace($curdir, '', $request);
-switch ($removeRoot) {
+$absolute = basename(parse_url($removeRoot, PHP_URL_PATH));?>
+<h1> hia <?= $removeRoot ?> </h1>
+<?php
+switch ($absolute) {
     case 'index' :
         require __DIR__ . '/Resources/index.php';
         break;
