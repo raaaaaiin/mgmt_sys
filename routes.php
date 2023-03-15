@@ -1,12 +1,10 @@
 <?php
-
-$Params = $_GET;
 $request = $_SERVER['REQUEST_URI'];
 $removeRoot = str_replace('/mgmt_sys/','',$request,);
 $curdir = dirname($_SERVER['REQUEST_URI']);
 $baseUri = str_replace($curdir, '', $request);
-$absolute = basename(parse_url($removeRoot, PHP_URL_PATH));?>
-<h1> hia <?= $removeRoot ?> </h1>
+$absolute = basename(parse_url($removeRoot, PHP_URL_PATH));
+?>
 <?php
 switch ($absolute) {
     case 'index' :
