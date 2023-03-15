@@ -106,8 +106,12 @@
 
 
     window.addEventListener('message', function(event) {
-        $(`a`).removeClass('selected');
+      if (typeof event.data === "object") {
+} else {
+  $(`a`).removeClass('selected');
         $(`a[href='${event.data}']`).addClass('selected');
+}
+       
     });
 
 

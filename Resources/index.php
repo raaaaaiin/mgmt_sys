@@ -31,6 +31,7 @@
             $("#sidebar").toggleClass('active');
     }
     function SideNavRefocus(sendData){
+        alert(1);
         const message = sendData;
         const iframe = document.querySelector("iframe");
         iframe.contentWindow.postMessage(message, "*");
