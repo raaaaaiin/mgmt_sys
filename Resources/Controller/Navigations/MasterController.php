@@ -1,5 +1,4 @@
 <?php
-session_start();
 class MasterController{
     public $history;
     function render(): void

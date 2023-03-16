@@ -1,22 +1,22 @@
 <?php
 $request = $_SERVER['REQUEST_URI'];
-$removeRoot = str_replace('/mgmt_sys/','',$request,);
+$removeRoot = str_replace('/mgmt_sys/', '', $request, );
 $curdir = dirname($_SERVER['REQUEST_URI']);
 $baseUri = str_replace($curdir, '', $request);
 $absolute = basename(parse_url($removeRoot, PHP_URL_PATH));
 ?>
 <?php
 switch ($absolute) {
-    case 'index' :
+    case 'index':
         require __DIR__ . '/Resources/index.php';
         break;
-    case 'login' :
+    case 'login':
         require __DIR__ . '/Resources/Controller/Auth/LoginController.php';
         break;
-    case 'TopNavController' :
+    case 'TopNavController':
         require __DIR__ . '/Resources/Controller/Navigations/TopNavController.php';
         break;
-    case 'SideNavController' :
+    case 'SideNavController':
         require __DIR__ . '/Resources/Controller/Navigations/SideNavController.php';
         break;
     case 'MasterController':
@@ -52,4 +52,3 @@ switch ($absolute) {
 
 
 }
-

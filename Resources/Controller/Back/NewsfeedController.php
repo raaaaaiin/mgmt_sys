@@ -1,5 +1,4 @@
 <?php
-session_start();
 class NewsfeedController{
     function render(): void
     {

@@ -539,7 +539,7 @@
         </div>
     </div>
 </div>
-<?php echo $this->getProfilepicdata() ?>
+<?php echo "$this->profilepicdata" ?>
 <script>
     window.parent.changepage('<?php echo $_SESSION['CurrentSelection'] ?>');
 </script>

@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Common\common;
 
 include 'App\Common\Common.php';

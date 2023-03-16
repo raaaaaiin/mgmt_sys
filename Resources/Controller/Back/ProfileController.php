@@ -2,8 +2,6 @@
 
 namespace App\Resources\Controller;
 
-session_start();
-
 use App\Models\studentparent;
 
 include 'App\Models\studentparent.php';
@@ -16,13 +14,14 @@ class ProfileController{
     {
         $studentlist = new studentparent;
         $ha = $studentlist->get();
+        $this->setProfilepicdata("Raw Data");
         foreach($ha as $hotdog){
             echo $hotdog['Student_Code'] . '<br>';
         }
         require_once 'Resources/View/Back/ProfileView.php';
     }
-    function setProfilepicdata(){
-        $this->profilepicdata = "raw data";
+    function setProfilepicdata($string){
+        $this->profilepicdata = $string;
     }
 
     function getProfilepicdata(){

@@ -1,5 +1,4 @@
 <?php
-session_start();
 class SideNavController{
 
     function render(): void
