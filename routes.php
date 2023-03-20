@@ -1,4 +1,18 @@
 <?php
+include_once "autoload.php";
+
+use app\Http\Controller\Auth\LoginController;
+use Controller\Back\DiscoverController;
+use Controller\Back\Item\ItemAddController;
+use Controller\Back\Item\ItemListController;
+use Controller\Back\NewsfeedController;
+use Controller\Back\ProfileController;
+use Controller\Back\TemplateTrialController;
+use Controller\Back\TimelineController;
+use Controller\Navigations\MasterController;
+use Controller\Navigations\SideNavController;
+use Controller\Navigations\TopNavController;
+
 $request = $_SERVER['REQUEST_URI'];
 $removeRoot = str_replace('/mgmt_sys/', '', $request, );
 $curdir = dirname($_SERVER['REQUEST_URI']);
@@ -11,44 +25,39 @@ switch ($absolute) {
         require __DIR__ . '/Resources/index.php';
         break;
     case 'login':
-        require __DIR__ . '/Resources/Controller/Auth/LoginController.php';
+        (new LoginController())->render();
         break;
     case 'TopNavController':
-        require __DIR__ . '/Resources/Controller/Navigations/TopNavController.php';
+        (new TopNavController())->index();
         break;
     case 'SideNavController':
-        require __DIR__ . '/Resources/Controller/Navigations/SideNavController.php';
+        (new SideNavController())->index();
         break;
     case 'MasterController':
-        require __DIR__ . '/Resources/Controller/Navigations/MasterController.php';
+        (new MasterController())->index();
         break;
     case 'DiscoverController':
-        require __DIR__ . '/Resources/Controller/Back/DiscoverController.php';
+        (new DiscoverController())->index();
         break;
     case 'ProfileController':
-        require __DIR__ . '/Resources/Controller/Back/ProfileController.php';
+        (new ProfileController())->index();
         break;
     case 'TimelineController':
-        require __DIR__ . '/Resources/Controller/Back/TimelineController.php';
+        (new TimelineController())->index();
         break;
     case 'NewsfeedController':
-        require __DIR__ . '/Resources/Controller/Back/NewsfeedController.php';
+        (new NewsfeedController())->index();
         break;
     case 'ItemAddController':
-        require __DIR__ . '/Resources/Controller/Back/Item/ItemAddController.php';
+        (new ItemAddController())->index();
         break;
     case 'ItemListController':
-        require __DIR__ . '/Resources/Controller/Back/Item/ItemListController.php';
+        (new ItemListController())->index();
         break;
     case 'TemplateTrialController':
-        require __DIR__ . '/Resources/Controller/Back/TemplateTrialController.php';
+        (new TemplateTrialController())->index();
         break;
     default:
         require __DIR__ . '/View/index.php';
         break;
-
-
-
-
-
-}
+} 
