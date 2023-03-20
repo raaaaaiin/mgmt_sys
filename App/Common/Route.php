@@ -1,11 +1,17 @@
 <?php
 
-namespace App\Route;
+namespace App\Common;
 
 class Route{
    
-    public function get(string $uri,$action = null){
+
+    public static function get($path, $action)
+    {
+        $controller = new $action[0](); // create an instance of LoginController
+        $controller->{$action[1]}(); // call the render() method on the instance
+        
     }
+
     public function put(){
     }
     public function post(){

@@ -1,4 +1,5 @@
 <?php
+namespace app\Http\Controller\Navigations;
 class SideNavController{
 
     function render(): void

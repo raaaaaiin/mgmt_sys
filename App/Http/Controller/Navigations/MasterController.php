@@ -1,4 +1,6 @@
 <?php
+namespace app\Http\Controller\Navigations;
+
 class MasterController{
     public $history;
     function render(): void

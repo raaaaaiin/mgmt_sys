@@ -1,6 +1,6 @@
 <?php
 include_once "autoload.php";
-
+use app\Common\Route;
 use app\Http\Controller\Auth\LoginController;
 use Controller\Back\DiscoverController;
 use Controller\Back\Item\ItemAddController;
@@ -9,9 +9,9 @@ use Controller\Back\NewsfeedController;
 use Controller\Back\ProfileController;
 use Controller\Back\TemplateTrialController;
 use Controller\Back\TimelineController;
-use Controller\Navigations\MasterController;
+use app\Http\Controller\Navigations\MasterController;
 use Controller\Navigations\SideNavController;
-use Controller\Navigations\TopNavController;
+use app\Http\Controller\Navigations\TopNavController;
 
 $request = $_SERVER['REQUEST_URI'];
 $removeRoot = str_replace('/mgmt_sys/', '', $request, );
@@ -25,16 +25,17 @@ switch ($absolute) {
         require __DIR__ . '/Resources/index.php';
         break;
     case 'login':
-        (new LoginController())->render();
+        Route::get('/path', [LoginController::class,'render']);
+        
         break;
     case 'TopNavController':
-        (new TopNavController())->index();
+        (new TopNavController())->render();
         break;
     case 'SideNavController':
         (new SideNavController())->index();
         break;
     case 'MasterController':
-        (new MasterController())->index();
+        (new MasterController())->render();
         break;
     case 'DiscoverController':
         (new DiscoverController())->index();
