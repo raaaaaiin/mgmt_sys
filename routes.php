@@ -2,6 +2,7 @@
 include_once "autoload.php";
 use app\Common\Route;
 use app\Http\Controller\Auth\LoginController;
+use app\Http\Controller\Master\IndexController;
 use Controller\Back\DiscoverController;
 use Controller\Back\Item\ItemAddController;
 use Controller\Back\Item\ItemListController;
@@ -23,6 +24,7 @@ Route::get('TimelineController', [TimelineController::class,'render']);
 Route::get('NewsfeedController', [NewsfeedController::class,'render']);
 Route::get('ItemAddController', [ItemAddController::class,'render']);
 Route::get('TemplateTrialController', [TemplateTrialController::class,'render']);
+Route::get('index', [IndexController::class,'render']);
 
 ?>
 <?php
