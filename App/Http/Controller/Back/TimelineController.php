@@ -1,4 +1,5 @@
 <?php
+namespace App\Resources\Controller\Back;
 class TimelineController{
     function render(): void
     {

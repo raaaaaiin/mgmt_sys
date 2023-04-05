@@ -1,6 +1,6 @@
 <?php
 
-use App\Common\common;
+namespace App\Resources\Controller\Back;
 
 include 'App\Common\Common.php';
 

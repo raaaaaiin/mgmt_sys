@@ -1,4 +1,5 @@
 <?php
+namespace App\Resources\Controller\Back\Item;
 session_start();
 class ItemAddController{
     function render(): void

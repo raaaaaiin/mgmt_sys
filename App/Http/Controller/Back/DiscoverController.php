@@ -1,4 +1,5 @@
 <?php
+namespace App\Resources\Controller\Back;
 class DiscoverController{
     function render(): void
     {
