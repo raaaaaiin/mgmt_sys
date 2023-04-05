@@ -13,19 +13,25 @@ use app\Http\Controller\Navigations\MasterController;
 use Controller\Navigations\SideNavController;
 use app\Http\Controller\Navigations\TopNavController;
 
-$request = $_SERVER['REQUEST_URI'];
-$removeRoot = str_replace('/mgmt_sys/', '', $request, );
-$curdir = dirname($_SERVER['REQUEST_URI']);
-$baseUri = str_replace($curdir, '', $request);
-$absolute = basename(parse_url($removeRoot, PHP_URL_PATH));
+Route::get('login', [LoginController::class,'render']);
+Route::get('TopNavController', [TopNavController::class,'render']);
+Route::get('SideNavController', [SideNavController::class,'render']);
+Route::get('MasterController', [MasterController::class,'render']);
+Route::get('DiscoverController', [DiscoverController::class,'render']);
+Route::get('ProfileController', [ProfileController::class,'render']);
+Route::get('TimelineController', [TimelineController::class,'render']);
+Route::get('NewsfeedController', [NewsfeedController::class,'render']);
+Route::get('ItemAddController', [ItemAddController::class,'render']);
+Route::get('TemplateTrialController', [TemplateTrialController::class,'render']);
+
 ?>
 <?php
-switch ($absolute) {
+/*switch ($absolute) {
     case 'index':
         require __DIR__ . '/Resources/index.php';
         break;
     case 'login':
-        Route::get('/path', [LoginController::class,'render']);
+        
         
         break;
     case 'TopNavController':
@@ -61,4 +67,4 @@ switch ($absolute) {
     default:
         require __DIR__ . '/View/index.php';
         break;
-} 
+} */
