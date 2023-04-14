@@ -1,2 +1,2 @@
 <?php
-require __DIR__ . '/routes.php';
+include __DIR__ . '/routes/route.php';

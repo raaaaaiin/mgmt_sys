@@ -4,7 +4,7 @@ session_start();
 class ItemAddController{
     function render(): void
     {
-        require_once 'Resources/View/Back/Item/ItemAddView.php';
+        require_once '../Resources/Views/Back/Item/ItemAddView.php';
     }
 
 }

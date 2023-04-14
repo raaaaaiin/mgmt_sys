@@ -1,10 +1,6 @@
 <?php
 
-namespace App\Common;
-
-use App\Common\Connection as Connection;
-
-include 'App\Common\Connection.php';
+include 'Connection.php';
 
 abstract class Model{
     protected $connection;
@@ -21,7 +17,7 @@ abstract class Model{
     public function get($columns = ['*'])
     {
 
-        $this->connection = new \Connection;
+        $this->connection = new Connection();
         $sql = "SELECT * FROM 00_00_studentparent";
         $result = $this->connection -> query($sql);
         return $result;

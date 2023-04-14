@@ -1,9 +1,11 @@
 <?php
+
+namespace App\Resources\Controller\Back\Item;
 session_start();
 class ItemListController{
     function render(): void
     {
-        require_once 'Resources/View/Back/Item/ItemListView.php';
+        require_once '../Resources/Views/Back/Item/ItemListView.php';
     }
 
 }

@@ -10,7 +10,7 @@ class TemplateTrialController extends Common {
     function render(): void
     {
         $this->assign('kawaii','"Hello there, Kawaii template engine is working"');
-        $this->EngineView('Resources/View/Back/TemplateTrialView');
+        $this->EngineView('../Resources/Views/Back/TemplateTrialView');
     }
 
 }

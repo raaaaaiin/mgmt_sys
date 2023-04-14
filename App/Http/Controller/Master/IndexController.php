@@ -4,7 +4,7 @@ class IndexController{
 
     function render(): void
     {
-        require_once 'Resources/index.php';
+        require_once '../Resources/index.php';
     }
 
 }

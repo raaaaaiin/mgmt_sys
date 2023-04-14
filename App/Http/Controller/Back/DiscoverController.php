@@ -3,7 +3,7 @@ namespace App\Resources\Controller\Back;
 class DiscoverController{
     function render(): void
     {
-        require_once 'Resources/View/Back/DiscoverView.php';
+        require_once '../Resources/Views/Back/DiscoverView.php';
     }
 }
 

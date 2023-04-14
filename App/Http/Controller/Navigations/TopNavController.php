@@ -4,7 +4,7 @@ class TopNavController
 {
     function render(): void
     {
-        require_once 'Resources/View/Navigations/TopNavView.php';
+        require_once '../Resources/Views/Navigations/TopNavView.php';
     }
 
 }

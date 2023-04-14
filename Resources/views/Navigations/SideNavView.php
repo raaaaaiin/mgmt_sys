@@ -1,6 +1,6 @@
 <head>
   <link rel="stylesheet" href="PreRequisites/bootstrap-4.6.0-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="Resources/View/CSS/SideNavCss.css">
+  <link rel="stylesheet" href="Resources/Views/CSS/SideNavCss.css">
   <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
 </head>
 
