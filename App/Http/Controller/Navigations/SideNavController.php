@@ -4,7 +4,7 @@ class SideNavController{
 
     function render(): void
     {
-        require_once '../Resources/Views/Navigations/SideNavView.php';
+        require_once 'Resources/View/Navigations/SideNavView.php';
     }
 
 }

@@ -3,7 +3,7 @@ namespace App\Resources\Controller\Back;
 class NewsfeedController{
     function render(): void
     {
-        require_once '../Resources/Views/Back/NewsfeedView.php';
+        require_once 'Resources/View/Back/NewsfeedView.php';
     }
 
 }

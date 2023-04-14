@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="PreRequisites/bootstrap-4.6.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="Resources/Views/CSS/ProfileViewCss.css">
+    <link rel="stylesheet" href="Resources/View/CSS/ProfileViewCss.css">
 </head>
 <body>
 <div>

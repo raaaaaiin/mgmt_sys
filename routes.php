@@ -1,7 +1,5 @@
 <?php
-
 include_once "autoload.php";
-
 use app\Common\Route;
 use app\Http\Controller\Auth\LoginController;
 use app\Http\Controller\Master\IndexController;

@@ -10,7 +10,7 @@ session_start();
     }
     function render(): void
     {
-        include '..\Resources\Views\Auth\LoginView.php';
+        require_once 'Resources/View/Auth/LoginView.php';
     }
 
 

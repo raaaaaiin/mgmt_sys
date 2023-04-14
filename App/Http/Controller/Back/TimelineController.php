@@ -3,7 +3,7 @@ namespace App\Resources\Controller\Back;
 class TimelineController{
     function render(): void
     {
-        require_once '../Resources/Views/Back/TimelineView.php';
+        require_once 'Resources/View/Back/TimelineView.php';
     }
 
 }
