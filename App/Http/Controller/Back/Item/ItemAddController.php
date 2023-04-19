@@ -2,6 +2,9 @@
 namespace App\Resources\Controller\Back\Item;
 session_start();
 class ItemAddController{
+    public function ItemAddController(): void{
+        $this->render();
+    }
     function render(): void
     {
         require_once 'Resources/View/Back/Item/ItemAddView.php';
@@ -10,5 +13,3 @@ class ItemAddController{
 }
 
 $_SESSION['CurrentSelection'] = 'ItemAddController';
-$display = new ItemAddController;
-$display->render();

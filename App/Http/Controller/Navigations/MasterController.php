@@ -2,9 +2,14 @@
 namespace app\Http\Controller\Navigations;
 
 class MasterController{
+    public function NewsfeedController(): void{
+        
+        $this->render();
+    }
     public $history;
     function render(): void
     {
+        $this->checkSelect();
         require_once 'Resources/View/Navigations/MasterView.php';
     }
     function checkSelect(){
@@ -16,7 +21,3 @@ class MasterController{
     }
 }
 
-
-    $display = new MasterController;
-$display->checkSelect();
-$display->render();

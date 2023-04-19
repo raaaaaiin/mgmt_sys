@@ -1,6 +1,9 @@
 <?php
-namespace App\Resources\Controller\Back;
+namespace App\Http\Controller\Back;
 class TimelineController{
+    public function TimelineController(): void{
+        $this->render();
+    }
     function render(): void
     {
         require_once 'Resources/View/Back/TimelineView.php';
@@ -9,5 +12,3 @@ class TimelineController{
 }
 
 $_SESSION['CurrentSelection'] = 'TimelineController';
-$display = new TimelineController;
-$display->render();

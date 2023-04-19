@@ -2,14 +2,15 @@
 
 namespace App\Common;
 
+
 class Route{
 
     public static function get($path, $action)
     {
         
         if($path == Route::getAbsolute()){
-            $controller = new $action[0](); // create an instance of LoginController
-            $controller->{$action[1]}();
+            @$controller = new $action[0](); // create an instance of LoginController
+            @$controller->{$action[1]}();
         }else{
 
         }
