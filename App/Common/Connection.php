@@ -17,7 +17,6 @@ class Connection{
         $this -> hostName = "127.0.0.1";
         $this -> userName = "root";
         $this -> password = "";
-        return $this->dbConnect();
     }
 
     function dbConnect()    {
