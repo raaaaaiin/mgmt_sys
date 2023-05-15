@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Resources\Controller\Back;
+namespace App\Http\Controller\Back;
 
 use App\Models\studentparent;
 
