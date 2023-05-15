@@ -48,8 +48,5 @@ class Route
         }
     }
 
-    public static function resetMatch(): void
-    {
-        self::$matches = false;
-    }
+   
 }

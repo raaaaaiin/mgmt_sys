@@ -27,8 +27,7 @@ Route::get('NewsfeedController', [NewsfeedController::class,'render']);
 Route::get('ItemAddController', [ItemAddController::class,'render']);
 Route::get('TemplateTrialController', [TemplateTrialController::class,'render']);
 Route::get('index', [IndexController::class,'render']);
-Route::get('notfound', [FallbackController::class,'render']);
 Route::dispatch();
 
 // Check if there was a match
-Route::fallback('notfound', [FallbackController::class,'render']);
+Route::fallback('404', [FallbackController::class,'render']);
