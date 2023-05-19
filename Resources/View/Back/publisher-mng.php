@@ -5,6 +5,12 @@
     <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
     <link rel="stylesheet" href="Resources/CSS/adminlte.css">
     <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+    <style>
+        /* Custom styles for the table */
+        table.table tbody {
+            background-color: #fff;
+        }
+    </style>
 </head>
 <div>
     <div class="card">
@@ -65,7 +71,7 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style="background-color: #fff;">
                             <!-- If $items->total() -->
                                 <tr>
                                     <td>ID</td>
@@ -91,7 +97,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -115,7 +121,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -139,7 +145,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -163,7 +169,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -187,7 +193,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -211,31 +217,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                                tr>
-                                    <td>ID</td>
-                                    <td>Name</td>
-                                    <td>
-                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
-                                        <!-- @if(count($books_titles)) -->
-                                            <!-- @foreach($books_titles as $book) -->
-                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
-                                                <!-- @if(!$loop->last),@endif -->
-                                            <!-- @endforeach -->
-                                        <!-- @else -->
-                                            <span class="text-sm">--</span>
-                                        <!-- @endif -->
-                                    </td>
-                                    <td>
-                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
-                                            <i class="far fa-edit"></i>
-                                        </button>
-                                        <button 
-                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                tr>
+                                <tr>
                                     <td>ID</td>
                                     <td>Name</td>
                                     <td>
@@ -262,7 +244,7 @@
                             <!-- else -->
                             <tr>
                                 <td colspan="10">
-                                    <div class="alert alert-dark">No publisher exist</div>
+                                    <div class="alert alert-dark">{{__("commonv2.no_publisher_exist")}}</div>
                                 </td>
                             </tr>
                             <!-- endif -->
