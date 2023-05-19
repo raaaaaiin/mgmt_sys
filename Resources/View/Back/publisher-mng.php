@@ -20,7 +20,7 @@
                 <div class="form-row">
                     <div class="col-12 mb-2">
                         <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text">{{__("commonv2.publisher_name")}}</span></div>
+                            <div class="input-group-prepend"><span class="input-group-text">Publisher Name</span></div>
                             <div class="form-control border-0 p-0">
                                 <input type="text" class="form-control" required wire:model.defer="publisher_name">
                             </div>
@@ -59,18 +59,17 @@
                     <table class="table table-hover table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">{{__("common.id")}}</th>
-                                <th scope="col">{{__("commonv2.publisher_name")}}</th>
-                                <th scope="col">{{__("commonv2.books_published")}}</th>
-                                <th scope="col">{{__("common.action")}}</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Books Published</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- If $items->total() -->
-                            @foreach($items as $item)
                                 <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->name}}</td>
+                                    <td>ID</td>
+                                    <td>Name</td>
                                     <td>
                                         <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
                                         <!-- @if(count($books_titles)) -->
@@ -86,17 +85,184 @@
                                         <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
                                             <i class="far fa-edit"></i>
                                         </button>
-                                        <button onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}','deletePublisher','{\'id\':{{$item->id}}}')"
+                                        <button 
                                             type="button" class="btn float-left btn-sm btn-danger action_btn">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
                                 </tr>
-                            @endforeach
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>
+                                        <!-- @php $books_titles = $item->books()->pluck("books.title")->toArray(); @endphp -->
+                                        <!-- @if(count($books_titles)) -->
+                                            <!-- @foreach($books_titles as $book) -->
+                                                <!-- <a target="_blank" href="{{url('/')."/details/".$common::utf8Slug($book)}}" class="btn-link text-sm">{{Str::title($book)}}</a> -->
+                                                <!-- @if(!$loop->last),@endif -->
+                                            <!-- @endforeach -->
+                                        <!-- @else -->
+                                            <span class="text-sm">--</span>
+                                        <!-- @endif -->
+                                    </td>
+                                    <td>
+                                        <button type="button" wire:click="editPublisher({{$item->id}})" class="btn float-left btn-sm btn-dark action_btn">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                        <button 
+                                            type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             <!-- else -->
                             <tr>
                                 <td colspan="10">
-                                    <div class="alert alert-dark">{{__("commonv2.no_publisher_exist")}}</div>
+                                    <div class="alert alert-dark">No publisher exist</div>
                                 </td>
                             </tr>
                             <!-- endif -->
