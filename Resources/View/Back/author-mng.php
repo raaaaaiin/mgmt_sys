@@ -9,7 +9,7 @@
 
     </style>
 </head>
-
+<body>
 <div>
     <div class="card">
         <!-- Placeholder for spinner -->
@@ -158,7 +158,7 @@
                 </button>
             </td>
         </tr>
-        
+
         <!-- endforeach -->
         <!-- else -->
         <tr>

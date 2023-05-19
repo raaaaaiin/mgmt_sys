@@ -1,19 +1,25 @@
-<div class="w-100">
-    @php
-        /* @var \App\Facades\Util $util */
-        /* @var \App\Facades\Common $common */
-    @endphp
-    @php $loading_target="searchBookInfo" @endphp
-    @include("back.common.spinner")
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+
+</head><div class="w-100">
+    
+    
+    
     <div class="card">
         <div class="card-header blue">
             <a href="{{route("books.index")}}"
                class="btn btn-sm btn-dark"><i
-                    class="fas fa-plus-circle mr-1"></i>{{__("common.add_new_book")}}</a>
+                    class="fas fa-plus-circle mr-1"></i>Add New Book</a>
         </div>
         <div class="card-body yellow">
             <form id="saveBook" wire:submit.prevent="saveBook" onkeydown="return event.key != 'Enter';">
-                @csrf
+                
                 <input type="hidden" value="{{$book_id}}" id="book_id">
                 <input type="hidden" value="{{$mode}}" id="mode">
                 <div class="row">
@@ -23,40 +29,40 @@
                             ((isset($custom_img) && !is_null($custom_img) && !is_string($custom_img)) ? $custom_img->temporaryUrl()
                             : asset("uploads/". config('app.DEFAULT_BOOK_IMG')))}}" class="img-thumbnail"/>
                             <div class="mt-2">
-                                {!! CForm::inputGroupHeader(__("common.upload_cover_image")) !!}
+                               
                                 <input type="file" wire:model="custom_img" class="form-control text-xs"
                                        accept=".jpeg,.png,.jpg">
-                                @error('custom_img')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
-                                {!! CForm::inputGroupFooter() !!}</div>
+                                
+                                Please Upload a picture</div>
                         </div>
                     </div>
                     <div class="col-md-9 col-12 mb-10">
                         <div class="row">
                             <div class="col-12">
-                                @include("common.messages")
+                                
                             </div>
                         </div>
                         <div class="row no-gutters">
                             <div class="form-group col-md-4 col-12">
-                                {!! CForm::inputGroupHeader("ISBN") !!}
+                                ISBN
                                 <input type="text" wire:model.lazy="isbn"
                                        class="form-control">
                                 <div class="input-group-append">
                                    
                                 </div>
-                                @error('isbn')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
-                                {!! CForm::inputGroupFooter() !!}
+                                
+                                
                             </div>
                             <div class="form-group col-md-2 col-12">
-                            <div class="input-group"><div class="input-group-prepend "><span class="input-group-text ">Search Online</span> </div>
+                           Search Online
                                 
                                 <button class="btn btn-dark" data-toggle="tooltip" data-placement="top"
                                             type="button"
@@ -65,102 +71,78 @@
                                             title="{{__('common.search_book_details')}}"><i
                                             class=""></i>
                                     Auto Complete</button>
-                                <div class="input-group-append">
-                                   
-                                </div>
-                                                                </div>
                             </div>
                             <div class="form-group col-md-3 col-12">
-                                {!! CForm::inputGroupHeader(__("common.cat")) !!}
+                               Category
                                 <select wire:ignore wire:model="sel_cat" class="form-control">
-                                    <option value="">{{__("common.select")}}</option>
-                                    @foreach($common::getAllParentCatInArray() as $k=>$v)
-                                        <option value="{{$k}}" @if($sel_cat==$k) selected @endif>{{$v}}</option>
-                                    @endforeach
+                                    <option value="">Dewey Decimal</option>
+                                    
+                                        <option value="{{$k}}"> </option>
+                                    
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
-                                @error('sel_cat')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
-                                @error('sel_sub_cat')
+                                
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                             </div>
                            <div class="form-group col-md-3 col-12 tag_holder">
-                                {!! CForm::inputGroupHeader(__("Media type")) !!}
-                                <select wire:ignore class="select2-multiple-tag w-100"
+                           Media Type
+                                <select class="form-control w-100"
                                         name="medtypes[]"
-                                        multiple="multiple" id="medtypes">
-                                    @foreach($MedtypeData as $k=>$v)
-                                        <option
-                                            value="{{$k}}"
-                                            @if(in_array($k,$sel_medtypes)) selected @endif>{{Str::title($v)}}</option>
-                                    @endforeach
+                                         id="medtypes">
+                                    
+                                        <option value="{{$k}}"> </option>
+                                            
+                                    
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
 
                               
                             </div>
-                            @if(is_countable($sub_cats) && count($sub_cats))
+                            
                                 <div class="form-group col-12" style="border: 1px solid lightgray; padding: 10px;">
                                     <div class="form-row no-gutters">
-                                        @foreach($sub_cats as $sub_cat)
+                                        
                                             <div class="col-md-6 col-12 p-1">
                                                 <div
                                                     style="border: 1px solid lightgray; min-height: 100%;padding: 4px;font-size: 15px;">
                                                     <input type="radio" name="sub_cats" class="mr-2"
                                                            wire:model.lazy="sel_sub_cat"
-                                                           @if($sel_sub_cats==$sub_cat->id) checked @endif
+                                                           
                                                            value="{{$sub_cat->id}}">{{$sub_cat->cat_name}}<br>
                                                     <span
                                                         class="font-weight-bold">{{__("commonv2.shelf_no")}} : {{$sub_cat->shelf_no}}</span>
                                                 </div>
                                             </div>
-                                        @endforeach
+                                        
                                     </div>
                                 </div>
-                            @endif
+                            
                             <div class="form-group col-md-10 col-12">
                                 {!! CForm::inputGroupHeader(__("common.book_title").CForm::generateStar()) !!}
                                 <input type="text" wire:model.defer="title" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-2 col-12">
                                 {!! CForm::inputGroupHeader(__("Edition").CForm::generateStar()) !!}
                                 <input type="text" wire:model="edition" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <style>
                             .select2-container .select2-selection--single {
         box-sizing: border-box;
@@ -191,67 +173,43 @@
                             <div class="form-group col-md-3 col-12 publisher_holder ">
                                 {!! CForm::inputGroupHeader(__("Dewey Decimal").CForm::generateStar()) !!}
                                 <input type="text" wire:model.defer="dewey" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 author_holder">
                                {!! CForm::inputGroupHeader(__("Author Number").CForm::generateStar()) !!}
                                 <input type="text" wire:model.defer="authorno" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 publisher_holder ">
                                {!! CForm::inputGroupHeader(__("Publication year").CForm::generateStar()) !!}
                                 <input type="text" wire:model="publicationyear" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
                             <div class="form-group col-md-6 col-12 author_holder">
                                 {!! CForm::inputGroupHeader(__("Placement of production")) !!}
                                 <select wire:ignore class="form-control select2-multiple w-100"
                                         name="authors[]"
                                         multiple="multiple" id="author">
-                                    @foreach($authorData as $k=>$v)
+                                    
                                         <option
                                             value="{{$k}}"
-                                            @if(in_array($k,$sel_authors)) selected @endif>{{Str::title($v)}}</option>
-                                    @endforeach
+                                            
+                                    
                                 </select>
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
@@ -261,11 +219,11 @@
                                 <select wire:ignore class="form-control select2-multiple w-100"
                                         name="publishers[]"
                                         multiple="multiple" id="publisher">
-                                    @foreach($publisherData as $k=>$v)
+                                    
                                         <option
                                             value="{{$k}}"
-                                            @if(in_array($k,$sel_publishers)) selected @endif>{{Str::title($v)}}</option>
-                                    @endforeach
+                                            
+                                    
                                 </select>
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
@@ -273,11 +231,11 @@
                              <div class="form-group col-md-3 col-12 publisher_holder ">
                                {!! CForm::inputGroupHeader(__("Publication Location").CForm::generateStar()) !!}
                                 <input type="text" wire:model.defer="publishloc" required class="form-control">
-                                @error('title')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
 
@@ -287,11 +245,11 @@
                                 <select wire:ignore class="select2-multiple-tag w-100"
                                         name="tags[]"
                                         multiple="multiple" id="tag">
-                                    @foreach($tagData as $k=>$v)
+                                    
                                         <option
                                             value="{{$k}}"
-                                            @if(in_array($k,$sel_tags)) selected @endif>{{Str::title($v)}}</option>
-                                    @endforeach
+                                            
+                                    
                                 </select>
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
@@ -309,11 +267,11 @@
                                 <div class="input-group-append">
                                    
                                 </div>
-                                @error('custom_file')
+                                
                                 <div class="w-100">
-                                    @include('back.common.validation', ['message' =>  $common::reformatErrorMsg($message),"cls_name" => "word-wrap"  ])
+                                    
                                 </div>
-                                @enderror
+                                
                                 {!! CForm::inputGroupFooter() !!}
                             </div>
 
@@ -327,11 +285,11 @@
                                 <div class="card-header blue">
                                     <span
                                         class="card-header-title">{{$mode=="create"?"Add":"Update"}} {{__("common.books")}}</span>
-                                    @if($isbn && $mode=="edit" && $common::getSiteSettings("enable_bardcode_reading_mode"))
+                                    
                                         <button class="btn btn-primary ml-2 btn-sm"
                                                 wire:click="printBarcode({{$book_id}})"><i
                                                 class="fas fa-print"></i> {{__("commonv2.barcode")}}</button>
-                                    @endif
+                                    
                                     <div class="float-right">
                                         <button class="btn btn-xs btn-danger" type="button"
                                                 wire:click="$emit('addSubBooksQnty')"><i
@@ -343,15 +301,15 @@
                                     </div>
                                 </div>
                                 <div class="card-body sub_book_card p-0 pt-1 pb-1">
-                                    @if($book_qnt==0)
+                                    
                                         <div class="alert m-0 p-0">
                                             <div class="alert-dark p-3">{{__("common.no_book_yet")}} <i
                                                     class="fas fa-plus-circle mr-1"></i> {{__("common.to_add_some_books")}}
                                             </div>
                                         </div>
-                                    @endif
+                                    
 
-                                    @for($i=0;$i<$book_qnt;$i++)
+                                    
                                         <div class="book_sub_holder">
                                             <div class="form-row">
 
@@ -413,8 +371,7 @@
                                                               ?$books_existing_collections[$i]["condition"] : "",null,null,true,null) !!}
                                                         </div>
                                                     </div>
-                                                </div>
-
+                                                </div>   
                                             </div>
                                             <div class="form-row">
                                                 <div class="mb-10 col-md-1 col-12">
@@ -445,9 +402,9 @@
                                                         </div>
                                                         <div class="btn-cust-wrapper float-left mb-10">
 
-                                                            @if($mode=="edit")
-                                                                @if(isset($books_existing_collections[$i]["borrowed"]))
-                                                                    @if($books_existing_collections[$i]["borrowed"])
+                                                            
+                                                                
+                                                                    
                                                                         <button disabled class="btn btn-danger btn-sm">
                                                                             {{__("common.already_issued")}}
                                                                         </button>
@@ -458,42 +415,42 @@
                                                                            class="btn btn-primary btn-sm">
                                                                             {{__("common.accept")}}
                                                                         </a>
-                                                                    @else
-                                                                        @if(isset($books_existing_collections[$i]["active"]) && $books_existing_collections[$i]["active"])
+                                                                    
+                                                                        
                                                                             <a target="_blank"
                                                                                href="{{route('cycle-books.index')}}?search={{$books_existing_collections[$i]["sub_book_id"]}}"
                                                                                class="btn btn-success btn-sm">
                                                                                 {{__("common.issue_book")}}
                                                                             </a>
-                                                                        @endif
-                                                                    @endif
-                                                                @endif
-                                                                @if(isset($books_existing_collections[$i]["id"]))
+                                                                        
+                                                                    
+                                                                
+                                                                
                                                                     <button type="button"
-                                                                            @if($books_existing_collections[$i]["borrowed"]) disabled
-                                                                            @endif
+                                                                            
+                                                                            
                                                                             onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}','deleteSubBook','{\'id\':{{isset($books_existing_collections[$i]["id"])
                                                                     ?$books_existing_collections[$i]["id"]:0}}}')"
                                                                             class="btn btn-dark btn-sm mr-1"><i
                                                                             class="far fa-trash-alt"></i></button>
-                                                                @endif
-                                                            @endif
+                                                                
+                                                            
 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    @endfor
+                                    
                                 </div>
                                 <div class="card-footer pt-0 p-0">
-                                    <button type="button" @if(!$submit_id) disabled @endif onclick="submitForm()"
+                                    <button type="button" 
                                             wire:loading.class="disabled"
                                             
                                             class="btn btn-sm btn-dark mb-1">
                                         <i class="far fa-hdd mr-2"></i>{{__("common.save")}}</button>
-                                    <button type="button" @if(!$submit_id) disabled
-                                            @endif onclick="submitForm('clearForm')"
+                                    <button type="button" 
+                                            
                                             class="btn btn-sm btn-dark mb-1">
                                         <i class="fas fa-plus-circle mr-1"></i>{{__("common.save_and_add_new_book")}}
                                     </button>

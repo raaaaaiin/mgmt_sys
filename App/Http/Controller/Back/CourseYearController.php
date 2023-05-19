@@ -6,7 +6,7 @@ class CourseYearController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/DiscoverView.php';
+        require_once 'Resources\View\Back\course_year\index.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

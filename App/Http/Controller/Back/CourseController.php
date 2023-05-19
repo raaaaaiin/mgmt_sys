@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\Controller\Back;
-class BookController{
-    public function BookController(): void{
+class CourseController{
+    public function CourseController(): void{
         $this->render();
     }
     function render(): void
     {
-        require_once 'Resources\View\Back\book.php';
+        require_once 'Resources\View\Back\course\index.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

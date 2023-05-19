@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\Controller\Back;
-class TimelineController{
-    public function TimelineController(): void{
+class YearController{
+    public function YearController(): void{
         $this->render();
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/TimelineView.php';
+        require_once 'Resources\View\Back\year\index.php';
     }
 
 }

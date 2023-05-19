@@ -10285,6 +10285,8 @@ html,
 body,
 .wrapper {
   min-height: 100%;
+  
+  background-color: #f9fafe !important;
 }
 
 .wrapper {
@@ -31223,3 +31225,22 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
