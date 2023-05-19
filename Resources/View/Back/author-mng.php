@@ -25,7 +25,7 @@
                 <div class="form-row">
                     <div class="col-12 mb-2">
                         <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text">{{__("common.author_name")}}</span></div>
+                            <div class="input-group-prepend"><span class="input-group-text">author_name</span></div>
                             <div class="form-control border-0 p-0">
                                 <input type="text" class="form-control" required wire:model.defer="author_name">
                             </div>
@@ -49,57 +49,127 @@
                             <!-- If $mode == "create" -->
                             <!-- else -->
                             <!-- endif -->
-                            {{__("common.author")}}
+                            author
                         </button>
                     </div>
                     <!-- Placeholder for input group footer -->
                 </div>
                 <div class="table-responsive mt-2">
-                    <table class="table table-hover table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">{{__("common.id")}}</th>
-                                <th scope="col">{{__("common.author_name")}}</th>
-                                <th scope="col">{{__("commonv2.books_written")}}</th>
-                                <th scope="col">{{__("common.action")}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- If $items->total() -->
-                            <!-- foreach $items as $item -->
-                            <tr>
-                                <td>Data</td>
-                                <td><!-- $item->name --></td>
-                                <td>
-                                    <!-- Placeholder for books_titles -->
-                                    <!-- If count($books_titles) -->
-                                    <!-- foreach $books_titles as $book -->
-                                    <a target="_blank" href="<!-- url('/') -->/details/<!-- $common::utf8Slug($book) -->" class="btn-link text-sm"><!-- Str::title($book) --></a>
-                                    <!-- if not $loop->last -->,<!-- endif -->
-                                    <!-- endforeach -->
-                                    <!-- else -->
-                                    <span class="text-sm">--</span>
-                                    <!-- endif -->
-                                </td>
-                                <td>
-                                    <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                                        <i class="far fa-edit"></i>
-                                    </button>
-                                    <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <!-- endforeach -->
-                            <!-- else -->
-                            <tr>
-                                <td colspan="10">
-                                    <div class="alert alert-dark">{{__("commonv2.no_author_exist")}}</div>
-                                </td>
-                            </tr>
-                            <!-- endif -->
-                        </tbody>
-                    </table>
+                <table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">author_name</th>
+            <th scope="col">books_written</th>
+            <th scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody style="background-color: white;">
+        <!-- If $items->total() -->
+        <!-- foreach $items as $item -->
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-left: 1px solid lightgray;">Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                    <i class="far fa-edit"></i>
+                </button>
+                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+        
+        <!-- endforeach -->
+        <!-- else -->
+        <tr>
+            <td colspan="10">
+                <div class="alert alert-dark">Show if no_author_exist</div>
+            </td>
+        </tr>
+        <!-- endif -->
+    </tbody>
+</table>
+
                 </div>
                 <!-- Placeholder for pagination links -->
             </div>
