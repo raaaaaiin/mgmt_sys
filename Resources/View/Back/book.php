@@ -25,9 +25,7 @@
                 <div class="row">
                     <div class="col-md-3 col-12 mb-10" style="background-color: #ffffff;">
                         <div class="image_holder pb-3">
-                            <img style="height:400px; width:250px" src="{{$util::isUrl($cover_img)?$cover_img:
-                            ((isset($custom_img) && !is_null($custom_img) && !is_string($custom_img)) ? $custom_img->temporaryUrl()
-                            : asset("uploads/". config('app.DEFAULT_BOOK_IMG')))}}" class="img-thumbnail"/>
+                            <img style="height:400px; width:250px" src="https://via.placeholder.com/300x450" class="img-thumbnail"/>
                             <div class="mt-2">
                                
                                 <input type="file" wire:model="custom_img" class="form-control text-xs"
@@ -114,9 +112,9 @@
                                                     <input type="radio" name="sub_cats" class="mr-2"
                                                            wire:model.lazy="sel_sub_cat"
                                                            
-                                                           value="{{$sub_cat->id}}">{{$sub_cat->cat_name}}<br>
+                                                           value="{{$sub_cat->id}}">Dewey Category Name<br>
                                                     <span
-                                                        class="font-weight-bold">{{__("commonv2.shelf_no")}} : {{$sub_cat->shelf_no}}</span>
+                                                        class="font-weight-bold">Shelf No : 001</span>
                                                 </div>
                                             </div>
                                         
@@ -124,24 +122,22 @@
                                 </div>
                             
                             <div class="form-group col-md-10 col-12">
-                                {!! CForm::inputGroupHeader(__("common.book_title").CForm::generateStar()) !!}
+                                Book Title
                                 <input type="text" wire:model.defer="title" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-2 col-12">
-                                {!! CForm::inputGroupHeader(__("Edition").CForm::generateStar()) !!}
+                                Book Edition
                                 <input type="text" wire:model="edition" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <style>
                             .select2-container .select2-selection--single {
@@ -156,7 +152,7 @@
 
 
                             <div class="form-group col-md-3 col-12 author_holder">
-                                {!! CForm::inputGroupHeader(__("Circulation")) !!}
+                                Book Circulation
                                 <select wire:model="circulation" class="form-control" name="circulation" id="circulation" style="height:calc(2.25rem + 2px)">
                                    
                                         <option value="blank">--</option>
@@ -168,100 +164,92 @@
                                         <option value="NewsPaper">News Paper</option>
                                     
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 publisher_holder ">
-                                {!! CForm::inputGroupHeader(__("Dewey Decimal").CForm::generateStar()) !!}
+                                Dewey Decimal Number
                                 <input type="text" wire:model.defer="dewey" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 author_holder">
-                               {!! CForm::inputGroupHeader(__("Author Number").CForm::generateStar()) !!}
+                               Author Number
                                 <input type="text" wire:model.defer="authorno" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 publisher_holder ">
-                               {!! CForm::inputGroupHeader(__("Publication year").CForm::generateStar()) !!}
+                               Publication Year
                                 <input type="text" wire:model="publicationyear" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
+                                
                             </div>
                             <div class="form-group col-md-6 col-12 author_holder">
-                                {!! CForm::inputGroupHeader(__("Placement of production")) !!}
+                               Placement of Production
                                 <select wire:ignore class="form-control select2-multiple w-100"
                                         name="authors[]"
-                                        multiple="multiple" id="author">
+                                         id="author">
                                     
                                         <option
-                                            value="{{$k}}"
+                                            value="{{$k}}"></option>
                                             
                                     
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-md-3 col-12 publisher_holder ">
-                                {!! CForm::inputGroupHeader(__("commonv2.publishers")) !!}
-                                {{--                                <input type="text" wire:model.defer="publisher" class="form-control">--}}
+                                Publishers
                                 <select wire:ignore class="form-control select2-multiple w-100"
                                         name="publishers[]"
-                                        multiple="multiple" id="publisher">
+                                         id="publisher">
                                     
                                         <option
-                                            value="{{$k}}"
+                                            value="{{$k}}"></option>
                                             
                                     
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
 
                              <div class="form-group col-md-3 col-12 publisher_holder ">
-                               {!! CForm::inputGroupHeader(__("Publication Location").CForm::generateStar()) !!}
+                               {Publishing Location
                                 <input type="text" wire:model.defer="publishloc" required class="form-control">
                                 
                                 <div class="w-100">
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
+                              
                             </div>
 
                              <div class="form-group col-md-12 col-12 tag_holder">
-                                {!! CForm::inputGroupHeader(__("Topical term ")) !!}
-                                {{--                                <input type="text" wire:model.defer="publisher" class="form-control">--}}
-                                <select wire:ignore class="select2-multiple-tag w-100"
+                                Topical Terms
+                           
+                                <select wire:ignore class="form-control w-100"
                                         name="tags[]"
-                                        multiple="multiple" id="tag">
+                                         id="tag">
                                     
                                         <option
-                                            value="{{$k}}"
+                                            value="{{$k}}"></option>
                                             
                                     
                                 </select>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="form-group col-12">
-                                {!! CForm::inputGroupHeader(__("common.preview_url")) !!}
+                                Preview URL
                                 <input type="text" wire:model.defer="preview_url" class="form-control">
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
 
                             <div class="form-group col-12">
-                                {!! CForm::inputGroupHeader(__("common.upload_pdf")) !!}
+                                Upload PDF
                                 <input type="file" wire:model.defer="custom_file" accept=".pdf"
                                        class="form-control text-xs">
                                 <div class="input-group-append">
@@ -272,23 +260,22 @@
                                     
                                 </div>
                                 
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
 
                             <div class="form-group col-12" wire:ignore>
                                 <textarea  style="height: 150px;" id="desc" class="form-control summernote_small"
-                                >{{$desc}}</textarea>
+                                >Description</textarea>
                             </div>
                            
 
                             <div class="card card-dark w-100">
                                 <div class="card-header blue">
                                     <span
-                                        class="card-header-title">{{$mode=="create"?"Add":"Update"}} {{__("common.books")}}</span>
+                                        class="card-header-title">Add Books</span>
                                     
                                         <button class="btn btn-primary ml-2 btn-sm"
                                                 wire:click="printBarcode({{$book_id}})"><i
-                                                class="fas fa-print"></i> {{__("commonv2.barcode")}}</button>
+                                                class="fas fa-print"></i> Book Barcode</button>
                                     
                                     <div class="float-right">
                                         <button class="btn btn-xs btn-danger" type="button"
@@ -303,8 +290,8 @@
                                 <div class="card-body sub_book_card p-0 pt-1 pb-1">
                                     
                                         <div class="alert m-0 p-0">
-                                            <div class="alert-dark p-3">{{__("common.no_book_yet")}} <i
-                                                    class="fas fa-plus-circle mr-1"></i> {{__("common.to_add_some_books")}}
+                                            <div class="alert-dark p-3">No Book Yet 
+                                                <i class="fas fa-plus-circle mr-1"></i>Add Some Books
                                             </div>
                                         </div>
                                     
@@ -314,16 +301,12 @@
                                             <div class="form-row">
 
                                                 <div class="mb-10 col-md-5 col-12">
-                                                    {!! CForm::inputGroupHeader(__("common.book_id")) !!}
+                                                    Book ID
                                                     <input wire:ignore type="text" class="form-control book_id_cls"
                                                            placeholder="{{__("common.any_book_id")}}"
                                                            error_holder="'err_book_id_{{$i}}" id="book_id_{{$i}}"
-                                                           value="{{isset($books_existing_collections[$i]["sub_book_id"]) ? $books_existing_collections[$i]["sub_book_id"] :
-                                                            ($common::getSiteSettings("enable_book_id_auto") ?
-                                                            $util::generateRandomNumber($util::fallBack($common::getSiteSettings("enable_book_id_length"),0)
-                                                            ,\App\Models\SubBook::class,"sub_book_id") : "")}}"
+                                                           value="Book ID: 0"
                                                            name="sub_books[{{$i}}][book_id]">
-                                                    {!! CForm::inputGroupFooter() !!}
                                                 </div>
                                                 <div class="col-md col-12 mb-10">
                                                     <div class="form-row" style="align-items: flex-end;">
@@ -336,7 +319,7 @@
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend float-left">
                                                                 <span
-                                                                    class="input-group-text">{{__("common.active")}}</span>
+                                                                    class="input-group-text">Active</span>
                                                                 </div>
                                                                 <input type="checkbox"
                                                                        name="sub_books[{{$i}}][book_status]"
@@ -348,27 +331,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md col-sm">
-                                                            {!! CForm::completeSelectBox(CForm::generateInfoToolTip(__("Acquisition")),"pl-1",
-                                                              "sub_books[".$i."][book_acquisition]",["0"=>"Purchased","1"=>"Donated"],
-                                                              isset($books_existing_collections[$i]["acquisition"])
-                                                              ?$books_existing_collections[$i]["acquisition"] : "",null,null,true,null) !!}
+                                                            
                                                         </div>
                                                         <div class="col-md col-sm">
 
                                                             <input type="text" name="sub_books[{{$i}}][book_price]"
                                                                    id="book_price_{{$i}}"
                                                                    placeholder="{{__("common.book_price")}}"
-                                                                   value="{{isset($books_existing_collections[$i]["price"])?$books_existing_collections[$i]["price"]:""}}"
+                                                                   value="Book Collection"
                                                                    class="form-control">
 
                                                         </div>
                                                         <div class="col-md col-sm">
-                                                            {!! CForm::completeSelectBox(CForm::generateInfoToolTip(__("Book Condition"))
-
-                                                            ,"pl-1",
-                                                              "sub_books[".$i."][book_condition]",["0"=>"Old","1"=>"New","2"=>"Damaged"],
-                                                              isset($books_existing_collections[$i]["condition"])
-                                                              ?$books_existing_collections[$i]["condition"] : "",null,null,true,null) !!}
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>   
@@ -376,19 +351,16 @@
                                             <div class="form-row">
                                                 <div class="mb-10 col-md-1 col-12">
 
-                                                    <img style="height: 150px;" src="{{$util::isUrl($cover_img) ? $cover_img:
-                            ((isset($custom_img) && !is_null($custom_img) && !is_string($custom_img)) ? $custom_img->temporaryUrl()
-                            : $util::fakeImage(50,65))}}" class="img-thumbnail"/>
+                                                    <img style="height: 150px;" src="https://via.placeholder.com/150x200" class="img-thumbnail"/>
                                                 </div>
                                                 <div class="mb-10 col-md-11 col-12">
                                                     <div class="input-group" style="height:150px">
                                                         <div class="input-group-prepend"><span
-                                                                class="input-group-text">{{__('common.remark')}}</span>
+                                                                class="input-group-text">Remarks</span>
                                                         </div>
                                                         <textarea class="form-control" style="    height: 125px;"
                                                                   name="sub_books[{{$i}}][book_remark]"
-                                                        >{{isset($books_existing_collections[$i]["remark"])
-                                                ? $books_existing_collections[$i]["remark"] : ""}}</textarea>
+                                                        >Remarks</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -406,21 +378,21 @@
                                                                 
                                                                     
                                                                         <button disabled class="btn btn-danger btn-sm">
-                                                                            {{__("common.already_issued")}}
+                                                                            Already Issued
                                                                         </button>
                                                                         <a href="{{route('indexReceiveBooks')}}"
                                                                            target="_blank" data-toggle="tooltip"
                                                                            data-placement="top"
                                                                            title="{{__("common.mark_received")}}"
                                                                            class="btn btn-primary btn-sm">
-                                                                            {{__("common.accept")}}
+                                                                            Accept
                                                                         </a>
                                                                     
                                                                         
                                                                             <a target="_blank"
                                                                                href="{{route('cycle-books.index')}}?search={{$books_existing_collections[$i]["sub_book_id"]}}"
                                                                                class="btn btn-success btn-sm">
-                                                                                {{__("common.issue_book")}}
+                                                                                Issue Book
                                                                             </a>
                                                                         
                                                                     
@@ -448,14 +420,14 @@
                                             wire:loading.class="disabled"
                                             
                                             class="btn btn-sm btn-dark mb-1">
-                                        <i class="far fa-hdd mr-2"></i>{{__("common.save")}}</button>
+                                        <i class="far fa-hdd mr-2"></i>Save</button>
                                     <button type="button" 
                                             
                                             class="btn btn-sm btn-dark mb-1">
-                                        <i class="fas fa-plus-circle mr-1"></i>{{__("common.save_and_add_new_book")}}
+                                        <i class="fas fa-plus-circle mr-1"></i>Save and Add New Book
                                     </button>
                                     <button class="btn btn-sm btn-danger mb-1" wire:click="savepost()"><i
-                                            class="far fa-trash-alt mr-1"></i>{{__("common.clear_form")}}</button>
+                                            class="far fa-trash-alt mr-1"></i>Clear Form</button>
                                 </div>
                             </div>
                         </div>

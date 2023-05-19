@@ -6,7 +6,7 @@ class PublisherController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/DiscoverView.php';
+        require_once 'Resources\View\Back\publisher-mng.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';
