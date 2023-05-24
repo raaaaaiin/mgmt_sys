@@ -6,7 +6,7 @@ class DeweyController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/author-mng.php';
+        require_once 'Resources/View/Back/dewey-decimal.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

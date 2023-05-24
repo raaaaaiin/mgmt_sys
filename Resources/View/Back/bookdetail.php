@@ -1,11 +1,11 @@
-@php $pcat = $common::getParentCatOfSubCat($book_obj->category);@endphp
-                @php $pcat_name = Str::title($common::getCatName($pcat));@endphp
-                @php $scat_name = Str::title($common::getCatName($book_obj->category));@endphp
-                @php $publishers = $book_obj->publishers()->pluck("publishers.name")->toArray();@endphp
-                @php $books_available = $util::countProperty($book_obj->sub_books->toArray(),"borrowed","0"); @endphp
-                                @php $tags = $book_obj->tags()->pluck("tags.name")->toArray();
-                                $trendbooks = \App\Facades\Common::getBooksDetailsForFrontEndPreffSoloCateg();
-                                @endphp
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+</head>
   <div class="single-product">
       <div class="container">
         <div class="row">

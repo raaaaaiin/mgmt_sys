@@ -6,7 +6,7 @@ class RoleController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/author-mng.php';
+        require_once 'Resources/View/Back/role-perm-mng.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

@@ -6,7 +6,7 @@ class UserController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/author-mng.php';
+        require_once 'Resources/View/Back/user-mng.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

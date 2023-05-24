@@ -6,7 +6,7 @@ class NotificationController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/author-mng.php';
+        require_once 'Resources/View/Back/notification.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';

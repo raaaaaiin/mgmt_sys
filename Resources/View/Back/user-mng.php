@@ -1,3 +1,11 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+</head>
 <div>
     @php
         /* @var \App\Facades\Util $util */
@@ -29,7 +37,7 @@
                             <div class="form-group col-md-3 col-12">
                                 @if($photo && $photo->temporaryUrl())
                                     <img wire:ignore src="{{$photo->temporaryUrl()}}"
-                                         class="img-thumbnail w-100"/>
+.                                         class="img-thumbnail w-100"/>
                                 @else
                                     <img src="{{asset("uploads/".$photo_link)}}" class="img-thumbnail w-100"/>
                                 @endif

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controller\Back;
-class BookTabConttroller{
-    public function BookTabConttroller(): void{
+class BookTabController{
+    public function BookTabController(): void{
         $this->render();
     }
     function render(): void
