@@ -19,15 +19,15 @@ use app\Http\Controller\Back\CourseController;
 use app\Http\Controller\Back\YearController;
 use app\Http\Controller\Back\BookController;
 use App\Http\Controller\Back\BookDetailController;
-
 use App\Http\Controller\Back\BookReturnController;
-use App\Http\Controller\Back\BookTabConttroller;
+use App\Http\Controller\Back\BookTabController;
 use App\Http\Controller\Back\CheckOutController;
 use App\Http\Controller\Back\DeweyController;
 use App\Http\Controller\Back\RoleController;
 use App\Http\Controller\Back\IssuedBooksController;
-
-
+use App\Http\Controller\Back\HolidayController;
+use App\Http\Controller\Back\NotificationController;
+use App\Http\Controller\Back\UserController;
 use app\Http\Controller\Master\FallbackController;
 use app\Http\Controller\Master\IndexController;
 use app\Http\Controller\Navigations\MasterController;
@@ -53,20 +53,18 @@ Route::get("course-year", [CourseYearController::class,'render']);
 Route::get("course", [CourseController::class,'render']);
 Route::get("year", [YearController::class,'render']);
 Route::get("books", [BookController::class,'render']);
-
-
 Route::get("awards", [AwardsController::class,'render']);
 Route::get("back-up", [BackUpController::class,'render']);
 Route::get("issued", [IssuedBooksController::class,'render']);
 Route::get("bookdetail", [BookDetailController::class,'render']);
 Route::get("bookreturn", [BookReturnController::class,'render']);
-Route::get("booktab", [BookTabConttroller::class,'render']);
+Route::get("booktab", [BookTabController::class,'render']);
 Route::get("checkout", [CheckOutController::class,'render']);
 Route::get("dewey-decimal", [DeweyController::class,'render']);
 Route::get("holiday", [HolidayController::class,'render']);
 Route::get("notif", [NotificationController::class,'render']);
 Route::get("role-perm", [RoleController::class,'render']);
-Route::get("user-mng", [BookController::class,'render']);
+Route::get("user-mng", [UserController::class,'render']);
 Route::dispatch();
 
 // Check if there was a match
