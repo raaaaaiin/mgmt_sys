@@ -11,11 +11,15 @@ use app\Http\Controller\Back\TemplateTrialController;
 use app\Http\Controller\Back\TimelineController;
 use app\Http\Controller\Back\TagController;
 use app\Http\Controller\Back\AuthorController;
+use App\Http\Controller\Back\AwardsController;
+use App\Http\Controller\Back\BackUpController;
 use app\Http\Controller\Back\PublisherController;
 use app\Http\Controller\Back\CourseYearController;
 use app\Http\Controller\Back\CourseController;
 use app\Http\Controller\Back\YearController;
 use app\Http\Controller\Back\BookController;
+use App\Http\Controller\Back\BookDetailController;
+use App\Http\Controller\Back\IssuedBooksController;
 use app\Http\Controller\Master\FallbackController;
 use app\Http\Controller\Master\IndexController;
 use app\Http\Controller\Navigations\MasterController;
@@ -42,6 +46,19 @@ Route::get("course", [CourseController::class,'render']);
 Route::get("year", [YearController::class,'render']);
 Route::get("books", [BookController::class,'render']);
 
+
+Route::get("awards", [AwardsController::class,'render']);
+Route::get("back-up", [BackUpController::class,'render']);
+Route::get("issued", [IssuedBooksController::class,'render']);
+Route::get("bookdetail", [BookDetailController::class,'render']);
+Route::get("bookreturn", [BookReturnController::class,'render']);
+Route::get("booktab", [BookTabConttroller::class,'render']);
+Route::get("checkout", [CheckOutController::class,'render']);
+Route::get("dewey-decimal", [DeweyController::class,'render']);
+Route::get("holiday", [HolidayController::class,'render']);
+Route::get("notif", [NotificationController::class,'render']);
+Route::get("role-perm", [RoleController::class,'render']);
+Route::get("user-mng", [UserController::class,'render']);
 Route::dispatch();
 
 // Check if there was a match
