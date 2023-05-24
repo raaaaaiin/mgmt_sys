@@ -19,7 +19,15 @@ use app\Http\Controller\Back\CourseController;
 use app\Http\Controller\Back\YearController;
 use app\Http\Controller\Back\BookController;
 use App\Http\Controller\Back\BookDetailController;
+
+use App\Http\Controller\Back\BookReturnController;
+use App\Http\Controller\Back\BookTabConttroller;
+use App\Http\Controller\Back\CheckOutController;
+use App\Http\Controller\Back\DeweyController;
+use App\Http\Controller\Back\RoleController;
 use App\Http\Controller\Back\IssuedBooksController;
+
+
 use app\Http\Controller\Master\FallbackController;
 use app\Http\Controller\Master\IndexController;
 use app\Http\Controller\Navigations\MasterController;
@@ -58,7 +66,7 @@ Route::get("dewey-decimal", [DeweyController::class,'render']);
 Route::get("holiday", [HolidayController::class,'render']);
 Route::get("notif", [NotificationController::class,'render']);
 Route::get("role-perm", [RoleController::class,'render']);
-Route::get("user-mng", [UserController::class,'render']);
+Route::get("user-mng", [BookController::class,'render']);
 Route::dispatch();
 
 // Check if there was a match
