@@ -6,7 +6,7 @@ class AwardsController{
     }
     function render(): void
     {
-        require_once 'Resources/View/Back/author-mng.php';
+        require_once 'Resources/View/Back/awards.php';
     }
 }
 $_SESSION['CurrentSelection'] = 'DiscoverController';
