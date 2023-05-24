@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controller\Back;
-class AuthorController{
-    public function AuthorController(): void{
+class BookReturnController{
+    public function BookReturnController(): void{
         $this->render();
     }
     function render(): void

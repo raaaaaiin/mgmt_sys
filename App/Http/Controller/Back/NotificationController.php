@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controller\Back;
-class AuthorController{
-    public function AuthorController(): void{
+class NotificationController{
+    public function NotificationController(): void{
         $this->render();
     }
     function render(): void

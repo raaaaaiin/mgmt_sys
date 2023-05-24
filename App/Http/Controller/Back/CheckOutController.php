@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controller\Back;
-class Checkout{
-    public function AuthorController(): void{
+class CheckOutController{
+    public function CheckOutController(): void{
         $this->render();
     }
     function render(): void
