@@ -1,43 +1,133 @@
-<?php ?><style>
-    body {
-      background-color: #2196F3;
-    }
-    .form-container {
-      background-color: #FFFFFF;
-      padding: 25px;
-      border-radius: 10px;
-    }
-    .signin-btn {
-      background-color: #2196F3;
-      border: none;
-      color: #FFFFFF;
-      padding: 10px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    .signin-btn:hover {
-      background-color: #1976D2;
-    }
-  </style>
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{isset($common) ? $common::getOrgName() : config("app.APP_NAME")}} | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+    <style>
+        .callout {
+            border-radius: .5rem;
+            /* box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%); */
+            background-color: #fff;
+            border-left: 5px solid #e9ecef;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+        }
+
+        .closeCallout {
+            outline: 0 !important;
+        }
+        .b-lr-1{
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', 'button.closeCallout', function () {
+                $(this).parent().parent().remove();
+            });
+        });
+
+    </script>
 </head>
-<body>
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-6">
-        <div class="form-container text-center">
-          <h3>Sign In</h3>
-          <form>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="E-mail Address" required>
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" required>
-            </div>
-            <button type="submit" class="signin-btn">Sign In</button>
-          </form>
-        </div>
-      </div>
+<body
+    class="hold-transition @if(request()->is('login') or request()->is('password/reset'))login-page @endif @if(request()->is('register')) register-page @endif" style="background-color:#0b5793;height: 75vh;">
+<div
+    class="@if(request()->is('login') or request()->is('password/reset') )login-box @endif @if(request()->is('register')) register-box @endif">
+    <div class="login-logo @if(request()->is('register')) register-logo @endif">
+        <a class="navbar-brand" href="{{config("app.APP_URL")}}" style="padding:0px;width:300px;">
+                       
+                            <img class="logo_img" href="{{config("app.APP_URL")}}"
+                                 src="https://via.placeholder.com/250">
+                       
+                    </a>
+        <!--<a href="#">{{isset($common) ? $common::getOrgName() : config("app.APP_NAME")}}</a>-->
     </div>
-  </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body yellow">
+        <div class="login-logo @if(request()->is('register')) register-logo @endif">
+
+        <a href="#">Elib IGC</a>
+    </div>
+            <p class="login-box-msg">Sign in to start session</p>
+            <br>
+            <form method="POST" action="{{ route('login') }}" id="loginForm">
+                
+                <div class="input-group mb-3">
+                  <!-- class="form-control @error('email') is-invalid @enderror " -->
+                    <input id="email" type="text" class="form-control" name="email" " autofocus
+                           placeholder="Enter your Student ID">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+
+                        </div>
+                    </div>
+                    <!-- @error('email')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror -->
+                </div>
+                <div class="input-group mb-3">
+                    <input id="password" type="password" class="form-control " name="password"
+                           required autocomplete="current-password" placeholder="Enter your password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+
+                        </div>
+                    </div>
+                    <!-- @error('password')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror -->
+                </div>
+               
+                <p class="mb-1">
+                   <br>
+                </p>
+            
+                <!-- <p class="mb-0">
+                    <a href="{{route('register')}}" class="text-center">Register</a>
+                </p> -->
+                <br><br><br>
+
+            <!-- /.social-auth-links -->
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label for="remember">
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-sm btn-dark btn-block">Sign In</button>
+                    </div>
+
+                    <!-- /.col -->
+                </div>
+            </form>
+
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+
 </body>
+</html>

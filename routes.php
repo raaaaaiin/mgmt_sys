@@ -9,7 +9,6 @@ use app\Http\Controller\Back\NewsfeedController;
 use app\Http\Controller\Back\ProfileController;
 use app\Http\Controller\Back\TemplateTrialController;
 use app\Http\Controller\Back\TimelineController;
-
 use app\Http\Controller\Back\TagController;
 use app\Http\Controller\Back\AuthorController;
 use app\Http\Controller\Back\PublisherController;
@@ -17,7 +16,6 @@ use app\Http\Controller\Back\CourseYearController;
 use app\Http\Controller\Back\CourseController;
 use app\Http\Controller\Back\YearController;
 use app\Http\Controller\Back\BookController;
-
 use app\Http\Controller\Master\FallbackController;
 use app\Http\Controller\Master\IndexController;
 use app\Http\Controller\Navigations\MasterController;
@@ -36,16 +34,6 @@ Route::get('NewsfeedController', [NewsfeedController::class,'render']);
 Route::get('ItemAddController', [ItemAddController::class,'render']);
 Route::get('TemplateTrialController', [TemplateTrialController::class,'render']);
 Route::get('index', [IndexController::class,'render']);
-
-
-
-
-
-
-
-
-
-
 Route::get("tag-mng", [TagController::class,'render']);
 Route::get("author-mng", [AuthorController::class,'render']);
 Route::get("publisher-mng", [PublisherController::class,'render']);
@@ -53,6 +41,7 @@ Route::get("course-year", [CourseYearController::class,'render']);
 Route::get("course", [CourseController::class,'render']);
 Route::get("year", [YearController::class,'render']);
 Route::get("books", [BookController::class,'render']);
+
 Route::dispatch();
 
 // Check if there was a match
