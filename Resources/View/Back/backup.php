@@ -1,12 +1,11 @@
-@php
-    /* @var \App\Facades\Util $util */
-    /* @var \App\Facades\Common $common */
-@endphp
-@extends("back.common.master")
-@section("page_name") {{__("common.site_setting")}} @endsection
-@section("content")
-    @include("back.common.spinner")
-    @php CForm::star_status('on'); @endphp
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+</head>
     <div class="content">
         <div class="container-fluid">
 
