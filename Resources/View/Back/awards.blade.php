@@ -1,8 +1,4 @@
 <div>
-    @php
-        /* @var \App\Facades\Util $util */
-        /* @var \App\Facades\Common $common */
-    @endphp
     <div class="card" id="notice_holder">
         <div class="card-body yellow">
 

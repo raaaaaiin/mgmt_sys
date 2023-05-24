@@ -53,7 +53,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body yellow">
+        <div class="ca rd-body login-card-body yellow">
         <div class="login-logo @if(request()->is('register')) register-logo @endif">
 
         <a href="#">Elib IGC</a>
