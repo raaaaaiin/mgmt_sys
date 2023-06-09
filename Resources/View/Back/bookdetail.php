@@ -41,43 +41,40 @@
           </div>
           <div class="col-md-8">
             <div class="right-content">
-              <h2>{{isset($book_obj) ? $book_obj->title : "N/A"}}</h2>
-               @php $authors = $book_obj->authors()->pluck("authors.name")->toArray();@endphp
-                        @if(count($authors))
-                            <strong>{{__("common.by")}} - </strong><span class="">
-                                @if(count($authors))
-                                    @foreach($authors as $author)
+              <h2>Book Title</h2>
+               
+                            <strong>By </strong><span class="">
+                                
                                         <a class="btn-link"
-                                           href="{{url("/")."?search=".$author."#books"}}">{{$author}}</a>
-                                        @if(!$loop->last) , @endif @endforeach
-                                @else -- @endif
+                                           href="{{url("/")."?search=".$author."#books"}}">Author 1</a>
+                                           
+                                        <a class="btn-link"
+                                           href="{{url("/")."?search=".$author."#books"}}">Author 2</a>
+                                           
+                                        <a class="btn-link"
+                                           href="{{url("/")."?search=".$author."#books"}}">Author 3</a>
+                                        
                         </span><br>
-                        @endif
-              @php $publishers = $book_obj->publishers()->pluck("publishers.name")->toArray();@endphp
-                                @if(count($publishers))
-                                        <strong>{{__("common.publisher")}}
+                       
+                                        <strong>Publisher
                                             - </strong>
-                                        @if(count($publishers))
-                                            @foreach($publishers as $publisher)
+                                        
                                                 <a class="btn-link"
-                                                   href="{{url("/")."?search=".$publisher."#books"}}">{{$publisher}}</a>
-                                                @if(!$loop->last) , @endif @endforeach
-                                        @else -- @endif
-                                    
-                                @endif
-
+                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 1</a>
+                                                   <a class="btn-link"
+                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 2</a>
+                                                   <a class="btn-link"
+                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 3</a>
               
-              <p>{!! $book_obj->desc !!}</p>
-              @if($book_obj->isbn_10)
+              <p></p>
                                     
-                                        <strong>{{__("common.isbn_10")}} - </strong><span>{{$book_obj->isbn_10}}</span>
+                                        <strong>isbn 10 - </strong><span>100203010230 ISB</span>
                                     
-                                @endif<br>
-              @if($book_obj->isbn_13)
+                            <br>
                                     
-                                        <strong>{{__("common.isbn_13")}} - </strong><span>{{$book_obj->isbn_13}}</span>
+                                        <strong>ISBN13 - </strong><span>3123123123/span>
                                    
-                                @endif<br>
+                                <br>
 
 
 
@@ -112,11 +109,10 @@
                 
                 
                
-              <div class="mt-2 d-flex col-12" style="justify-content: flex-end; flex-direction: column;">
+              <div class="mt-2 d-flex col-12" style="justify-content: flex-end;                flex-direction: column;">
 
                                 <p class="d-inline">
-                                    @livewire("partial. -book",["user_id"=>Auth::id(),"book_id"=>$book_obj->id,"book_obj"=>$book_obj
-                                    ,"books_available"=>$books_available])
+                                   
                                 </p></div>
 
                                 <div id="viewer" class="row mt-2 preview_container">
@@ -131,16 +127,15 @@
                                 </div>
                             </div>
            
-                @if($book_obj->category)
+          
                                       <div class="down-content">
                 <div class="categories">
-                                        <h6>{{__("common.category")}}
+                                        <h6>Category
                                             </h6><a class="btn-link"
                                                           href="{{url('/').'?pcat='.$pcat
 .'&scat='.$book_obj->category}}#books">
-                                            <span>{{$scat_name}}</span></a>
+                                            <span>Category Name</span></a>
                                     </div>
-                                @endif
                   
                 
                 <div class="share">
@@ -166,17 +161,17 @@
           <div class="col-md-12">
             <div class="owl-carousel owl-theme">
 
-            @foreach($trendbooks as $book)
+          
               <a href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}
                                  ">
                 <div class="featured-item">
                   <img style="width:250px;height:300px;" src="{{asset("uploads/".$util::fileChecker(public_path("uploads"),
                                        $book["CIMG"],config("app.BOOK_IMG_NOT_FOUND")))}}" alt="Item 1">
-                  <h4>{{ str_limit($book["TITLE"], $limit = 35, $end = '...') }}</h4>
+                  <h4>Book Title</h4>
                   
                 </div>
               </a>
-              @endforeach
+             
               
             </div>
           </div>
