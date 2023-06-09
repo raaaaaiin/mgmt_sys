@@ -1,5 +1,9 @@
 <head>
     <link rel="stylesheet" href="Resources/View/CSS/NewsfeedViewCss.css">
+    <script type="application/javascript" src="PreRequisites/jQuery_v3.6.0.js"></script>
+    <link rel="stylesheet" href="Resources/CSS/adminlte.css">
+    <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
+
     <style>
     </style>
 </head>

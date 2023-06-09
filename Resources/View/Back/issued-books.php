@@ -1,21 +1,4 @@
 <div class="w-100">
-    @php
-        /* @var \App\Facades\Util $util */
-        /* @var \App\Facades\Common $common */
-    @endphp
-    @php $location_target="dd_filter"; @endphp
-    @include("back.common.spinner")
-    @php
-    @endphp
-
-
-
-
-
-
-
-
-
     <div class="card">
     <div class="card-header blue">
                 <span class="card-header-title">Must Return Today</span>
@@ -29,7 +12,7 @@
                     <table class="table table-bordered table-striped table-sm">
                         <thead>
                         <tr>
-                          <th>{{__("common.bo_id")}}</th>
+                          <th>Book ID</th>
                             <th>Accession</th>
                             <th>{!!__("common.book_img")!!}</th>
                             <th style="width: 65px;">{!!__("common.user_img")!!}</th>

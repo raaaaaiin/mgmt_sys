@@ -10,24 +10,21 @@
     <div class="row">
         <div class="col-md-12 col-12 mb-10">
             <form id="issueBook">
-                @csrf
                 <div class="card">
-                    <div class="card-header"><span class="card-header-title">{{__("common.issue_book")}}</span></div>
+                    <div class="card-header"><span class="card-header-title">Issue Book</span></div>
                     <div class="card-body">
                         <div class="form-row mb-10">
                             <div wire:ignore class="mb-10 col-md col-6">
                                 <div class="form-row mb-10">
-                                    {!! CForm::inputGroupHeader(__("common.search_user")."<a data-toggle='tooltip' 
+                                    Search User"<a data-toggle='tooltip' 
                                     data-placement='top' title='Try User Id : 370 or 369'
                                   class='pl-1'><i class='fas fa-info-circle'></i></a>") !!}
                                     <input id="user_autocomplete" placeholder="{{__("common.ty_search")}}" type="text"
                                            class="form-control">
-                                    {!! CForm::inputGroupFooter() !!}
-                                </div>
+                            </div>
                                 <div class="form-row">
-                                    <div class="col-md-3">
-                                        <img id="user_image" src="{{$util::fakeImage(400,400)}}"
-                                             class="ui-state-default img-thumbnail">
+                           <div class="col-md-3">
+                                        <img id="user_image" src="{{$util::fakeImage(400,400)}}"  class="ui-state-default img-thumbnail">
                                     </div>
                                     <div class="col-md-9">
                                         <input type="hidden" id="user_id">
@@ -35,32 +32,32 @@
                                         <input type="hidden" id="user_year_id">
                                         <ul class="list-group text-sm">
                                             <li class="list-group-item text-capitalize"
-                                                style="padding-left: 7px;">{{__("common.user_id")}} :
+                                                style="padding-left: 7px;">User ID
                                                 <span class="user_field_val"
-                                                      id="spn_user_id">{{__("common.n_a")}}</span></li>
-                                            <li class="list-group-item text-capitalize">{{__("common.course")}} : <span
+                                                      id="spn_user_id">:05</span></li>
+                                            <li class="list-group-item text-capitalize">Course : <span
                                                     class="user_field_val"
-                                                    id="user_course">{{__("common.n_a")}}</span>
-                                                | {{__("common.year")}} :<span class="user_field_val"
-                                                                               id="user_year">{{__("common.n_a")}}</span>
+                                                    id="user_course">BSCS</span>
+                                                | Year:<span class="user_field_val"
+                                                                               id="user_year">801</span>
                                             </li>
-                                            <li class="list-group-item">{{__("common.email")}} : <span
+                                            <li class="list-group-item">Email : <span
                                                     class="user_field_val"
-                                                    id="user_email">{{__("common.n_a")}}</span>
+                                                    id="user_email">ma@gma.co</span>
                                             </li>
-                                            <li class="list-group-item address_li">{{__("common.address")}} : <span
+                                            <li class="list-group-item address_li">Address : <span
                                                     class="user_field_val"
-                                                    id="user_address">{{__("common.n_a")}}</span>
+                                                    id="user_address">Antip rizs</span>
                                             </li>
-                                            <li class="list-group-item address_li">{{__("common.borrowed")}} : <span
+                                            <li class="list-group-item address_li">Borrowed : <span
                                                     class="user_field_val"
-                                                    id="user_borrowed_cnt">{{__("common.n_a")}}</span>
+                                                    id="user_borrowed_cnt">Borrowed</span>
                                             </li>
-                                            <li class="list-group-item address_li">{{__("commonv2.lmt_allw")}} : <span
+                                            <li class="list-group-item address_li">Limit allowed : <span
                                                     class="user_field_val"
-                                                    id="user_limit">{{__("common.n_a")}}</span>
+                                                    id="user_limit">N/A</span>
                                             </li>
-                                            <li class="list-group-item user_history_holder">{{__("common.borrowing_history")}}
+                                            <li class="list-group-item user_history_holder">History
                                                 <a target="_blank" href="" id="user_history" class="float-right"><i
                                                         class="fas fa-search mr-1"></i></a>
                                             </li>
@@ -71,10 +68,10 @@
 
 
                             </div>
-                            @if($common::getSiteSettings("enable_bardcode_reading_mode"))
+                            
                                 <div class="mb-10 col-md col-6">
                                     <div wire:ignore class="form-row mb-10">
-                                        {!! CForm::inputGroupHeader(__("common.search_book").'<i class="fas fa-barcode ml-1"></i>') !!}
+                                        Search Book.'<i class="fas fa-barcode ml-1"></i>
                                         <input id="book_ids" wire:model.defer="tmp_barcode_book_id"
                                                placeholder="{{__("commonv2.pl_book_id_comma")}}" type="text"
                                                class="form-control">
@@ -82,12 +79,12 @@
                                             <button class="btn btn-dark btn-sm" wire:click="attach()" type="button"><i
                                                     class="fas fa-cart-plus"></i></button>
                                         </div>
-                                        {!! CForm::inputGroupFooter() !!}
+                                       
                                     </div>
                                     <div class="form-row"
                                          style="height: 200px;overflow-y: auto;border: 1px solid lightgray;padding: 10px;">
                                         <ul class="list-group w-100">
-                                            @foreach($sel_books_info as $book_obj)
+                                        
                                                 <li class="list-group-item" style="padding: 0.5rem;">
                                                     <button type="button" class="btn btn-danger btn-xs float-right"
                                                             wire:click="deleteTmpSelectedBookId({{$book_obj->sub_book_id}})">
@@ -96,30 +93,20 @@
                                                     <img class="img-thumbnail" src="{{$book_obj->book->cover_img()}}"
                                                          style="width: 30px;display: block;float: left;margin-right: 2%;padding-top: 5px;"/>
                                                     <span class="text-sm">
-                                                        {{$book_obj->book->title}}
-                                                        <span class="badge badge-dark">{{$book_obj->sub_book_id}}</span>
+                                                        Book TItle
+                                                        <span class="badge badge-dark">Book ID</span>
                                                     </span>
                                                 </li>
-                                            @endforeach
-                                            @if(is_countable($sel_books_info) && !count($sel_books_info))
                                                 <div class="alert alert-dark text-sm">No books selected yet.</div>
-                                            @endif
+                                     
 
-                                            {{--                                            <li class="list-group-item">Dapibus ac facilisis in</li>--}}
-                                            {{--                                            <li class="list-group-item">Morbi leo risus</li>--}}
-                                            {{--                                            <li class="list-group-item">Porta ac consectetur ac</li>--}}
-                                            {{--                                            <li class="list-group-item">Vestibulum at eros</li>--}}
-                                        </ul>
+                                           </ul>
                                     </div>
                                 </div>
-                            @else
                                 <div wire:ignore class="mb-10 col-md col-6">
                                     <div class="form-row mb-10">
-                                        {!! CForm::inputGroupHeader(__("common.search_book")."<a data-toggle='tooltip' 
-                                    data-placement='top' style='padding-left:5px;' title='Try Book Id : Type 97'><i class='fas fa-info-circle'></i></a>") !!}
                                         <input id="book_autocomplete" placeholder="{{__("common.ty_search")}}"
                                                type="text" class="form-control">
-                                        {!! CForm::inputGroupFooter() !!}
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-3">
@@ -131,26 +118,26 @@
                                             <input type="hidden" id="book_m_id">
                                             <ul class="list-group text-sm">
                                                 <li class="list-group-item text-capitalize" style="padding-left: 7px;">
-                                                    {{__("common.book_code")}} : <span class="book_field_val"
-                                                                                       id="book_span_code">{{__("common.n_a")}}</span>
+                                                    Book Code <span class="book_field_val"
+                                                                                       id="book_span_code"></span>
                                                 </li>
-                                                <li class="list-group-item text-capitalize">{{__("common.book_title")}}
+                                                <li class="list-group-item text-capitalize">Book Title
                                                     : <span class="book_field_val"
-                                                            id="book_title">{{__("common.n_a")}}</span>
+                                                            id="book_title">N/a</span>
                                                 </li>
-                                                <li class="list-group-item text-capitalize">{{__("common.cat")}} : <span
+                                                <li class="list-group-item text-capitalize">Category <span
                                                         class="book_field_val"
-                                                        id="book_category">{{__("common.n_a")}}
-                                        </span> | {{__("common.book_condition")}} : <span class="book_field_val"
-                                                                                          id="book_condition">{{__("common.n_a")}}</span>
-                                                    | {{__("common.book_price")}} : <span class="book_field_val"
-                                                                                          id="book_price">{{__("common.n_a")}}</span>
+                                                        id="book_category">N/a
+                                 </span> | Book Condition : <span class="book_field_val"llll
+                                                                                          id="book_condition">N/aa</span>
+                                                    | Book price : <span class="book_field_val"
+                                                                                          id="book_price">N/a</span>
                                                 </li>
-                                                <li class="list-group-item">{{__("common.remark")}} : <span
+                                                <li class="list-group-item">Remark : <span
                                                         class="book_field_val"
-                                                        id="book_remark">{{__("common.n_a")}}</span>
+                                                        id="book_remark">N/a</span>
                                                 </li>
-                                                <li class="list-group-item book_history_holder">{{__("common.last_history")}}
+                                                <li class="list-group-item book_history_holder">Last History
                                                     <a target="_blank" href="" id="book_history" class="float-right"><i
                                                             class="fas fa-search mr-1"></i></a>
                                                 </li>
@@ -162,28 +149,23 @@
                         </div>
                         <div class="form-row mb-10">
                             <div wire:ignore class="col-md mb-10">
-                                {!! CForm::inputGroupHeader(__("common.issue_date")) !!}
+                               
                                 <input type="text" id="issue_date_tmp" class="form-control"/>
                                 <input type="hidden" id="issue_date"/>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div wire:ignore class="col-md mb-10">
-                                {!! CForm::inputGroupHeader(__("common.return_date")) !!}
                                 <input type="text" id="return_date_tmp" class="form-control"/>
                                 <input type="hidden" id="return_date"/>
-                                {!! CForm::inputGroupFooter() !!}
                             </div>
                             <div class="col-md mb-10">
                                 <button type="button" @if(!$allow_issue) disabled @endif
                                 @if($common::getSiteSettings("enable_bardcode_reading_mode")) wire:click="bulkissueBook"
                                         @else wire:click="issueBook" @endif
-                                        class="btn btn-danger">{{__("common.issue_book")}}</button>
+                                        class="btn btn-danger">Issue Book</button>
                             </div>
                         </div>
                         <div class="form-row">
-                            {!! CForm::inputGroupHeader("Remark") !!}
                             <textarea class="form-control" wire:model.lazy="sel_remark"></textarea>
-                            {!! CForm::inputGroupFooter() !!}
                         </div>
                     </div>
                 </div>
@@ -194,7 +176,6 @@
         <div class="col-md-12 col-12 mb-10">
             <div class="card">
                 <div class="card-header">
-                    {{__("commonv2.req_for_borrowing")}}
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -202,36 +183,34 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</td>
-                                <th scope="col">{{__("common.user_id")}}</td>
-                                <th scope="col">{{__("common.user_img")}}</td>
-                                <th scope="col">{{__("common.full_name")}}</td>
-                                <th scope="col">{{__("common.book_id")}}</td>
-                                <th scope="col">{{__("common.book_img")}}</td>
-                                <th scope="col">{{__("commonv2.req_book")}}</td>
-                                <th scope="col">{{__("common.created_on")}}</td>
-                                <th scope="col">{{__("common.borrow_on")}}</td>
-                                <th scope="col">{{__("common.return_date")}}</td>
-                                <th scope="col">{{__("common.action")}}</td>
+                                <th scope="col">User Id</td>
+                                <th scope="col">User image</td>
+                                <th scope="col">Full Name</td>
+                                <th scope="col">Book Id</td>
+                                <th scope="col">Book Img</td>
+                                <th scope="col">Req Book</td>
+                                <th scope="col">Created on</td>
+                                <th scope="col">Borrow On</td>
+                                <th scope="col">Return Date</td>
+                                <th scope="col">Action</td>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--                           @php dd($books_pending); @endphp--}}
                             <input type="hidden" id="return_dt"/>
-                            @foreach($books_pending as $item)
-                                <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->user->id}}</td>
+                                <tr>s
+                                    <td>ID</td>
+                                    <td>User ID</td>
                                     <td><img style="width: 50px;"
                                              src="{{asset('uploads/'.$item->user->get_user_image())}}"
                                              class="img-thumbnail"/></td>
-                                    <td>{{$item->user->name}}</td>
-                                    <td style="font-size: 20px;">{{$item->sub_book->sub_book_id}}</td>
+                                    <td>User Name</td>
+                                    <td style="font-size: 20px;">Book Id</td>
                                     <td><img style="width: 50px;" src="{{$item->sub_book->book->cover_img()}}"
                                              class="img-thumbnail"/></td>
-                                    <td>{{Str::words($item->sub_book->book->title,5,"...")}}</td>
-                                    <td>{{$util::goodDate($item->created_at)}}</td>
-                                    <td>{{$util::goodDate($item->expectedborrow)}}</td>
-                                    <td><input id="retdate" type="text" class="return_dt form-control" value="{{$util::goodDate($item->expectedreturn)}}"></td>
+                                    <td>Book Title</td>
+                                    <td>Created at</td>
+                                    <td>Expected Borrow date</td>
+                                    <td><input id="retdate" type="text" class="return_dt form-control" value="12/27/2000"></td>
                                     <script>
                                     
                                     </script>
@@ -244,16 +223,12 @@
                                                 class="far fa-times-circle"></i></button>
                                     </td>
                                 </tr>
-                            @endforeach
-                            @if(is_countable($books_pending) && !count($books_pending))
-                                <tr><td colspan="100"><div class="alert alert-dark">{{__("commonv2.no_books_in_request_queue")}}</div></td></tr>
-                            @endif
+                          
+                                <tr><td colspan="100"><div class="alert alert-dark">No books</div></td></tr>
+                         
                             </tbody>
                         </table>
                     </div>
-                    @if(!is_null($books_pending) && is_countable($books_pending) && $books_pending instanceof \Illuminate\Pagination\LengthAwarePaginator)
-                        {{$books_pending->links()}}
-                    @endif
                 </div>
             </div>
         </div>

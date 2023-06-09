@@ -14,16 +14,16 @@
     <div class="card" id="notice_holder">
         <div class="card-body yellow">
 
-            @if(session()->has("form_notice") && session()->has("form_notice"))
+            <!-- @if(session()->has("form_notice") && session()->has("form_notice")) -->
                 <div class="row">
                     <div class="col-12">
-                        @include("common.messages")
+                        <!-- @include("common.messages") -->
                     </div>
                 </div>
-            @endif
+            <!-- @endif -->
 
             <form id="frm_notice" wire:submit.prevent="add_notice">
-                @csrf
+               
                 <div class="form-row">
                     <input type="hidden" name="mode" wire:model="mode"/>
                     <input type="hidden" name="id" wire:model="selected_id"/>
@@ -55,10 +55,12 @@
                                 <span class="input-group-text">Course</span>
                             </div>
                             <select wire:model="selcourse" class="form-control">
-                                <option value="">--{{__("common.select")}}--</option>
-                                            @foreach($common::getAllCourses() as $course)
-                                                <option value="{{$course->id}}">{{$course->name}}</option>
-                                            @endforeach
+                                <option value="">
+                                    <!-- --{{__("common.select")}}-- -->
+                                </option>
+                                            <!-- @foreach($common::getAllCourses() as $course) -->
+                                                <option value="{{$course->id}}">Course Name</option>
+                                            <!-- @endforeach -->
 
                             </select>
                         </div>
@@ -71,13 +73,13 @@
                                 <span class="input-group-text">Section</span>
                             </div>
                             <select wire:model.defer="sel_year" class="form-control">
-                                  @foreach(\App\Models\Course_Year::where("course_id",$this->selcourse)->get() as $obj)
-                                                    @if($obj->course_id)
-                                                           <option value="{{$obj->course_year_id}}">{{$common::getCourseYearName($obj->course_year_id)}}</option>
+                                  <!-- @foreach(\App\Models\Course_Year::where("course_id",$this->selcourse)->get() as $obj) -->
+                                                   <!-- /@if($obj->course_id) -->
+                                                           <option value="{{$obj->course_year_id}}">Section</option>
                                                             
                                                            
-                                                    @endif
-                                                @endforeach
+                                                    <!-- @endif -->
+                                                <!-- @endforeach -->
                             </select>
 
 
@@ -104,20 +106,17 @@
                             <select wire:ignore class="form-control select2-multiple"
                                     name="give_to_user[]"
                                     id="give_to_user" >
-                                @foreach($common::getAllUsers() as $user)
+                                <!-- @foreach($common::getAllUsers() as $user) -->
                                     <option
-                                        value="{{$user->id}}">{{Str::title($user->name)}}</option>
-                                @endforeach
-
-
-
+                                        value="{{$user->id}}">To User</option>
+                                <!-- @endforeach -->
                             </select>
                         </div>
                     </div>
                     <div class="col-12 mb-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                                <span class="input-group-text">{{__("common.or")}} {{__("common.show_in")}} <i
+                                                <span class="input-group-text">Show on<i
                                                         class="fas fa-info-circle ml-1 mt-1" data-toggle="tooltip"
                                                         data-placement="top"
                                                         title="{{__('Show to all your website visitors.')}}"></i> </span>
@@ -131,7 +130,7 @@
                     <div class="col-12">
                         <div class="input-group">
                             <button type="submit" class="btn btn-dark btn-sm">
-                                <i class="fas fa-plus-circle mr-1"></i>{{__("common.push_notice")}}
+                                <i class="fas fa-plus-circle mr-1"></i>Post Award
                             </button>
                         </div>
                     </div>
@@ -148,27 +147,27 @@
                 <table class="table table-hover table-sm">
                     <thead>
                     <tr>
-                        <th scope="col">{{__("common.id")}}</th>
+                        <th scope="col">id</th>
                         <th scope="col" style="width: 20%;">Notice Title</th>
-                        <th scope="col" style="width: 50%;">{{__("common.notice")}} {{__("common.msg")}}</th>
-                        <th scope="col">{{__("common.ass_to_role")}}</th>
+                        <th scope="col" style="width: 50%;">Description</th>
+                        <th scope="col">Assign to role</th>
                         <th scope="col">Course</th>
                         <th scope="col">Section</th>
-                        <th style="width: 12%;" scope="col">{{__("common.action")}}</th>
+                        <th style="width: 12%;" scope="col">Add</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @if($notices->total())
-                        @foreach($notices as $notice)
+                    <!-- @if($notices->total()) -->
+                        <!-- @foreach($notices as $notice) -->
                             <tr>
-                                <td>{{$notice->id}}</td>
-                                <td>{{$notice->noticetitle}}</td>
-                                <td>{{$notice->notice}}</td>
+                                <td>User</td>
+                                <td>Award Title</td>
+                                <td>Description</td>
                                 <td>
                                     
                                         
                                             <span
-                                                class="badge bg-info text-dark">{{Str::title($common::getCourseName($notice->course))}}</span>
+                                                class="badge bg-info text-dark">Student</span>
                                        
                                   
                                 </td>
@@ -176,29 +175,29 @@
                                     
                                         
                                             <span
-                                                class="badge bg-info text-dark">{{$common::getCourseYearName($notice->section)}}</span>
+                                                class="badge bg-info text-dark">BSCS</span>
                                
                                     
                                 </td>
                                 <td>
                                  
                                             <span
-                                                class="badge bg-dark">{{Str::title($common::getUserName($notice->user_id))}}</span>
+                                                class="badge bg-dark">201</span>
                                         
                                   
                                 </td>
                                 <td>
-                                    @if($notice->active)
+                                    <!-- @if($notice->active) -->
                                         <button title="{{__('common.active_and_visible')}}"
                                                 class="btn btn-sm btn-primary action_btn float-left" type="button"
                                                 wire:click="noticeStatus({{$notice->id}},0)"><i class="far fa-eye"></i>
                                         </button>
-                                    @else
+                                    <!-- @else -->
                                         <button title="{{__('common.deactive_and_visible')}}"
                                                 class="btn btn-sm btn-primary action_btn float-left" type="button"
                                                 wire:click="noticeStatus({{$notice->id}},1)"><i
                                                 class="far fa-eye-slash"></i></button>
-                                    @endif
+                                    <!-- @endif -->
                                     <button wire:click="editNotice({{$notice->id}})" type="button"
                                             class="btn btn-sm btn-dark btn_edit action_btn float-left">
                                         <i class="far fa-edit"></i>
@@ -207,14 +206,14 @@
 
                                 </td>
                             </tr>
-                        @endforeach
-                    @else
+                        <!-- @endforeach -->
+                    <!-- @else -->
                         <tr>
                             <td colspan="100">
-                                <div class="alert alert-dark">{{__("common.no_notice_exist")}}</div>
+                                <div class="alert alert-dark">No data exist</div>
                             </td>
                         </tr>
-                    @endif
+                    <!-- @endif -->
                     </tbody>
                 </table>
             </div>
@@ -228,12 +227,11 @@
             </div>
         </div>
     </div>
-@endsection
-@section("css_loc")
+<!-- @endsection -->
+<!-- @section("css_loc") -->
     <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/notice.css')}}">
-@endsection
-@section("js_loc")
-    <script type="text/javascript" src="{{asset("js/select2.min.js")}}"></script>
+<!-- @endsection -->
+<!-- @section("js_loc") -->
     <script src="{{asset('js/notice.js')}}"></script>
-@endsection
+<!-- @endsection -->

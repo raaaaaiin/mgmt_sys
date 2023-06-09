@@ -7,19 +7,17 @@
     <link rel="stylesheet" href="Resources/CSS/fontawesome-free/css/all.min.css">
 </head>
 <div class="container">
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-    {{--    @include("back.common.spinner")--}}
     <div class="card">
-        <div class="card-header blue">{{__("commonv2.add_edit_dewey_class")}}
-            {{--            <a target="_blank" class="btn-link ml-2" href="https://en.wikipedia.org/wiki/List_of_Dewey_Decimal_classes">Dewey--}}
-            {{--                Ref.</a><small>Just for getting s</small>--}}
+        <div class="card-header blue">
+            <a target="_blank" class="btn-link ml-2" href="https://en.wikipedia.org/wiki/List_of_Dewey_Decimal_classes">Dewey
+            Ref.</a><small>Just for getting s</small>
             <div class="float-right">
                 <button class="btn btn-sm btn-dark mr-1" type="button"
-                        wire:click="clearClassTable()">{{__("commonv2.clear_dt_start_new")}}
+                        wire:click="clearClassTable()">
                 </button>
                 
                 <button class="btn btn-sm btn-dark" type="button"
-                        wire:click="clearAllCategoryOfBook()">{{__("commonv2.reset_book_cat")}}
+                        wire:click="clearAllCategoryOfBook()">
                 </button>
             </div>
         </div>
@@ -28,48 +26,33 @@
                 <form wire:submit.prevent="saveCat">
                     <div class="form-row">
                         <div class="mb-2 col-md-12 col-12">
-                            {!! CForm::inputGroupHeader(__("commonv2.calling_id")) !!}
+                           
                             <input class="form-control" wire:model.defer="cat_name" required>
-                            {!! CForm::inputGroupFooter() !!}
                         </div>
                         <div class="mb-2 col-md-6 col-12">
-                            {!! CForm::inputGroupHeader(__("commonv2.main_cat")) !!}
+                          
                             <select wire:model="sel_parent" class="form-control">
-                                <option value="">{{__("common.select")}}</option>
-                                @foreach($cat_parent as $item)
-                                    <option value="{{$item->id}}">{{$item->cat_name}}</option>
-                                @endforeach
+                                <option value="">Select</option>
+                                    <option value="{{$item->id}}">Cat Name</option>
                             </select>
-                            {!! CForm::inputGroupFooter() !!}
                         </div>
-                        {{--                        <div class="mb-2 col-md-6 col-12">--}}
-                        {{--                            {!! CForm::inputGroupHeader(__("commonv2.sub_cat_of")) !!}--}}
-                        {{--                            <select wire:model="sel_sub_parent" class="form-control">--}}
-                        {{--                                <option value="">{{__("common.select")}}</option>--}}
-                        {{--                                @foreach($cat_sub_parent as $item)--}}
-                        {{--                                    <option @if($item->parent==0)--}}
-                        {{--                                            @endif value="{{$item->id}}">{{$item->cat_name}}</option>--}}
-                        {{--                                @endforeach--}}
-                        {{--                            </select>--}}
-                        {{--                            {!! CForm::inputGroupFooter() !!}--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="mb-2 col-md-6 col-12">--}}
-                        {{--                            {!! CForm::inputGroupHeader(__("commonv2.dewey_no")) !!}--}}
-                        {{--                            <input class="form-control" wire:model.defer="dewey_no" @if(!$common::getSiteSettings("enable_basic_classification")) required @endif--}}
-                        {{--                                   placeholder="500.01 {{__("commonv2.the_system_attach_shelf_no")}}">--}}
-                        {{--                            {!! CForm::inputGroupFooter() !!}--}}
-                        {{--                        </div>--}}
+                       <div class="mb-2 col-md-6 col-12">
+                        <select wire:model="sel_sub_parent" class="form-control">
+                        <option value="">{{__("common.select")}}</option>
+                        <option @if($item->parent==0)</option></select></div>
+                        <div class="mb-2 col-md-6 col-12">
+                            <input class="form-control" wire:model.defer="dewey_no" @if(!$common::getSiteSettings("enable_basic_classification")) required placeholder="500.01 {{__("commonv2.the_system_attach_shelf_no")}}">
+                        </div>
                         <div class="mb-2 col-md-5 col-12">
-                            {!! CForm::inputGroupHeader(__("commonv2.shelf_no")) !!}
+                            
                             <input class="form-control" type="text" wire:model.defer="shelf_no"
                                    placeholder="{{__("commonv2.any_no_between0099")}}">
-                            {!! CForm::inputGroupFooter() !!}
                         </div>
                         
                         <div class="mb-2 col-md-1 col-12 d-flex" style="align-items: flex-end;">
                             <button class="btn btn-sm btn-dark w-100 " style="height:calc(2.25rem + 2px);"  wire:loading.class="disabled" type="submit">
                                 <i class="far fa-hdd mr-1"></i>
-                                {{__("common.save")}}</button>
+                                Save</button>
                         </div>
                     </div>
                 </form>
@@ -81,28 +64,26 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>{{__("commonv2.calling_id")}}</th>
-                                <th>{{__("commonv2.main_cat")}}</th>
-                                <th>{{__("commonv2.shelf_no")}}</th>
+                                <th>Calling ID</th>
+                                <th>Main Category</th>
+                                <th>Shelft No</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            @if(isset($all_dewey_data) && is_countable($all_dewey_data) && !count($all_dewey_data))
-                                <tr>
+                            <tr>
                                     <td colspan="100">
-                                        <div class="alert alert-dark">{{__("common.no_data_exist")}}</div>
+                                        <div class="alert alert-dark">No Data exist</div>
                                     </td>
                                 </tr>
-                            @else
-                                @foreach($all_dewey_data as $dewey)
+                         
                                     <tr class="parent level0">
-                                        <td scope="row">{{$dewey->id}}</td>
-                                        <td style="display: none">{{$common::formatDeweyNo($dewey->dewey_no,4)}}</td>
-                                        <td colspan="2">{{$dewey->cat_name}}</td>
-                                        {{--                                        <td>{{"N/A"}}</td>--}}
+                                        <td scope="row">ID</td>
+                                        <td style="display: none">Dewey</td>
+                                        <td colspan="2">Cat Name</td>
+                                        <td>"N/A"</td>
 
-                                        <td>{{$common::formatShelfNo($dewey->shelf_no)}}</td>
+                                        <td>Shelf No</td>
                                         <td>
                                             <button type="button" wire:click="editCat({{$dewey->id}})"
                                                     class="btn float-left btn-sm btn-dark action_btn">
@@ -110,7 +91,7 @@
                                             </button>
                                             <button
                                                 wire:loading.class="disabled"
-                                                onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}','deleteCat','{\'id\':{{$dewey->id}}}')"
+                                                onclick=""
                                                 type="button"
                                                 class="btn float-left btn-sm btn-danger action_btn">
                                                 <i class="fas fa-trash-alt"></i>
@@ -118,9 +99,7 @@
 
                                         </td>
                                     </tr>
-                                    @php $childrens = \App\Models\DeweyDecimal::where("parent",$dewey->id)->get(); @endphp
-                                    @if(isset($childrens) && count($childrens))
-                                        @foreach($childrens as $deweychld)
+                                   
                                             <tr class="children level1">
                                                 <td scope="row">{{$deweychld->id}}</td>
                                                 <td style="display: none">{{$common::formatDeweyNo($deweychld->dewey_no)}}</td>
@@ -135,7 +114,7 @@
                                                     </button>
                                                     <button
                                                         wire:loading.class="disabled"
-                                                        onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}','deleteCat','{\'id\':{{$deweychld->id}}}')"
+                                                        onclick=""
                                                         type="button"
                                                         class="btn float-left btn-sm btn-danger action_btn">
                                                         <i class="fas fa-trash-alt"></i>
@@ -144,17 +123,9 @@
                                                 </td>
                                             </tr>
 
-                                        @endforeach
-                                    @endif
-                                @endforeach
-                            @endif
                             </tbody>
                         </table>
                     </div>
-
-                    @if($all_dewey_data instanceof \Illuminate\Pagination\LengthAwarePaginator)
-                        {{$all_dewey_data->links()}}
-                    @endif
                 </div>
             </div>
         </div>
@@ -162,6 +133,7 @@
     <style>
         .level0 {
         background-color:#f4d03f;
+        color:#ffffff;
         }
 
         .level1 {
@@ -170,7 +142,8 @@
         }
 
         .level2 {
-            background-color: ##f4d03f;
+            background-color: #f4d03f;
+            color:#ffffff;
         }
     </style>
 </div>

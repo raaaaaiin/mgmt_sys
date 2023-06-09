@@ -1719,8 +1719,12 @@ pre code {
 
 .table tbody + tbody {
   border-top: 2px solid #dee2e6;
+  background-color: #fff;
 }
 
+tbody{
+  background-color: #fff;
+}
 .table-sm th,
 .table-sm td {
   padding: 0.3rem;
