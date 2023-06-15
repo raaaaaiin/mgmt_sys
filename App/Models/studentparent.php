@@ -8,4 +8,5 @@ include 'App\Common\Model.php';
 
 class studentparent extends Model
 {
+    protected $table = '00_00_studentparent';
 }

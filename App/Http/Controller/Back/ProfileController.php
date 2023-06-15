@@ -18,7 +18,7 @@ class ProfileController{
         foreach($ha as $hotdog){
             echo $hotdog['Student_Code'] . '<br>';
         }
-        require_once '../Resources/Views/Back/ProfileView.php';
+        require_once 'Resources\View\Back\ProfileView.php';
     }
     function setProfilepicdata($string){
         $this->profilepicdata = $string;
