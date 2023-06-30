@@ -14,26 +14,26 @@ abstract class Model{
     }
 
     public function table($columns = ['']){
-
     }
+    
     public function get($columns = ['*'])
     {
 
         $this->connection = new Connection;
-        $sql = "SELECT $columns FROM $this->table";
-        var_dump($sql);
+        $col =  implode(',', $columns);
+        $sql = "SELECT $col FROM $this->table";
         $result = $this->connection -> query($sql);
         return $result;
     }
 
-    public function where($column, $operator = null, $value = null, $boolean = 'and')
+    public function where($column= [''], $operator= [''], $value = [''])
     {
-
+        
     }
-    public function limit(){
-
+    public function limit($count){
+            
     }
-    public function  orderBy(){
+    public function  orderBy($orde){
 
     }
 
