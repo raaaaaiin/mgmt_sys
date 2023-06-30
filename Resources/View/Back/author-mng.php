@@ -67,97 +67,33 @@
     <tbody style="background-color: white;">
         <!-- If $items->total() -->
         <!-- foreach $items as $item -->
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-left: 1px solid lightgray;">Data</td>
-            <td>Data</td>
-            <td>Data</td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
+        <?php
+       if (empty($ha)) {
+        echo '<tr>
+                <td colspan="10">
+                    <div class="alert alert-dark">Show if no_author_exist</div>
+                </td>
+              </tr>';
+        } else {
+            foreach ($ha as $hotdog) {
+                echo '<tr>
+                        <td style="border-left: 1px solid lightgray;">' . $hotdog['id'] . '</td>
+                        <td>' . $hotdog['name'] . '</td>
+                        <td>' . $hotdog['book_id'] . '</td>
+                        <td>
+                            <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                                <i class="far fa-edit"></i>
+                            </button>
+                            <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>';
+            }
+        }
+
+        ?>
+       
 
         <!-- endforeach -->
         <!-- else -->
