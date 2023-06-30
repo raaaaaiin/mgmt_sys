@@ -187,22 +187,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>ID</td>
-                                    <td>Year</td>
-                                    <td>
-                                        <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <!-- Form open -->
-                                            <button class="btn btn-sm btn-danger action_btn" type="button">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                            <!-- Form close -->
-                                        </div>
-                                    </td>
-                                </tr>
+                                
 
                                 <tr>
                                     <td colspan="3">
