@@ -43,8 +43,6 @@ Route::get('DiscoverController', [DiscoverController::class,'render']);
 Route::get('ProfileController', [ProfileController::class,'render']);
 Route::get('TimelineController', [TimelineController::class,'render']);
 Route::get('NewsfeedController', [NewsfeedController::class,'render']);
-//Route::get('ItemAddController', [ItemAddController::class,'render']);
-//Route::get('TemplateTrialController', [TemplateTrialController::class,'render']);
 Route::get('index', [IndexController::class,'render']);
 Route::get("tag-mng", [TagController::class,'render']);
 Route::get("author-mng", [AuthorController::class,'render']);
