@@ -4,9 +4,10 @@ class TimelineController{
     public function TimelineController(): void{
         $this->render();
     }
-    function render(): void
+    function render()
     {
-        require_once 'Resources/View/Back/TimelineView.php';
+        //require_once 'Resources/View/Back/TimelineView.php';
+        return "<h1>hi</h1>";
     }
 
 }

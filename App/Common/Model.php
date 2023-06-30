@@ -20,7 +20,7 @@ abstract class Model{
     {
 
         $this->connection = new Connection;
-        $sql = "SELECT * FROM $this->table";
+        $sql = "SELECT $columns FROM $this->table";
         var_dump($sql);
         $result = $this->connection -> query($sql);
         return $result;
