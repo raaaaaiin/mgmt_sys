@@ -9,7 +9,7 @@ class TagController{
     }
     function render(): void
     {
-        $Taglist = (new Tag)->get();
+        $Taglist = (new Tag)->orderBy('Asc')->limit(10)->get();
         require_once 'Resources\View\Back\tag-mng.php';
     }
 }
