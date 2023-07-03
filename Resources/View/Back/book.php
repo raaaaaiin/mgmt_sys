@@ -13,15 +13,15 @@
     
     <div class="card">
         <div class="card-header blue">
-            <a href="{{route("books.index")}}"
+            <a href=""
                class="btn btn-sm btn-dark"><i
                     class="fas fa-plus-circle mr-1"></i>Add New Book</a>
         </div>
         <div class="card-body yellow">
             <form id="saveBook" wire:submit.prevent="saveBook" onkeydown="return event.key != 'Enter';">
                 
-                <input type="hidden" value="{{$book_id}}" id="book_id">
-                <input type="hidden" value="{{$mode}}" id="mode">
+                <input type="hidden" value="" id="book_id">
+                <input type="hidden" value="" id="mode">
                 <div class="row">
                     <div class="col-md-3 col-12 mb-10" style="background-color: #ffffff;">
                         <div class="image_holder pb-3">
@@ -66,7 +66,7 @@
                                             type="button"
                                             wire:loading.class="disabled"
                                             wire:click="searchBookInfo()"
-                                            title="{{__('common.search_book_details')}}"><i
+                                            title=""><i
                                             class=""></i>
                                     Auto Complete</button>
                             </div>
@@ -75,7 +75,7 @@
                                 <select wire:ignore wire:model="sel_cat" class="form-control">
                                     <option value="">Dewey Decimal</option>
                                     
-                                        <option value="{{$k}}"> </option>
+                                        <option value=""> </option>
                                     
                                 </select>
                                 
@@ -95,7 +95,7 @@
                                         name="medtypes[]"
                                          id="medtypes">
                                     
-                                        <option value="{{$k}}"> </option>
+                                        <option value=""> </option>
                                             
                                     
                                 </select>
@@ -112,7 +112,7 @@
                                                     <input type="radio" name="sub_cats" class="mr-2"
                                                            wire:model.lazy="sel_sub_cat"
                                                            
-                                                           value="{{$sub_cat->id}}">Dewey Category Name<br>
+                                                           value="">Dewey Category Name<br>
                                                     <span
                                                         class="font-weight-bold">Shelf No : 001</span>
                                                 </div>
@@ -200,7 +200,7 @@
                                          id="author">
                                     
                                         <option
-                                            value="{{$k}}"></option>
+                                            value=""></option>
                                             
                                     
                                 </select>
@@ -212,7 +212,7 @@
                                          id="publisher">
                                     
                                         <option
-                                            value="{{$k}}"></option>
+                                            value=""></option>
                                             
                                     
                                 </select>
@@ -237,7 +237,7 @@
                                          id="tag">
                                     
                                         <option
-                                            value="{{$k}}"></option>
+                                            value=""></option>
                                             
                                     
                                 </select>
@@ -274,7 +274,7 @@
                                         class="card-header-title">Add Books</span>
                                     
                                         <button class="btn btn-primary ml-2 btn-sm"
-                                                wire:click="printBarcode({{$book_id}})"><i
+                                                wire:click="printBarcode()"><i
                                                 class="fas fa-print"></i> Book Barcode</button>
                                     
                                     <div class="float-right">
@@ -303,10 +303,10 @@
                                                 <div class="mb-10 col-md-5 col-12">
                                                     Book ID
                                                     <input wire:ignore type="text" class="form-control book_id_cls"
-                                                           placeholder="{{__("common.any_book_id")}}"
-                                                           error_holder="'err_book_id_{{$i}}" id="book_id_{{$i}}"
+                                                           placeholder=""
+                                                           error_holder="'err_book_id_"
                                                            value="Book ID: 0"
-                                                           name="sub_books[{{$i}}][book_id]">
+                                                           name="sub_books[][book_id]">
                                                 </div>
                                                 <div class="col-md col-12 mb-10">
                                                     <div class="form-row" style="align-items: flex-end;">
@@ -322,11 +322,11 @@
                                                                     class="input-group-text">Active</span>
                                                                 </div>
                                                                 <input type="checkbox"
-                                                                       name="sub_books[{{$i}}][book_status]"
-                                                                       id="book_status_{{$i}}"
+                                                                       name="sub_books[][book_status]"
+                                                                       id="book_status_"
                                                                        {{(isset($books_existing_collections[$i]["active"]) && $books_existing_collections[$i]["active"])
                                                                         ? "checked": ""}}
-                                                                       {{!isset($books_existing_collections[$i]["active"])?"checked":""}}
+                                                                       
                                                                        data-toggle="toggle">
                                                             </div>
                                                         </div>
@@ -335,9 +335,9 @@
                                                         </div>
                                                         <div class="col-md col-sm">
 
-                                                            <input type="text" name="sub_books[{{$i}}][book_price]"
-                                                                   id="book_price_{{$i}}"
-                                                                   placeholder="{{__("common.book_price")}}"
+                                                            <input type="text" name="sub_books[][book_price]"
+                                                                   id="book_price_"
+                                                                   placeholder=""
                                                                    value="Book Collection"
                                                                    class="form-control">
 
@@ -359,7 +359,7 @@
                                                                 class="input-group-text">Remarks</span>
                                                         </div>
                                                         <textarea class="form-control" style="    height: 125px;"
-                                                                  name="sub_books[{{$i}}][book_remark]"
+                                                                  name="sub_books[][book_remark]"
                                                         >Remarks</textarea>
                                                     </div>
                                                 </div>
@@ -380,17 +380,17 @@
                                                                         <button disabled class="btn btn-danger btn-sm">
                                                                             Already Issued
                                                                         </button>
-                                                                        <a href="{{route('indexReceiveBooks')}}"
+                                                                        <a href=""
                                                                            target="_blank" data-toggle="tooltip"
                                                                            data-placement="top"
-                                                                           title="{{__("common.mark_received")}}"
+                                                                           title=""
                                                                            class="btn btn-primary btn-sm">
                                                                             Accept
                                                                         </a>
                                                                     
                                                                         
                                                                             <a target="_blank"
-                                                                               href="{{route('cycle-books.index')}}?search={{$books_existing_collections[$i]["sub_book_id"]}}"
+                                                                               href=""
                                                                                class="btn btn-success btn-sm">
                                                                                 Issue Book
                                                                             </a>
@@ -401,7 +401,7 @@
                                                                     <button type="button"
                                                                             
                                                                             
-                                                                            onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}','deleteSubBook','{\'id\':{{isset($books_existing_collections[$i]["id"])
+                                                                            onclick="lv_confirm_then_submit(this,'','deleteSubBook','{\'id\':{{isset($books_existing_collections[$i]["id"])
                                                                     ?$books_existing_collections[$i]["id"]:0}}}')"
                                                                             class="btn btn-dark btn-sm mr-1"><i
                                                                             class="far fa-trash-alt"></i></button>
@@ -437,5 +437,5 @@
             </form>
         </div>
     </div>
-    {{--    </div>--}}
+    
 </div>

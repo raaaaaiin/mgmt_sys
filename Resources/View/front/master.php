@@ -16,10 +16,10 @@
     <meta charset="utf-8">
     <title>Elib STI</title>
     @if(isset($cust_title) && !blank($cust_title))
-        <title>{{$cust_title}}</title>
+        <title></title>
     @endif
     @if(!empty($google_verification))
-        <meta name="google-site-verification" content="{{$google_verification}}"/>
+        <meta name="google-site-verification" content=""/>
     @endif
     @if(!empty($google_analytics))
         {!! $google_analytics !!}
@@ -31,18 +31,18 @@
     <!--====== Magnific Popup CSS ======-->
 
     <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="{{asset('front/css/slick.css')}}">
+    <link rel="stylesheet" href="">
 
     <!--====== Line Icons CSS ======-->
     <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="">
 
     <!--====== Default CSS ======-->
 
     <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+    <link rel="stylesheet" href="">
     @yield("css_loc")
-    <link href="{{asset('css/front_master.css')}}" rel="stylesheet">
+    <link href="" rel="stylesheet">
     @yield("header")
     @yield("css_loc")
     <style>
@@ -58,15 +58,15 @@
         }
 
         .back-to-top, .team-content::before, .portfolio-menu ul li::before {
-            background-color: {{$secondary_color}};
+            background-color: ;
         }
 
         .single-features .features-title-icon .features-icon i {
-            color: {{$secondary_color}};
+            color: ;
         }
 
         .pricing-style, .team-style-eleven {
-            background: linear-gradient({{$primary_color}} 0%, {{$secondary_color}} 100%);
+            background: linear-gradient( 100%);
         }
 
         .btn {
@@ -75,12 +75,12 @@
 
         .light-rounded-buttons .light-rounded-two, .navbar-area.sticky .navbar .navbar-btn li a.solid,
         .btn_preview, .btn_open_link, .btn_subscribe, .btn_preview:hover, .btn_open_link:hover, .btn_subscribe:hover {
-            background-color: {{$secondary_color}};
-            border-color: {{$secondary_color}};
+            background-color: ;
+            border-color: ;
         }
 
         .form-input .input-items.default input:focus, .form-input .input-items.default textarea:focus {
-            border-color: {{$secondary_color}}
+            border-color: 
 
 
 
@@ -88,7 +88,7 @@
         }
 
         .logo_img {
-        {{$logo_css}}
+        
 
         }
 
@@ -104,7 +104,7 @@
 
 <!--====== NAVBAR TWO PART START ======-->
 
-{{--@include("front.nav")--}}
+
 @include("back.frontnav")
 @yield("content")
 <!--====== BACK TOP TOP PART START ======-->
@@ -118,35 +118,35 @@
 @include("front.footer")
 
 
-    <script src="{{asset('front/js/isotope.js')}}"></script>
-<script src="{{asset('front/js/jquery.min.js')}}"></script>
-<script src="{{asset('js/jquery-ui.js')}}"></script>
-<script src="{{asset('front/js/jquery.magnific-popup.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/jquery-confirm.min.css')}}">
-<script src="{{asset('js/jquery-confirm.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+    <script src=""></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
+<link rel="stylesheet" href="">
+<script src=""></script>
+<link rel="stylesheet" href="">
 
 
 
 <!--====== Bootstrap js ======-->
-<script src="{{asset('front/js/bootstrap.min.js')}}"></script>
+<script src=""></script>
 
 
 
 <!--====== Scrolling Nav js ======-->
 
-<script src="{{asset('js/vue.js')}}"></script>
-<script src="{{asset('front/js/slick.min.js')}}"></script>
-<script src="{{asset('front/js/imagesloaded.pkgd.min.js')}}"></script>
-<script src="{{asset('front/js/isotope.pkgd.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
-<script type="text/javascript" src="{{asset('plugins/sweetalert2/sweetalert2.all.min.js')}}"></script>
-<script src="{{asset('js/default.js')}}"></script>
-<script src="{{asset('front/js/main.js')}}"></script>
-<script src="{{asset('front/js/html2canvas.min.js')}}"></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
+<link rel="stylesheet" href="">
+<script type="text/javascript" src=""></script>
+<script src=""></script>
+<script src=""></script>
+<script src=""></script>
 
-   <script src="{{asset('front/js/custom.js')}}"></script>
-    <script src="{{asset('front/js/owl.js')}}"></script>
+   <script src=""></script>
+    <script src=""></script>
 
 @livewireScripts
 

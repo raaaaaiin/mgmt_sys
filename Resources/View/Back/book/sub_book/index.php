@@ -1,14 +1,14 @@
 @extends("back.common.master")
-@section("page_name") {{__("common.view_all_books")}} @endsection
+@section("page_name")  @endsection
 @section("content")
-{{--    <div class="card">--}}
-{{--        <div class="card-body yellow">--}}
-{{--            <div class="mb-10 w-100">--}}
-{{--                @include("common.messages")--}}
-{{--            </div>--}}
-{{--            @livewire("sub-book")--}}
-{{--        </div>--}}
-{{--    </div>--}}
+
+
+
+
+
+
+
+
     @livewire("sub-book")
 @endsection
 @section("css_loc")

@@ -1,6 +1,6 @@
 @extends("back.common.master")
 @section("page_name")
-    {{__("common.role_perm_management")}}
+    
 @endsection
 @section("content")
     <div class="content">

@@ -59,7 +59,7 @@
                         <h6 class="mb-0">Student Number</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        {{$this->user_id}}
+                        
                       </div>
                     </div>
                     <hr>
@@ -68,7 +68,7 @@
                         <h6 class="mb-0">Full Name</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        {{$this->name}}
+                        
                       </div>
                     </div>
                     <hr>
@@ -77,7 +77,7 @@
                         <h6 class="mb-0">Gender</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        {{$this->gender}}
+                        
                       </div>
                     </div>
                     <hr>
@@ -85,7 +85,7 @@
                       <div class="col-sm-3">
                         <h6 class="mb-0">Role</h6>
                       </div>
-                      <div class="col-sm-9 text-secondary"> @foreach($this->roles as $role){{Str::title($role->name)}} @endforeach </div>
+                      <div class="col-sm-9 text-secondary"> }}  </div>
                     </div>
                     <hr>
                     <div class="row">
@@ -93,7 +93,7 @@
                         <h6 class="mb-0">Address</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        {{$this->address}}
+                        
                       </div>
                     </div>
                     <hr>
@@ -108,7 +108,7 @@
                           <i class="material-icons text-info mr-2">Previously</i>Remarks
                         </h6>
                         <div style="overflow-y: scroll;
-    height: 268px;"> @foreach($this->currentlyRemarks as $key => $data) <div class="pf-gallery p-0 row mb-2" style="border-bottom:1px;">
+    height: 268px;">  <div class="pf-gallery p-0 row mb-2" style="border-bottom:1px;">
                             <div class=" post_topbar p-0">
                               <div class="row usy-dt w-100" style="align-items: center;">
                                 <div class="col-md-9 usy-name m-0">
@@ -122,7 +122,7 @@
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data["Remarks"] ? $data["Remarks"] : "A book was successfully returned."}}</h5> @if(empty($data["Accession"])) @else <h5 style="
+"></h5> @if(empty($data["Accession"])) @else <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
     border: 0;
@@ -131,7 +131,7 @@
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Refference:{{$data["Accession"]}}</h5> @endif <h5 style="
+">Refference:</h5> @endif <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
     border: 0;
@@ -140,11 +140,11 @@
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Date posted: {{$data["Returned"]}}</h5>
+">Date posted: </h5>
                                 </div>
                               </div>
                             </div>
-                          </div> @endforeach </div>
+                          </div>  </div>
                       </div>
                     </div>
                   </div>
@@ -155,12 +155,12 @@
                           <i class="material-icons text-info mr-2">Previously</i>Borrowed
                         </h6>
                         <div style="overflow-y: scroll;
-    height: 268px;"> @foreach($this->currentlyBorrowed as $key => $data) <div class="pf-gallery p-0 row" style="border-bottom:1px;">
+    height: 268px;">  <div class="pf-gallery p-0 row" style="border-bottom:1px;">
                             <div class=" post_topbar p-0">
                               <div class="row usy-dt w-100" style="align-items: center;">
-                                <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}'" src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data["book_img"]))}}" />
+                                <img class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top" class="img-thumbnail" wire:click="activeUser" onclick="location='" />
                                 <div class="col-md-9 usy-name m-0">
-                                  <a href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" style="color:#000;padding:0;">
+                                  <a href="" style="color:#000;padding:0;">
                                     <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -171,7 +171,7 @@
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data["title"]}}</h5>
+"></h5>
                                     <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -181,7 +181,7 @@
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Accession:{{$data["Accession"]}}</h5>
+">Accession:</h5>
                                     <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -191,7 +191,7 @@
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Borrowed On: {{$data["Borrowed"]}}</h5>
+">Borrowed On: </h5>
                                     <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -201,7 +201,7 @@
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Returned On: {{$data["Returned"]}}</h5>
+">Returned On: </h5>
                                   </a>
                                   <h5 style="
     margin-left:10px!important;margin: 0;
@@ -217,7 +217,7 @@
                                 </div>
                               </div>
                             </div>
-                          </div> @endforeach </div>
+                          </div>  </div>
                       </div>
                     </div>
                   </div>
@@ -235,11 +235,11 @@
                 <div class="dashcard yellow">
                   <div class="dashcard-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                      <img src="{{$photo_link}}" alt="Admin" class="rounded-circle" width="150">
+                      <img src="" alt="Admin" class="rounded-circle" width="150">
                       <div class="mt-3">
-                        <h4>{{$name}}</h4>
+                        <h4></h4>
                         <p class="text-secondary mb-1">Check all attachment to</p>
-                        <p class="text-muted font-size-sm">Accept {{$name}}'s Request</p>
+                        <p class="text-muted font-size-sm">Accept 's Request</p>
                       </div>
                     </div>
                   </div>
@@ -251,7 +251,7 @@
                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                           </svg> Email
                         </h6>
-                        <span class="text-secondary">{{$this->email}}</span>
+                        <span class="text-secondary"></span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                         <h6 class="mb-0">
@@ -260,7 +260,7 @@
                             <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                           </svg> Phone
                         </h6>
-                        <span class="text-secondary">{{$this->phone}}</span>
+                        <span class="text-secondary"></span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                         <h6 class="mb-0">
@@ -269,7 +269,7 @@
                             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
                           </svg> Course
                         </h6>
-                        <span class="text-secondary"> @if($this->section) @foreach($this->section as $items) @foreach($items as $course=>$year) {{Str::title($common::getCourseName($course))}} @endforeach @endforeach @endif</span>
+                        <span class="text-secondary"> @if($this->section) }}   @endif</span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                         <h6 class="mb-0">
@@ -279,7 +279,7 @@
                           </svg> Section
                         </h6>
                         <span class="text-secondary">@if($this->section)
-@foreach($this->section as $items) @foreach($items as $course=>$year) {{Str::title($common::getCourseName($course))}} {{$common::getCourseYearName($year)}} @endforeach @endforeach @endif</span>
+}}   @endif</span>
                       </li>
                      
                     </ul>

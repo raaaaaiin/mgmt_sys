@@ -26,7 +26,7 @@
                             <div id="backup" class="tabcontent" style="    width: 100%!important;">
                                 <h3 style="padding-top: 15px;">DB BACKUP</h3>
                                 <p>Data base Back up Description</p>
-                                <form method="post" action="{{route('file.db_mng')}}">
+                                <form method="post" action="">
                                     <!-- @csrf -->
                                     <input name="do" type="hidden" value="backup">
                                     <input name="frm_name" type="hidden" value="backup">
@@ -50,8 +50,8 @@
                                         $items = $util::getDbBackupFiles();
                                     @endphp
                                     @if(count($items))
-                                        @php $count = 1; @endphp
-                                        @foreach($items as $key=>$value) -->
+                                        
+                                         -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Dummy.sql</td>
@@ -59,25 +59,25 @@
                                                 <td>May 20, 2023</td>
                                                 <td>
                                                     <form class="d-inline" method="post"
-                                                          action="{{route('file.db_mng')}}">
-                                                        <input type="hidden" name="filename" value="{{$key}}">
+                                                          action="">
+                                                        <input type="hidden" name="filename" value="">
                                                         <input type="hidden" name="do" value="restore">
                                                         <input name="frm_name" type="hidden" value="backup"/>
                                                         <button class="btn p-2" type="submit" data-toggle="tooltip"
                                                                 data-placement="top"
-                                                                title="{{__("common.restore_db")}}"><i
+                                                                title=""><i
                                                                 class="fas fa-sync"></i></button>
                                                     </form>
-                                                    <form class="d-inline" method="post" id="delete_{{$count}}"
-                                                          action="{{route('file.db_mng')}}">
-                                                        <input type="hidden" name="filename" value="{{$key}}">
+                                                    <form class="d-inline" method="post" id="delete_"
+                                                          action="">
+                                                        <input type="hidden" name="filename" value="">
                                                         <input type="hidden" name="do" value="delete">
                                                         <input name="frm_name" type="hidden" value="backup"/>
                                                         <button
                                                             onclick="confirm_then_submit('')"
                                                             class="btn p-2"
                                                             type="button" data-toggle="tooltip" data-placement="top"
-                                                            title="{{__("common.del_this_bck")}}"><i
+                                                            title=""><i
                                                                 class="far fa-trash-alt"></i></button>
                                                     </form>
                                                 </td>

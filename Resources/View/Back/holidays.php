@@ -14,7 +14,7 @@
                     <input type="hidden" name="mode" wire:model="mode">
                     <input type="hidden" name="id" wire:model="selected_id">
 
-                    <div class="col-md-3 col-12 mb-2 {{$give_to_role_holder}}">
+                    <div class="col-md-3 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Date</span>
@@ -24,7 +24,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-3 col-12 mb-2 {{$give_to_role_holder}}">
+                    <div class="col-md-3 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">To: *Leave blank if single date only</span>
@@ -40,7 +40,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-2 col-12 mb-2 {{$give_to_user_holder}}">
+                    <div class="col-md-2 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Coverage</span>
@@ -90,8 +90,8 @@
                                 <td>06/30/20000</td>
                                 <td>Birthday ko baket?</td>
 
-                                <td><button title="{{__('common.active_and_visible')}}" class="btn btn-sm btn-primary action_btn float-left" type="button" wire:click="noticeStatus({{$notice->id}},0)"><i class="far fa-eye"></i>
-                                        </button><button title="{{__('common.deactive_and_visible')}}" class="btn btn-sm btn-primary action_btn float-left" type="button" wire:click="noticeStatus({{$notice->id}},1)"><i class="far fa-eye-slash"></i></button><button wire:click="editNotice({{$notice->id}})" type="button" class="btn btn-sm btn-dark btn_edit action_btn float-left">
+                                <td><button title=",0)"><i class="far fa-eye"></i>
+                                        </button><button title=")" type="button" class="btn btn-sm btn-dark btn_edit action_btn float-left">
                                                                                                                                                                                                                                                                                                                                         <i class="far fa-edit"></i>
                                     </button>
 
@@ -106,9 +106,9 @@
             </div></div>
     </div>
 
-    <script src="{{asset('js/jquery-1.12.4.js')}}"></script>
-<script src="{{asset('js/jquery-ui.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+    <script src=""></script>
+<script src=""></script>
+<link rel="stylesheet" href="">
     <script>
     let x;
     let y;

@@ -2,7 +2,6 @@
 namespace App\Http\Controller\Back;
 
 use App\Models\Year;
-use App\Common\Model;
 
 class YearController{
     public function YearController(): void{
@@ -10,7 +9,7 @@ class YearController{
     }
     function render(): void
     {
-        $yearList = (new Model())->table('year')->get();
+        $yearList = (new Year())->table('year')->get();
         var_dump($yearList);
         require_once 'Resources\View\Back\year\index.php';
     }

@@ -17,7 +17,7 @@
 
 </style>
 
-<script src="{{asset('js/instascan.min.js')}}"></script>
+<script src=""></script>
 
 
 
@@ -34,9 +34,9 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{route('dashboard')}}" style="background-color:#0B5793;padding-left:0px" class="brand-link" >
-        <img style="margin-left:-3px;max-height: 45px;margin-top: -7px;" src="{{asset('uploads/satellite.png')}}"
-             alt="{{config("app.APP_NAME")}}"
+                <a href="" style="background-color:#0B5793;padding-left:0px" class="brand-link" >
+        <img style="margin-left:-3px;max-height: 45px;margin-top: -7px;" src=""
+             alt=""
              class="brand-image"
         >
 
@@ -113,7 +113,7 @@
         <li class="nav-item col-lg-12 d-flex" stlye="align-items: flex-end;">
         @if(Route::is('discover.index') )
     <input id="search_book" type="text" class="form-control search_txtbox"
-                                               placeholder="{{__("commonv2.pl_search_text")}}">
+                                               placeholder="">
 @endif
 
         </li>
@@ -177,7 +177,7 @@
 
             <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" style="padding-left:0px;padding-right:0px">
-                <span class="fa-stack" @php echo $notif->notifcount==0 ? "" : 'data-count="'.$notif->notifcount.'"';@endphp>
+                <span class="fa-stack" >
   <i class="fa-solid fa-bell fa-stack-1x"></i>
 </span>
 
@@ -199,17 +199,17 @@
 
      @endphp
 
-     @if($item["Meta_key"] =="Request")  <a wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{!isset($item["role"]) ? url('/cycle-books'):url('/timeline')}}"></span>@endif
-        @if($item["Meta_key"] =="Approved")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{!isset($item["role"]) ?url('/issued-books'):url('/timeline')}}">@endif
-        @if($item["Meta_key"] =="Return")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{!isset($item["role"]) ?url('/issued-books'):url('/timeline')}}">@endif
-        @if($item["Meta_key"] =="NewBook") <a wire:click="read({{$item["id"]}})"  style="padding: 0!important" href="{{route("details", ['page_slug' => $common::utf8Slug(\App\Models\Book::get_book_name($item["Target"]))])}}
+     @if($item["Meta_key"] =="Request")  <a wire:click="read("></span>@endif
+        @if($item["Meta_key"] =="Approved")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="Return")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="NewBook") <a wire:click="read(
                                  ">@endif
-        @if($item["Meta_key"] =="Promotion")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{!isset($item["role"]) ?url('/role-perm-mng'):url('/timeline')}}">@endif
-        @if($item["Meta_key"] =="Notice")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{url('/notice-mng')}}">@endif
-        @if($item["Meta_key"] =="Carousel")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{url('/slider-mng')}}">@endif
-        @if($item["Meta_key"] =="Enquiries")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{url('/enquiry-mng')}}">@endif
-        @if($item["Meta_key"] =="ReturnAlert")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{url('/enquiry-mng')}}">@endif
-        @if($item["Meta_key"] =="Dewey")<a  wire:click="read({{$item["id"]}})" style="padding: 0!important" href="{{url('/classification-mng')}}">@endif
+        @if($item["Meta_key"] =="Promotion")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="Notice")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="Carousel")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="Enquiries")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="ReturnAlert")<a  wire:click="read(">@endif
+        @if($item["Meta_key"] =="Dewey")<a  wire:click="read(">@endif
 
 
 
@@ -229,37 +229,37 @@
         @endif
      @endif
        <!--<div id="setting" style="position:absolute;right: 0;" class="name"><i class="fa-regular fa-circle-ellipsis"></i></div>-->
-       <img src="{{asset("uploads/".\App\Models\User::get_user_photo($item["User"]))}}" alt="" / style="width:50px;height:50px">
+       <img src="" alt="" / style="width:50px;height:50px">
        <div class="text">
-        <p><span class="name">{{!isset($item["role"]) ? \App\Models\User::get_user_name($item["User"]):$item["Useralt"] }}</span>
-        {{$item["Action"]}}
+        <p><span class="name"></span>
+        
 
-        @if($item["Meta_key"] =="Request")  <span class="name">{{ \App\Models\SubBook::get_book_name($item["Target"]) }}</span>@endif
-        @if($item["Meta_key"] =="Approved")<span class="name">{{ \App\Models\User::get_user_name($item["Target"]) }} </span>@endif
-        @if($item["Meta_key"] =="Return")<span class="name">{{ \App\Models\User::get_user_name($item["Target"]) }} </span>@endif
-        @if($item["Meta_key"] =="NewBook") <span class="name">{{ \App\Models\Book::get_book_name($item["Target"]) }} </span>@endif
-        @if($item["Meta_key"] =="Promotion")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Notice")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Carousel")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Enquiries")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="ReturnAlert")  <span class="name">{{ \App\Models\SubBook::get_book_name($item["Target"]) }}</span>@endif
-        @if($item["Meta_key"] =="Dewey")  <span class="name">{{$item["Target"]}}</span>@endif
+        @if($item["Meta_key"] =="Request")  <span class="name"></span>@endif
+        @if($item["Meta_key"] =="Approved")<span class="name"> </span>@endif
+        @if($item["Meta_key"] =="Return")<span class="name"> </span>@endif
+        @if($item["Meta_key"] =="NewBook") <span class="name"> </span>@endif
+        @if($item["Meta_key"] =="Promotion")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Notice")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Carousel")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Enquiries")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="ReturnAlert")  <span class="name"></span>@endif
+        @if($item["Meta_key"] =="Dewey")  <span class="name"></span>@endif
 
 
-         @if($item["Meta_key"] =="Approved"){{ \App\Models\Book::get_book_name_byID($item["Modifier"]) }} </span>
-         @elseif($item["Meta_key"] =="Return"){{ \App\Models\Book::get_book_name_byID($item["Modifier"]) }} </span>
+         @if($item["Meta_key"] =="Approved") </span>
+         @elseif($item["Meta_key"] =="Return") </span>
          @else
-         {{$item["Modifier"]}}
+         
          @endif</p>
-         <p class="time">{{$item["created_at"]->diffForHumans()}}</p>
+         <p class="time"></p>
        </div>
       </div>
       </a>
-     @endforeach
+     
       @endif
       <div class="header" style="padding: 0!important"></div>
        <div class="header justify-content-center">
-      <a href="{{url("/notif")}}" style="padding: 0px">See all Notification</a>
+      <a href="" style="padding: 0px">See all Notification</a>
      </div>
      </div>
 
@@ -281,16 +281,16 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
                 <div class="dropdown-divider"></div>
-                <a href="{{config('app.APP_URL')}}" target="_blank" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt mr-2"></i> {{__("common.visit_front_page")}}
+                <a href="" target="_blank" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt mr-2"></i> 
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{route("profile", ['v_id' => \App\Models\User::get_current_id()])}}" class="dropdown-item">
-                    <i class="far fa-id-card mr-2"></i> {{__("common.profile")}}
+                <a href="" class="dropdown-item">
+                    <i class="far fa-id-card mr-2"></i> 
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{route("custom.logout")}}" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt mr-2"></i> {{__("logout")}}
+                <a href="" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt mr-2"></i> 
                 </a>
                 <div class="dropdown-divider"></div>
             </div>
@@ -299,7 +299,7 @@
 </nav>
 
 </div>
-<script src="{{asset('front/js/vendor/jquery-1.12.4.min.js')}}"></script>
+<script src=""></script>
 <script>
 
 setInterval(function() {

@@ -1,5 +1,5 @@
 @extends("back.common.master")
-@section("page_name") {{__("common.add_books")}} @endsection
+@section("page_name")  @endsection
 @section("content")
     @if(isset($id))
         @livewire("book",["edit_id"=>$id])
@@ -9,16 +9,16 @@
 @endsection
 
 @section("css_loc")
-    <link rel="stylesheet" href="{{asset('css/book_index.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-toggle.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
-    <link href="{{asset('plugins/summernote/summernote-bs4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link href="" rel="stylesheet">
 @endsection
 @section("js_loc")
-    <script src="{{asset('js/bootstrap-toggle.min.js')}}"></script>
-    <script src="{{asset('plugins/summernote/summernote-bs4.js')}}"></script>
-    <script type="text/javascript" src="{{asset("js/select2.min.js")}}"></script>
-    <script src="{{asset('js/book_index.js')}}"></script>
+    <script src=""></script>
+    <script src=""></script>
+    <script type="text/javascript" src=""></script>
+    <script src=""></script>
     <script>
         $('.select2-multiple').select2({tags: true, tokenSeparators: [',']});
         $('#author').on('select2:select', function (e) {

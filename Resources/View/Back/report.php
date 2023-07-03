@@ -1,22 +1,22 @@
  @extends("back.common.master")
 @section("page_name")
-    {{__("commonv2.report_printing")}}
+    
 @endsection
 @section("content")
     <div class="card">
         <div class="card-body yellow">
-            <form method="post" action="{{route('reports.store')}}">
+            <form method="post" action="">
                 @csrf
                 <div class="row no-gutters">
                     <div class="col-md-4 col-12 mb-3">
                         <div class="input-group">
                         {!! CForm::inputGroupHeader(__("Type of reports"))!!}
                             <select name="to_do" required class="form-control">
-                                <option value="">{{__("common.select")}}</option>
-                                <option value="most_issued_books">{{__("commonv2.most_issued_books")}}</option>
-                                <option value="damage_books">{{__("commonv2.damage_books")}}</option>
-                                <option value="losted_books">{{__("commonv2.lost_books")}}</option>
-                                <option value="late_returned">{{__("commonv2.late_returned")}}</option>
+                                <option value=""></option>
+                                <option value="most_issued_books"></option>
+                                <option value="damage_books"></option>
+                                <option value="losted_books"></option>
+                                <option value="late_returned"></option>
                                 <option value="all_active_student">List of activated student</option>
                                 <option value="all_inactive_student">List of inactive student</option>
                                 <option value="all_books">List of all books</option>
@@ -33,13 +33,13 @@
                             </div>
                              {!! CForm::inputGroupHeader(__("Choices"))!!}
                             <select name="fast_tag" class="form-control">
-                                <option value="">{{__("common.select")}}</option>
-                                <option value="this_week">{{__("commonv2.this_week")}}</option>
-                                <option value="last_30">{{__("commonv2.last_30")}}</option>
-                                <option value="this_month">{{__("commonv2.this_month")}}</option>
-                                <option value="last_month">{{__("commonv2.last_month")}}</option>
-                                <option value="this_year">{{__("commonv2.this_year")}}</option>
-                                <option value="last_year">{{__("commonv2.last_year")}}</option>
+                                <option value=""></option>
+                                <option value="this_week"></option>
+                                <option value="last_30"></option>
+                                <option value="this_month"></option>
+                                <option value="last_month"></option>
+                                <option value="this_year"></option>
+                                <option value="last_year"></option>
                             </select>
                            {!! CForm::inputGroupFooter() !!}
                         </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-12 col-12 mb-3">
                         <button type="submit" class="btn btn-dark btn-block"><i
-                                class="far fa-newspaper mr-2"></i>{{__("commonv2.shw_report")}}</button>
+                                class="far fa-newspaper mr-2"></i></button>
                     </div>
                 </div>
             </form>

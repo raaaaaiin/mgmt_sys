@@ -1,5 +1,5 @@
 @extends("back.common.master")
-@section("page_name") {{__("commonv2.tag_mng")}} @endsection
+@section("page_name")  @endsection
 @section("content")
     @livewire("tag-mng")
 @endsection

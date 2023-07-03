@@ -49,37 +49,37 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-12 mb-2 {{$give_to_role_holder}}">
+                    <div class="col-md-3 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Course</span>
                             </div>
                             <select wire:model="selcourse" class="form-control">
                                 <option value="">
-                                    <!-- --{{__("common.select")}}-- -->
+                                    <!-- ---- -->
                                 </option>
-                                            <!-- @foreach($common::getAllCourses() as $course) -->
-                                                <option value="{{$course->id}}">Course Name</option>
-                                            <!-- @endforeach -->
+                                            <!--  -->
+                                                <option value="">Course Name</option>
+                                            <!--  -->
 
                             </select>
                         </div>
                     </div>
 
 
-                    <div class="col-md-3 col-12 mb-2 {{$give_to_role_holder}}">
+                    <div class="col-md-3 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Section</span>
                             </div>
                             <select wire:model.defer="sel_year" class="form-control">
-                                  <!-- @foreach(\App\Models\Course_Year::where("course_id",$this->selcourse)->get() as $obj) -->
+                                  <!--  -->
                                                    <!-- /@if($obj->course_id) -->
-                                                           <option value="{{$obj->course_year_id}}">Section</option>
+                                                           <option value="">Section</option>
                                                             
                                                            
                                                     <!-- @endif -->
-                                                <!-- @endforeach -->
+                                                <!--  -->
                             </select>
 
 
@@ -98,7 +98,7 @@
 
 
 
-                    <div class="col-md-6 col-12 mb-2 {{$give_to_user_holder}}">
+                    <div class="col-md-6 col-12 mb-2 ">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Assign to User</span>
@@ -106,10 +106,10 @@
                             <select wire:ignore class="form-control select2-multiple"
                                     name="give_to_user[]"
                                     id="give_to_user" >
-                                <!-- @foreach($common::getAllUsers() as $user) -->
+                                <!--  -->
                                     <option
-                                        value="{{$user->id}}">To User</option>
-                                <!-- @endforeach -->
+                                        value="">To User</option>
+                                <!--  -->
                             </select>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                                                 <span class="input-group-text">Show on<i
                                                         class="fas fa-info-circle ml-1 mt-1" data-toggle="tooltip"
                                                         data-placement="top"
-                                                        title="{{__('Show to all your website visitors.')}}"></i> </span>
+                                                        title=""></i> </span>
                             </div>
                             <select wire:model="show_in" name="show_in" class="form-control">
                                 <option value="back_end">Timeline & Profile</option>
@@ -158,7 +158,7 @@
                     </thead>
                     <tbody>
                     <!-- @if($notices->total()) -->
-                        <!-- @foreach($notices as $notice) -->
+                        <!--  -->
                             <tr>
                                 <td>User</td>
                                 <td>Award Title</td>
@@ -188,17 +188,17 @@
                                 </td>
                                 <td>
                                     <!-- @if($notice->active) -->
-                                        <button title="{{__('common.active_and_visible')}}"
+                                        <button title=""
                                                 class="btn btn-sm btn-primary action_btn float-left" type="button"
-                                                wire:click="noticeStatus({{$notice->id}},0)"><i class="far fa-eye"></i>
+                                                wire:click="noticeStatus(,0)"><i class="far fa-eye"></i>
                                         </button>
                                     <!-- @else -->
-                                        <button title="{{__('common.deactive_and_visible')}}"
+                                        <button title=""
                                                 class="btn btn-sm btn-primary action_btn float-left" type="button"
-                                                wire:click="noticeStatus({{$notice->id}},1)"><i
+                                                wire:click="noticeStatus(,1)"><i
                                                 class="far fa-eye-slash"></i></button>
                                     <!-- @endif -->
-                                    <button wire:click="editNotice({{$notice->id}})" type="button"
+                                    <button wire:click="editNotice()" type="button"
                                             class="btn btn-sm btn-dark btn_edit action_btn float-left">
                                         <i class="far fa-edit"></i>
                                     </button>
@@ -206,7 +206,7 @@
 
                                 </td>
                             </tr>
-                        <!-- @endforeach -->
+                        <!--  -->
                     <!-- @else -->
                         <tr>
                             <td colspan="100">
@@ -229,9 +229,9 @@
     </div>
 <!-- @endsection -->
 <!-- @section("css_loc") -->
-    <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/notice.css')}}">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
 <!-- @endsection -->
 <!-- @section("js_loc") -->
-    <script src="{{asset('js/notice.js')}}"></script>
+    <script src=""></script>
 <!-- @endsection -->

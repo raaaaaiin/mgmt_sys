@@ -50,13 +50,13 @@
                                     <form role="form" wire:submit.prevent="deleteRole">
                                         <div class="input-group">
                                             <select class="custom-select" wire:model="role_id">
-                                                <option value="">Role Name</option><option value="{{$role_obj->id}}">Role Name</option></select>
+                                                <option value="">Role Name</option><option value="">Role Name</option></select>
                                             <div class="input-group-append">
-                                                <button type="button" @if(in_array($role_id,$common::getlistofdefaultroles(true)))="" disabled="" @endif="" wire:click="editRoleName({{$role_id}})" class="btn btn-sm btn-dark">
+                                                <button type="button" @if(in_array($role_id,$common::getlistofdefaultroles(true)))="" disabled="" @endif="" wire:click="editRoleName()" class="btn btn-sm btn-dark">
                                                     <i class="far fa-edit"></i>
                                                 </button>
 
-                                                <button @if(in_array($role_id,$common::getlistofdefaultroles(true)))="" disabled="" @endif="" onclick="lv_confirm_then_submit(this,'{{__(" common.cnf_del_role")}}','deleterole','{\'id\':{{$role_id}}}')"="" type="button" class="btn btn-sm btn-danger">
+                                                <button @if(in_array($role_id,$common::getlistofdefaultroles(true)))="" disabled="" @endif="" onclick="lv_confirm_then_submit(this,'')"="" type="button" class="btn btn-sm btn-danger">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
@@ -69,12 +69,12 @@
                                     <form role="form" wire:submit.prevent="deletePermission">
                                         <div class="input-group">
                                             <select class="custom-select" wire:model="permission_id">
-                                                <option value="">Permission Name</option><option value="{{$permission_obj->id}}"></option></select>
+                                                <option value="">Permission Name</option><option value=""></option></select>
                                             <div class="input-group-append">
-                                                <button type="button" @if(in_array($permission_id,$common::getlistofdefaultpermissions(true)))="" disabled="" @endif="" wire:click="editPermissionName({{$permission_id}})" class="btn btn-sm btn-dark">
+                                                <button type="button" @if(in_array($permission_id,$common::getlistofdefaultpermissions(true)))="" disabled="" @endif="" wire:click="editPermissionName()" class="btn btn-sm btn-dark">
                                                     <i class="far fa-edit"></i>
                                                 </button>
-                                                <button type="button" @if(in_array($permission_id,$common::getlistofdefaultpermissions(true)))="" disabled="" @endif="" onclick="lv_confirm_then_submit(this,'{{__(" common.cnf_del_perm")}}','deletepermission','{\'id\':{{$permission_id}}}')"="" class="btn btn-sm btn-danger">
+                                                <button type="button" @if(in_array($permission_id,$common::getlistofdefaultpermissions(true)))="" disabled="" @endif="" onclick="lv_confirm_then_submit(this,'')"="" class="btn btn-sm btn-danger">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </div>
@@ -108,19 +108,19 @@
                                         <label>Select User</label>
                                         <select class="custom-select" wire:model="user_id">
                                             <option value="">Student Name</option>
-                                            @foreach($users as $user)
-                                                <option value="{{$user->id}}">{{Str::title($user-&gt;name)}}</option>
-                                            @endforeach
+                                            
+                                                <option value="</option>
+                                            
                                         </select>
                                     </div>
                                     <div class="form-group col-6">
                                         <label class="d-none d-sm-block">Select Permission</label>
-                                        <label class="d-block d-sm-none">{{__("commonv2.chs_role_frm_here_small")}}</label>
+                                        <label class="d-block d-sm-none"></label>
                                         <select class="custom-select" wire:model="assigned_role_id">
                                             <option value="">Permission Name</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{$role->id}}">{{Str::title($role-&gt;name)}}</option>
-                                            @endforeach
+                                            
+                                                <option value="</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
                                                                                     
                                                                            </button></li></td>
                                 <td><span class="badge bg-info text-dark">Info</span><span class="badge bg-info rounded-pill text-dark">
-                                                {{$item-&gt;name}}
+                                                
                                                 
                                             </span><li class="list-group-item d-flex justify-content-between align-items-center">Name<button>
                                   <i class="fas fa-trash-alt"></i>

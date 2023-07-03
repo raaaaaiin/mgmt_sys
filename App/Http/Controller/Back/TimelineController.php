@@ -6,7 +6,7 @@ class TimelineController{
     }
     function render()
     {
-        //require_once 'Resources/View/Back/TimelineView.php';
+        require_once 'Resources/View/Back/TimelineView.php';
         return "<h1>hi</h1>";
     }
 

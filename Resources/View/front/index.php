@@ -8,7 +8,7 @@
     <!--====== SLIDER PART START ======-->
 
     <section id="home" class="slider_area">
-        @php $all_sliders = \App\Models\Slider::all(); @endphp
+        
         @if(is_countable($all_sliders) && count($all_sliders)>0)
         <div id="carouselThree" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -17,21 +17,21 @@
                 <li data-target="#carouselThree" data-slide-to="2"></li>
             </ol>
             <div id="parent" class="carousel-inner">
-                @foreach($all_sliders as $slider_obj)
+                
                     <div class="carousel-item @if($loop->index==0) active @endif">
                         <div class="container-fluid p-0">
                             <div class="row no-gutters">
                                 <div class="col-lg-12">
                                     <div id="child" class="slider-content p-0">
-                                        <img   style="height:100%;" src="{{asset('uploads/'.$slider_obj->image)}}" alt="Slider_{{$loop->index}}" class="w-100 slider_img">
-                                        <div class="slider_h1_holder"><h1 class="title">{{$slider_obj->header}}</h1></div>
-                                        <div class="slider_h3_holder"><h3 class="text m-0 slider_h3">{{$slider_obj->sub_header}}</h3></div>
+                                        <img   style="height:100%;" src="" class="w-100 slider_img">
+                                        <div class="slider_h1_holder"><h1 class="title"></h1></div>
+                                        <div class="slider_h3_holder"><h3 class="text m-0 slider_h3"></h3></div>
                                     </div>
                                 </div>
                             </div> <!-- row -->
                         </div> <!-- container -->
                     </div> <!-- carousel-item -->
-                @endforeach
+                
             </div>
             <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
                 <i class="lni lni-arrow-left"></i>
@@ -49,15 +49,15 @@
                     <div class="col-lg-5">
                         <div class="faq-content mt-45">
                             <div class="about-title">
-                                <h6 class="sub-title">{{__("common.a_little_more_about_us")}}</h6>
+                                <h6 class="sub-title"></h6>
                                 <h4 class="title">{!! $common::getSiteSettings("faq_heading") !!}</h4>
                             </div> 
                             <div class="about-accordion">
                                 <div class="accordion" id="accordion">
-                                    @foreach(range(1,$common::getSiteSettings("no_of_faqs")) as $i)
+                                    
                                         <div class="card">
-                                            <div class="card-header blue" id="heading{{$i}}">
-                                                <a href="#" data-toggle="collapse" data-target="#collapse{{$i}}"
+                                            <div class="card-header blue" id="heading">
+                                                <a href="#" data-toggle="collapse" data-target="#collapse"
                                                    aria-expanded="@if($loop->first) true @else false @endif"
                                                    aria-controls="">{!! Str::title($common::getSiteSettings("faq_que_".$i)) !!}
                                                   
@@ -70,8 +70,8 @@
                                                    
                                             </div>
 
-                                            <div id="collapse{{$i}}" class="collapse @if($loop->first)  @endif"
-                                                 aria-labelledby="heading{{$i}}"
+                                            <div id="collapse" class="collapse @if($loop->first)  @endif"
+                                                 aria-labelledby="heading"
                                                  data-parent="#accordion">
                                                 <div class="card-body yellow">
                                                     <p class="text">{!!  $common::getSiteSettings("faq_ans_".$i)!!}</p>
@@ -81,7 +81,7 @@
                                             
                                         </div>
                                         
-                                    @endforeach
+                                    
 
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="about-image">
-                            <img src="{{asset('uploads/faq-banner.png')}}" alt="about">
+                            <img src="" alt="about">
                         </div>
                     </div>
                 </div> 

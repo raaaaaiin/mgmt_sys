@@ -29,9 +29,9 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
                                 <h4 class="alert-heading">Recommendation on book demand</h4>
                                 <hr/>
                                 <p>"Buy another copy or alternatively marked as Book Reserve:
-                                @foreach($mostborrowedpreviousmonth as $mbrData)
-                                            {{Illuminate\Support\Str::limit(App\Models\SubBook::get_directbook_name($mbrData->book_id), 45,)}}
-                                            @endforeach
+                                
+                                            
+                                            
 
                                 "</p>
                             </div>
@@ -43,7 +43,7 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
 
              <div class='search-input d-flex pb-2' style="justify-content: flex-end; ">
               
-        <input id="dateonchange" value="{{$this->echototest =="Null" ? "mm/dd/yyyy" : $this->echototest}}"style="
+        <input id="dateonchange" value=""style="
                 
     height: calc(2.25rem + 5px);
     padding: 0.375rem 0.75rem;
@@ -75,7 +75,7 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
                                     <div class="card-body" style="height:150px;max-height:150px!important;min-height:150px!important">
                                         <h5 class="text-muted">Total User</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{\App\Models\User::count()}}</h1>
+                                            <h1 class="mb-1"></h1>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span><!-- <i class="fa fa-fw fa-arrow-up"></i> Font Awesome fontawesome.com --></span>
@@ -89,7 +89,7 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
                                     <div class="card-body">
                                         <h5 class="text-muted">Total Book Borrowed</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{\App\Models\borrowed::count()}}</h1>
+                                            <h1 class="mb-1"></h1>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span><!-- <i class="fa fa-fw fa-arrow-up"></i> Font Awesome fontawesome.com --></span>
@@ -103,7 +103,7 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
                                     <div class="card-body">
                                         <h5 class="text-muted">Total Book Returned</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{\App\Models\borrowed::count() - \App\Models\borrowed::whereNull('date_returned')->count()}}</h1>
+                                            <h1 class="mb-1"></h1>
                                         </div>
                                         
                                     </div>
@@ -115,7 +115,7 @@ $lastDayofPreviousMonth = Carbon\Carbon::now()->subMonthsNoOverflow()->endOfMont
                                     <div class="card-body">
                                         <h5 class="text-muted">Available Book</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">{{\App\Models\SubBook::where("active",1)->count()}}</h1>
+                                            <h1 class="mb-1"></h1>
                                         </div>
                                         
                                     </div>
@@ -215,14 +215,14 @@ $date = $newformat;
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($searches as $data)
+                                                
                                                
                                                     <tr>
-                                                        <td>{{$data["meta_value"]}}</td>
-                                                        <td>{{$data["Amount"]}}</td>
-                                                        <td>{{$data["meta_key"]}}</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
-                                                    @endforeach
+                                                    
                                                     
                                                 </tbody>
                                             </table>
@@ -263,7 +263,7 @@ $series = [];
                                     </div>
                                         <script>
                                             var options = {
-          series: [{{$imploded_string}}],
+          series: [],
            labels: [{!!'"'.$implodedv2_string.'"'!!}],
           chart: {
           height: 350,
@@ -327,21 +327,21 @@ $series = [];
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($latestborrow as $latestdata)
+                                                
                                                     <tr>
-                                                        <td>{{$latestdata->id}}</td>
+                                                        <td></td>
                                                         <td>
-                                                            <div class="m-r-10"><img src="{{asset("uploads/".App\Models\User::get_user_photo($latestdata->user_id))}}" alt="user" class="rounded" width="45"></div>
+                                                            <div class="m-r-10"><img src="" alt="user" class="rounded" width="45"></div>
                                                         </td>
-                                                        <td>{{App\Models\SubBook::get_directbook_name($latestdata->book_id)}}</td>
+                                                        <td></td>
                                                         <td>	Mark Myers</td>
-                                                        <td>{{$latestdata->date_borrowed}}</td>
+                                                        <td></td>
                                                         
-                                                        <td>{{$latestdata->date_returned}}</td>
-                                                        <td>{{App\Models\User::get_user_name($latestdata->user_id)}}</td>
-                                                        <td><span class="badge-dot badge-brand mr-1"></span>{{$latestdata->date_returned ? "Returned" : "Issued"}}</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td><span class="badge-dot badge-brand mr-1"></span></td>
                                                     </tr>
-                                                    @endforeach
+                                                    
                                                        
                                                     
                                                     
@@ -532,7 +532,7 @@ $series = [];
                                         
                                         var options = {
           series: [
-          {{$imploded_string}}
+          
           
           ],
            labels: [{!!'"'.$implodedv2_string.'"'!!}],
@@ -577,10 +577,10 @@ $series = [];
                                     <h5 class="card-header">Most borrowed book</h5>
                                     <div class="card-body p-0">
                                         <ul class="social-sales list-group list-group-flush">
-                                        @foreach($mostborrowed as $mbrData)
-                                            <li class="list-group-item social-sales-content"><span class="social-sales-name">{{Illuminate\Support\Str::limit(App\Models\SubBook::get_directbook_name($mbrData->book_id), 45,)}}</span><span style="color: #c6c6c6;" class="float-right text-dark">{{$mbrData->Amount}} <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
+                                        
+                                            <li class="list-group-item social-sales-content"><span class="social-sales-name"> <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
                                             </li>
-                                            @endforeach
+                                            
                                             
                                             
                                         </ul>
@@ -606,11 +606,11 @@ $series = [];
                                     <h5 class="card-header">Trend Category</h5>
                                     <div class="card-body p-0">
                                     <ul class="country-sales list-group list-group-flush">
-                                        @foreach($trending as $views)
+                                        
                                          <li class="country-sales-content list-group-item"><span class="mr-2"> </span>
-                                                <span alt="" class="">{{$views->meta_value}}</span><span style="color: #c6c6c6;" class="float-right text-dark">{{$views->Amount}} <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
+                                                <span alt="" class=""> <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
                                             </li>
-                                        @endforeach
+                                        
                                            
                                            
                                         </ul>
@@ -637,11 +637,11 @@ $series = [];
                                     <h5 class="card-header">Top Clicked Book</h5>
                                     <div class="card-body p-0">
                                         <ul class="country-sales list-group list-group-flush">
-                                        @foreach($clicked as $views)
+                                        
                                          <li class="country-sales-content list-group-item"><span class="mr-2"> </span>
-                                                <span alt="App\Models\SubBook::get_directuniquebook_name($views->unique_id)" class="">{{Illuminate\Support\Str::limit(App\Models\SubBook::get_directuniquebook_name($views->unique_id), 45,)}}</span><span style="color: #c6c6c6;" class="float-right text-dark">{{$views->meta_value}} <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
+                                                <span alt="App\Models\SubBook::get_directuniquebook_name($views->unique_id)" class=""> <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span>
                                             </li>
-                                        @endforeach
+                                        
                                            
                                            
                                         </ul>

@@ -51,12 +51,12 @@
                         <button type="submit" class="btn btn-sm btn-dark">
                             <!-- @if($mode=="create") -->
                                 <i class="fas fa-plus-circle"></i>
-                                <!-- {{__("common.create")}} -->
+                                <!--  -->
                             <!-- @else -->
                                 <i class="fas fa-save"></i>
-                                <!-- {{__("common.update")}} -->
+                                <!--  -->
                             <!-- @endif -->
-                            <!-- {{__("common.publisher")}} -->
+                            <!--  -->
                         </button>
                     </div>
                     <!-- {!! CForm::inputGroupFooter() !!} -->
@@ -77,7 +77,7 @@
                             if (empty($Publisherlist)) {
                                 echo '<tr>
                                 <td colspan="10">
-                                    <div class="alert alert-dark">{{__("commonv2.no_publisher_exist")}}</div>
+                                    <div class="alert alert-dark"></div>
                                 </td>
                             </tr>';
                             } else {
@@ -105,7 +105,7 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- {{$items->links()}} -->
+                <!--  -->
             </div>
         </div>
     </div>

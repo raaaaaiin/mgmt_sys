@@ -879,14 +879,14 @@ a:hover {
      
      @endphp
 
-     @if($item["Meta_key"] =="Request")  <a style="padding: 0!important" href="{{url('/cycle-books')}}"></span>@endif
-        @if($item["Meta_key"] =="Approved")<a style="padding: 0!important" href="{{url('/issued-books')}}">@endif
-        @if($item["Meta_key"] =="NewBook") <a style="padding: 0!important" href="{{route("details", ['page_slug' => $common::utf8Slug(\App\Models\Book::get_book_name($item["Target"]))])}}
+     @if($item["Meta_key"] =="Request")  <a style="padding: 0!important" href=""></span>@endif
+        @if($item["Meta_key"] =="Approved")<a style="padding: 0!important" href="">@endif
+        @if($item["Meta_key"] =="NewBook") <a style="padding: 0!important" href="
                                  ">@endif
-        @if($item["Meta_key"] =="Promotion")<a style="padding: 0!important" href="{{url('/role-perm-mng')}}">@endif
-        @if($item["Meta_key"] =="Notice")<a style="padding: 0!important" href="{{url('/notice-mng')}}">@endif
-        @if($item["Meta_key"] =="Carousel")<a style="padding: 0!important" href="{{url('/slider-mng')}}">@endif
-        @if($item["Meta_key"] =="Enquiries")<a style="padding: 0!important" href="{{url('/enquiry-mng')}}">@endif
+        @if($item["Meta_key"] =="Promotion")<a style="padding: 0!important" href="">@endif
+        @if($item["Meta_key"] =="Notice")<a style="padding: 0!important" href="">@endif
+        @if($item["Meta_key"] =="Carousel")<a style="padding: 0!important" href="">@endif
+        @if($item["Meta_key"] =="Enquiries")<a style="padding: 0!important" href="">@endif
 
 
 
@@ -904,30 +904,30 @@ a:hover {
         @endif
      @endif
        <!--<div id="setting" style="position:absolute;right: 0;" class="name"><i class="fa-regular fa-circle-ellipsis"></i></div>-->
-       <img src="{{asset("uploads/".\App\Models\User::get_user_photo($item["User"]))}}" alt="" / style="width:50px;height:50px">  
+       <img src="" alt="" / style="width:50px;height:50px">  
        <div class="text" style="width: 100%;">  
-        <p style="margin:0px;font-size:1em;" class="pt-2"><span class="name">{{ \App\Models\User::get_user_name($item["User"]) }}</span>
-        {{$item["Action"]}}
+        <p style="margin:0px;font-size:1em;" class="pt-2"><span class="name"></span>
         
-        @if($item["Meta_key"] =="Request")  <span class="name">{{ \App\Models\SubBook::get_book_name($item["Target"]) }}</span>@endif
-        @if($item["Meta_key"] =="Approved")<span class="name">{{ \App\Models\User::get_user_name($item["Target"]) }} </span>@endif
-        @if($item["Meta_key"] =="NewBook") <span class="name">{{ \App\Models\Book::get_book_name($item["Target"]) }} </span>@endif
-        @if($item["Meta_key"] =="Promotion")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Notice")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Carousel")<span class="name">{{$item["Target"]}}</span>@endif
-        @if($item["Meta_key"] =="Enquiries")<span class="name">{{$item["Target"]}}</span>@endif
+        
+        @if($item["Meta_key"] =="Request")  <span class="name"></span>@endif
+        @if($item["Meta_key"] =="Approved")<span class="name"> </span>@endif
+        @if($item["Meta_key"] =="NewBook") <span class="name"> </span>@endif
+        @if($item["Meta_key"] =="Promotion")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Notice")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Carousel")<span class="name"></span>@endif
+        @if($item["Meta_key"] =="Enquiries")<span class="name"></span>@endif
 
         
-         @if($item["Meta_key"] =="Approved"){{ \App\Models\Book::get_book_name_byID($item["Modifier"]) }} </span>
+         @if($item["Meta_key"] =="Approved") </span>
          @else
-         {{$item["Modifier"]}}
+         
          @endif</p>
-         <p class="time">{{$item["created_at"]->diffForHumans()}}</p>  
+         <p class="time"></p>  
        </div>  
       </div>
       </a>
       </div>
-     @endforeach
+     
 
 											
 											

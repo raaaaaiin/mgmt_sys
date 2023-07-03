@@ -15,17 +15,17 @@ const post = [];
                   <div class="container">
                      <div class="main-section-data ">
                      <div class="row">
-                @foreach($this->notices_for_me as $notice)
+                
                     @if(!empty($notice->notice))
                         <div class="col">
                             <div class="alert alert-light" role="alert">
-                                <h4 class="alert-heading">{{__("common.notice")}}!</h4>
+                                <h4 class="alert-heading">!</h4>
                                 <hr/>
-                                <p>{{$notice->notice}}</p>
+                                <p></p>
                             </div>
                         </div>
                     @endif
-                @endforeach
+                
             </div>
                         <div class="row">
                            <div class="col-lg-3 col-md-4 pd-left-none p-3">
@@ -78,17 +78,17 @@ const post = [];
                                        </div>
                                        </a>
                                     @endif
-                                    @foreach($trendbooks as $book)
-                                    <a  wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}">
+                                    
+                                    <a  wire:click="activeUser" class="p-0" href="">
                                        <div class="suggestion-usd">
                                           <div class="sgt-text">
-                                             <h4>{{ str_limit($book["TITLE"], $limit = 20, $end = '...') }}</h4>
-                                             <span>{{Ucfirst($common::getCatName($book["CATEGORY"]))}}</span>
+                                             <h4></h4>
+                                             <span></span>
                                           </div>
                                           <span><i class="la la-plus"></i></span>
                                        </div>
                                        </a>
-                                    @endforeach
+                                    
 
 
                                        <div class="view-more d-none">
@@ -118,17 +118,17 @@ const post = [];
                                        </div>
                                        </a>
                                     @endif
-                                    @foreach($trendbooks as $book)
-                                    <a class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}">
+                                    
+                                    <a class="p-0" href="">
                                        <div class="suggestion-usd">
                                           <div class="sgt-text">
-                                             <h4>{{ str_limit($book["TITLE"], $limit = 20, $end = '...') }}</h4>
-                                             <span>{{Ucfirst($common::getCatName($book["CATEGORY"]))}}</span>
+                                             <h4></h4>
+                                             <span></span>
                                           </div>
                                           <span><i class="la la-plus"></i></span>
                                        </div>
                                        </a>
-                                    @endforeach
+                                    
 
 
                                        <div class="view-more d-none">
@@ -177,7 +177,7 @@ const post = [];
                                      <img  style="width:100%     margin-top: 50px;
     padding: 0; ;cursor: pointer"  data-toggle="tooltip" data-placement="top"
                                              class="img-thumbnail"
-                                             src="{{asset('uploads/defaultcover.png')}}" />
+                                             src="" />
                                        
                                        <div class="job_descp">
                                           <center>
@@ -202,7 +202,7 @@ const post = [];
                                     `);
                                     </script>
                              @endif
-                                    @foreach($this->merged_post as $key => $data)
+                                    
                                    
                                     <script>
 
@@ -212,10 +212,10 @@ const post = [];
                                        <div class="post_topbar">
                                           <div class="usy-dt">
                                              <img  style="width:50px;cursor: pointer"  data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data["Id"])])}}'"
-                                             src="{{asset($data["image"])}}" />
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src="" />
                                              <div class="usy-name">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data["Id"])])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin: 0;
     padding: 0;
     border: 0;
@@ -227,22 +227,22 @@ const post = [];
     font-weight: 600;
     margin-bottom: 6px;
     margin-top: 2px;
-">{{$data["name"]}}</h5></a>
-                                                <span>{{\Carbon\Carbon::parse($data["created_at"])->diffForHumans()}}</span>
+"></h5></a>
+                                                <span></span>
                                              </div>
                                           </div>
                                        </div>
                                        <div class="job_descp">
                                           <center>
-                                           <a  class="p-0 m-0" wire:click="activeUser" href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" style="color:black">
+                                           <a  class="p-0 m-0" wire:click="activeUser" href="" style="color:black">
                                              <img style="cursor: pointer width:280px; height:300px;" style="width:200px"  data-toggle="tooltip" data-placement="top"
                                              class="img-thumbnail"
-                                             src="{{asset(str_replace (array('[', ']','"','"'), '' , $data["book_img"]))}}"
+                                             src=""
                                              /></a>
                                           </center>
                                           <br>
-                                           <a  class="p-0 m-0" wire:click="activeUser" href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" style="color:black"><h2>
-                                          {{$data["title"]}}</h2></a>
+                                           <a  class="p-0 m-0" wire:click="activeUser" href="" style="color:black"><h2>
+                                          </h2></a>
                                           <p  style="text-align: justify;text-justify: inter-word;">
                                           @php
                                           $tmp = route("details", ['page_slug' => $common::utf8Slug($data["title"])]);
@@ -251,18 +251,18 @@ const post = [];
 
                                           </p>
                                           <ul class="skill-tags">
-                                             <li>{{str_replace (array('[', ']','"'), '' , $data["category"])}}</li>
+                                             <li></li>
                                           </ul>
                                        </div>
                                        <div class="job-status-bar">
-                                          <a><i class="la la-eye"></i>Views {{$data["views"]}}</a>
+                                          <a><i class="la la-eye"></i>Views </a>
                                        </div>
                                     </div>
                                     <!--post-bar end-->
                                     <div class="d-none">
                                     `);
                                     </script>
-                                    @endforeach
+                                    
                                     <div id="infiniteloading">
                                     </div>
                                     <!--post-bar end-->
@@ -292,14 +292,14 @@ const post = [];
 
 
                                              <h3>Most Book Borrower</h3>
-                                             @foreach($topborrow as $data)
+                                             
                                              <div class="post_topbar p-0">
                                           <div class="usy-dt w-100">
                                              <img  style="width:25px;cursor: pointer"  data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}'"
-                                             src="{{asset("uploads/".\App\Models\User::get_user_photo($data->id))}}" />
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src="" />
                                              <div class="usy-name">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin: 0;
     padding: 0;
     border: 0;
@@ -309,12 +309,12 @@ const post = [];
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data->name}}</h5></a>
-                                                <span>Book Borrowed: {{$data->times}}</span>
+"></h5></a>
+                                                <span>Book Borrowed: </span>
                                              </div>
                                           </div>
                                        </div>
-                                             @endforeach
+                                             
                                           </div>
 
                                        </div>
@@ -322,14 +322,14 @@ const post = [];
                                        <div class="job-info">
                                           <div class="job-details  w-100">
                                              <h3>Visit Library The Most</h3>
-                                             @foreach($topvisit as $data)
+                                             
                                              <div class="post_topbar p-0">
                                           <div class="usy-dt w-100">
                                              <img  style="width:25px;cursor: pointer"  data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}'"
-                                             src="{{asset("uploads/".\App\Models\User::get_user_photo($data->id))}}" />
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src="" />
                                              <div class="usy-name">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin: 0;
     padding: 0;
     border: 0;
@@ -339,12 +339,12 @@ const post = [];
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data->name}}</h5></a>
-                                                <span>Visit Times: {{$data->times}}</span>
+"></h5></a>
+                                                <span>Visit Times: </span>
                                              </div>
                                           </div>
                                        </div>
-                                             @endforeach
+                                             
                                           </div>
 
                                        </div>
@@ -353,14 +353,14 @@ const post = [];
                                           <div class="job-details w-100">
 
                                              <h3>Stayed Online The Most</h3>
-                                             @foreach($toponline as $data)
+                                             
                                              <div class="post_topbar p-0">
                                           <div class="usy-dt w-100">
                                              <img  style="width:25px;cursor: pointer"  data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}'"
-                                             src="{{asset("uploads/".\App\Models\User::get_user_photo($data->id))}}" />
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src="" />
                                              <div class="usy-name">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data->id)])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin: 0;
     padding: 0;
     border: 0;
@@ -370,12 +370,12 @@ const post = [];
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data->name}}</h5></a>
-                                                <span>Spent Days: {{ number_format($data->times, 2)}}</span>
+"></h5></a>
+                                                <span>Spent Days: </span>
                                              </div>
                                           </div>
                                        </div>
-                                             @endforeach
+                                             
                                           </div>
 
                                        </div>
@@ -415,21 +415,21 @@ const post = [];
                                        </div>
                                        </a>
                                         @endif
-                                        @foreach($clicked as $views)
-                                        <a wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug(App\Models\SubBook::get_directuniquebook_name($views->unique_id))])}}">
+                                        
+                                        <a wire:click="activeUser" class="p-0" href="">
                                         <div class="job-info">
                                           <div class="job-details" style="margin-bottom: 12px!important;">
 
-                                             <h3 style="font-size: 14px!important;">{{str_limit(Illuminate\Support\Str::limit(App\Models\SubBook::get_directuniquebook_name($views->unique_id), 45,), $limit = 20, $end = '...')}}</h3>
+                                             <h3 style="font-size: 14px!important;"></h3>
                                           </div>
                                           <div class="hr-rate">
-                                             <span><span style="color: #c6c6c6;font-size: 12px!important;" class="float-right ">{{$views->meta_value}} <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span></span>
+                                             <span><span style="color: #c6c6c6;font-size: 12px!important;" class="float-right "> <i style="color: #c6c6c6;" class="fa fa-eye" aria-hidden="true"></i></span></span>
                                           </div>
 
                                        </div>
                                        </a>
 
-                                        @endforeach
+                                        
 
 
                                     </div>
@@ -457,17 +457,17 @@ const post = [];
 
                                             </div>
                                         @endif
-                        @foreach($latestborrow as $latestdata)
+                        
 
 
                                                     <div class="suggestion-usd" style="padding: 10px 20px;">
                                             <div class="sgt-text">
-                                             <h4 style="font-size: 14px!important;">{{str_limit(Illuminate\Support\Str::limit(App\Models\SubBook::get_directbook_name($latestdata->book_id), 45,), $limit = 60, $end = '...')}}</h4>
-                                             <span>{{$latestdata->date_borrowed}}</span>
+                                             <h4 style="font-size: 14px!important;"></h4>
+                                             <span></span>
                                             </div>
 
                                             </div>
-                                                    @endforeach
+                                                    
 
 
 

@@ -1,5 +1,5 @@
 @extends("back.common.master")
-@section("page_name") {{__("commonv2.dewey_classification")}} @endsection
+@section("page_name")  @endsection
 @section("content")
     @livewire("dewey-decimal")
 @endsection

@@ -33,20 +33,20 @@
                           
                             <select wire:model="sel_parent" class="form-control">
                                 <option value="">Select</option>
-                                    <option value="{{$item->id}}">Cat Name</option>
+                                    <option value="">Cat Name</option>
                             </select>
                         </div>
                        <div class="mb-2 col-md-6 col-12">
                         <select wire:model="sel_sub_parent" class="form-control">
-                        <option value="">{{__("common.select")}}</option>
+                        <option value=""></option>
                         <option @if($item->parent==0)</option></select></div>
                         <div class="mb-2 col-md-6 col-12">
-                            <input class="form-control" wire:model.defer="dewey_no" @if(!$common::getSiteSettings("enable_basic_classification")) required placeholder="500.01 {{__("commonv2.the_system_attach_shelf_no")}}">
+                            <input class="form-control" wire:model.defer="dewey_no" @if(!$common::getSiteSettings("enable_basic_classification")) required placeholder="500.01 ">
                         </div>
                         <div class="mb-2 col-md-5 col-12">
                             
                             <input class="form-control" type="text" wire:model.defer="shelf_no"
-                                   placeholder="{{__("commonv2.any_no_between0099")}}">
+                                   placeholder="">
                         </div>
                         
                         <div class="mb-2 col-md-1 col-12 d-flex" style="align-items: flex-end;">
@@ -85,7 +85,7 @@
 
                                         <td>Shelf No</td>
                                         <td>
-                                            <button type="button" wire:click="editCat({{$dewey->id}})"
+                                            <button type="button" wire:click="editCat()"
                                                     class="btn float-left btn-sm btn-dark action_btn">
                                                 <i class="far fa-edit"></i>
                                             </button>
@@ -101,14 +101,14 @@
                                     </tr>
                                    
                                             <tr class="children level1">
-                                                <td scope="row">{{$deweychld->id}}</td>
-                                                <td style="display: none">{{$common::formatDeweyNo($deweychld->dewey_no)}}</td>
-                                                <td>{{$deweychld->cat_name}}</td>
-                                                <td class="parent">{{$dewey->cat_name}}</td>
+                                                <td scope="row"></td>
+                                                <td style="display: none"></td>
+                                                <td></td>
+                                                <td class="parent"></td>
 
-                                                <td>{{$common::formatShelfNo($deweychld->shelf_no)}}</td>
+                                                <td></td>
                                                 <td>
-                                                    <button type="button" wire:click="editCat({{$deweychld->id}})"
+                                                    <button type="button" wire:click="editCat()"
                                                             class="btn float-left btn-sm btn-dark action_btn">
                                                         <i class="far fa-edit"></i>
                                                     </button>

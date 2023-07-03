@@ -1,16 +1,16 @@
 @extends("back.common.master")
-@section("page_name") {{__("common.issued_book_list")}} @endsection
+@section("page_name")  @endsection
 @section("content")
 
         @livewire("notification")
 
 @endsection
 @section("css_loc")
-    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="">
     <style>
 
     </style>
 @endsection
 @section("js_loc")
-    <script src="{{asset('js/book_issued.js')}}"></script>
+    <script src=""></script>
 @endsection

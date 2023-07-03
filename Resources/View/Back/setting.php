@@ -3,10 +3,10 @@
     /* @var \App\Facades\Common $common */
 @endphp
 @extends("back.common.master")
-@section("page_name") {{__("common.site_setting")}} @endsection
+@section("page_name")  @endsection
 @section("content")
     @include("back.common.spinner")
-    @php CForm::star_status('on'); @endphp
+    
     <div class="content">
         <div class="container-fluid">
 
@@ -32,62 +32,62 @@
                                 <button class="tablinks" onclick="openCity(event, 'content_setting')"
                                         @if($working_frm=="content_setting") id="defaultOpen" @endif>
                                     <span class="hidden-xs">
-                                        {{__("common.text_setting")}}
+                                        
                                     </span>
                                     <i class="d-block d-sm-none fas fa-text-height"></i>
                                 </button>
                                 <button class="tablinks" onclick="openCity(event, 'org_setting')"
                                         @if($working_frm=="org_setting") id="defaultOpen" @endif>
                                     <span class="hidden-xs">
-                                        {{__("common.org_setting")}}
+                                        
                                     </span>
                                     <i class="d-block d-sm-none fas fa-school"></i>
                                 </button>
                                 <button class="tablinks" @if($working_frm=="seo_setting") id="defaultOpen" @endif
                                 onclick="openCity(event, 'seo_setting')">
-                                    <span class="hidden-xs">{{__("common.seo_setting")}}</span>
+                                    <span class="hidden-xs"></span>
                                     <i class="d-block d-sm-none fab fa-google"></i>
                                 </button>
 
                                 <button class="tablinks" @if($working_frm=="site_setting") id="defaultOpen" @endif
                                 onclick="openCity(event, 'site_setting')">
-                                    <span class="hidden-xs">{{__("common.site_setting")}}</span>
+                                    <span class="hidden-xs"></span>
                                     <i class="d-block d-sm-none fas fa-cogs"></i>
                                 </button>
 
 
                                 <button class="tablinks" @if($working_frm=="payment_setting") id="defaultOpen" @endif
                                 onclick="openCity(event, 'payment_setting')">
-                                    <span class="hidden-xs">{{__("common.payment_setting")}} <span
-                                            class="badge badge-dark">{{__("common.fine")}}</span></span>
+                                    <span class="hidden-xs"> <span
+                                            class="badge badge-dark"></span></span>
                                     <i class="d-block d-sm-none fab fa-paypal"></i>
                                 </button>
 
 
                                 <button class="tablinks" @if($working_frm=="backup") id="defaultOpen"
                                         @endif onclick="openCity(event, 'backup')">
-                                    <span class="hidden-xs">{{__("common.bckup_restore")}}</span>
+                                    <span class="hidden-xs"></span>
                                     <i class="d-block d-sm-none fas fa-upload"></i>
                                 </button>
 
                                 <button class="tablinks" @if($working_frm=="purchase") id="defaultOpen"
                                         @endif onclick="openCity(event, 'purchase_setting')">
-                                    <span class="hidden-xs">{{__("purchased.activate_set")}}</span>
+                                    <span class="hidden-xs"></span>
                                     <i class="d-block d-sm-none fas fa-box-open"></i>
                                 </button>
 
                                 <button class="tablinks" @if($working_frm=="amazon_aff") id="defaultOpen"
                                         @endif onclick="openCity(event, 'amazon_aff')">
-                                    <span class="hidden-xs">{{__("commonv2.amazon_aff")}}</span>
+                                    <span class="hidden-xs"></span>
                                     <i class="d-block d-sm-none fas fa-box-open"></i>
                                 </button>
 
                             </div>
 
                             <div id="amazon_aff" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("commonv2.amazon_aff")}}</h3>
-                                <p>{{__("commonv2.pl_amazon_aff")}}</p>
-                                <form method="post" action="{{route("setting.store")}}">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="amazon_aff"/>
                                     <div class="mb-2">
@@ -121,15 +121,15 @@
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span
-                                                    class="input-group-text w-185">{{__("commonv2.amz_host")}}</span>
+                                                    class="input-group-text w-185"></span>
                                             </div>
-                                            {{--                                                @php dd($util::getAmazonHosts()); @endphp--}}
+                                            
                                             <select name="amz_host" class="form-control">
-                                                <option value="">{{__('common.select')}}</option>
-                                                @foreach($util::getAmazonHosts() as $k=>$v)
-                                                    <option value="{{$v}}"
-                                                            @if($common::getSiteSettings("amz_host")==$v) selected @endif>{{$k}}</option>
-                                                @endforeach
+                                                <option value=""></option>
+                                                
+                                                    <option value=""
+                                                            @if($common::getSiteSettings("amz_host")==$v) selected @endif></option>
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -137,30 +137,30 @@
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span
-                                                    class="input-group-text w-185">{{__("commonv2.amz_region")}}</span>
+                                                    class="input-group-text w-185"></span>
                                             </div>
                                             <select name="amz_region" class="form-control">
-                                                <option value="">{{__('common.select')}}</option>
-                                                @foreach($util::getAmazonRegions() as $v)
-                                                    <option value="{{$v}}"
-                                                            @if($common::getSiteSettings("amz_region")==$v) selected @endif>{{$v}}</option>
-                                                @endforeach
+                                                <option value=""></option>
+                                                
+                                                    <option value=""
+                                                            @if($common::getSiteSettings("amz_region")==$v) selected @endif></option>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-2">
                                         <button type="submit"
                                                 class="btn btn-dark btn-sm mb-10"><i
-                                                class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                                class="fas fa-save mr-1"></i></button>
                                     </div>
                                 </form>
                             </div>
 
 
                             <div id="purchase_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("purchased.activate_set")}}</h3>
-                                <p>{{__("purchased.pl_activate_set")}}</p>
-                                <form method="post" action="{{route("setting.store")}}">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="purchase_setting"/>
                                     <div class="mb-2">
@@ -172,9 +172,9 @@
                                     <div class="mb-2">
                                         <button type="submit"
                                                 class="btn btn-dark btn-sm mb-10"><i
-                                                class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                                class="fas fa-save mr-1"></i></button>
                                         @if((empty($common::getSiteSettings("expired_on")) && empty($common::getSiteSettings("bought_on"))) || !empty($common::getSiteSettings("expired_on")))
-                                            <a href="{{config('app.PARENT_WEBSITE').'/login'}}" target="_blank"
+                                            <a href="" target="_blank"
                                                class="btn btn-sm btn-warning mb-10">Renew
                                                 Now</a>
                                         @endif
@@ -184,9 +184,9 @@
 
 
                             <div id="content_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.text_setting")}}</h3>
-                                <p>{{__("common.pl_text_setting")}}</p>
-                                <form method="post" action="{{route("setting.store")}}">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="content_setting"/>
 
@@ -223,7 +223,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseThree" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.testimonials")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -234,57 +234,57 @@
                                                     @if(isset($settings["no_of_testimonials"]) && $settings["no_of_testimonials"]>0)
                                                         <div class="mb-2">
                                                             {!! CForm::inputGroupHeader(__("common.testimonial_heading"),"w-100","w-100") !!}
-                                                            @php $item_name = "testimonial_heading" ;@endphp
+                                                            
                                                             <textarea type="text"
                                                                       class="form-control summernote_small"
-                                                                      name="testimonials[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                                      name="testimonials[</textarea>
                                                             {!! CForm::inputGroupFooter() !!}
                                                         </div>
                                                         <div class="mb-2">
 
                                                             {!! CForm::inputGroupHeader(__("common.testimonial_sub_heading"),"w-100","w-100") !!}
-                                                            @php $item_name_desc = "testimonial_sub_heading" ;@endphp
-                                                            <textarea name="testimonials[{{$item_name_desc}}]"
-                                                                      class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                            
+                                                            <textarea name="testimonials[]"
+                                                                      class="form-control summernote_big">
                                                             </textarea>
                                                             {!! CForm::inputGroupFooter() !!}
 
                                                         </div>
 
                                                         <hr/>
-                                                        @foreach(range(1,$settings["no_of_testimonials"]) as $i)
+                                                        
                                                             <div class="mb-2">
                                                                 {!! CForm::inputGroupHeader(__("common.testimonial_name",["number"=>$i])) !!}
-                                                                @php $item_name = "testimonial_name_$i" ;@endphp
+                                                                
                                                                 <input type="text"
-                                                                       value="{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}"
+                                                                       value=""
                                                                        class="form-control"
-                                                                       name="testimonials[{{$item_name}}]">
+                                                                       name="testimonials[]">
                                                                 {!! CForm::inputGroupFooter() !!}
                                                             </div>
                                                             <div class="mb-2">
                                                                 {!! CForm::inputGroupHeader(__("common.testimonial_img_icon",["number"=>$i])) !!}
-                                                                @php $item_name = "testimonial_pic_$i" ;@endphp
+                                                                
                                                                 <input type="text"
-                                                                       value="{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}"
+                                                                       value=""
                                                                        class="form-control"
-                                                                       placeholder="{{__("common.pl_testimonial_icon_helper")}}"
-                                                                       name="testimonials[{{$item_name}}]">
+                                                                       placeholder=""
+                                                                       name="testimonials[]">
                                                                 {!! CForm::inputGroupFooter() !!}
                                                             </div>
                                                             <div class="mb-2">
                                                                 {!! CForm::inputGroupHeader(__("common.testimonial_desc",["number"=>$i]),"w-100","w-100") !!}
-                                                                @php $item_name_desc = "testimonial_desc_$i" ;@endphp
-                                                                <textarea name="testimonials[{{$item_name_desc}}]"
-                                                                          class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                                
+                                                                <textarea name="testimonials[]"
+                                                                          class="form-control summernote_big">
                                                     </textarea>
                                                                 {!! CForm::inputGroupFooter() !!}
                                                             </div>
                                                             <hr/>
-                                                        @endforeach
+                                                        
                                                     @else
                                                         <div
-                                                            class="alert alert-dark">{{__("common.no_testimonial_exist")}}</div>
+                                                            class="alert alert-dark"></div>
                                                     @endif
                                                 </div>
                                             </div>
@@ -298,7 +298,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseFour" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.books_holder")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -308,17 +308,17 @@
                                                 <div class="card-body yellow">
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.book_heading"),"w-100","w-100") !!}
-                                                        @php $item_name = "book_heading" ;@endphp
+                                                        
                                                         <textarea
                                                             class="form-control summernote_small"
-                                                            name="books[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                            name="books[</textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.book_sub_heading"),"w-100","w-100") !!}
-                                                        @php $item_name_desc = "book_sub_heading" ;@endphp
-                                                        <textarea name="books[{{$item_name_desc}}]"
-                                                                  class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                        
+                                                        <textarea name="books[]"
+                                                                  class="form-control summernote_big">
                                                             </textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
@@ -335,7 +335,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseSix" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.contact_holder")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -345,17 +345,17 @@
                                                 <div class="card-body yellow">
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.contact_heading"),"w-100","w-100") !!}
-                                                        @php $item_name = "contact_heading" ;@endphp
+                                                        
                                                         <textarea
                                                             class="form-control summernote_small"
-                                                            name="contacts[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                            name="contacts[</textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.cnt_sub_heading"),"w-100","w-100") !!}
-                                                        @php $item_name_desc = "contact_sub_heading" ;@endphp
-                                                        <textarea name="contacts[{{$item_name_desc}}]"
-                                                                  class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                        
+                                                        <textarea name="contacts[]"
+                                                                  class="form-control summernote_big">
                                                             </textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
@@ -372,7 +372,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseFive" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.faq")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -383,35 +383,35 @@
                                                     @if(isset($settings["no_of_faqs"]) && $settings["no_of_faqs"]>0)
                                                         <div class="mb-2">
                                                             {!! CForm::inputGroupHeader(__("common.faq_heading"),"w-100","w-100") !!}
-                                                            @php $item_name = "faq_heading" ;@endphp
+                                                            
                                                             <textarea
                                                                 class="form-control summernote_small"
-                                                                name="faqs[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                                name="faqs[</textarea>
                                                             {!! CForm::inputGroupFooter() !!}
                                                         </div>
 
                                                         <hr/>
-                                                        @foreach(range(1,$settings["no_of_faqs"]) as $i)
+                                                        
                                                             <div class="mb-2">
                                                                 {!! CForm::inputGroupHeader(__("common.faq_question",["number"=>$i]),"w-100","w-100") !!}
-                                                                @php $item_name = "faq_que_$i" ;@endphp
+                                                                
                                                                 <textarea
                                                                     class="form-control summernote_small"
-                                                                    name="faqs[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                                    name="faqs[</textarea>
                                                                 {!! CForm::inputGroupFooter() !!}
                                                             </div>
                                                             <div class="mb-2">
                                                                 {!! CForm::inputGroupHeader(__("common.faq_answer",["number"=>$i]),"w-100","w-100") !!}
-                                                                @php $item_name = "faq_ans_$i" ;@endphp
+                                                                
                                                                 <textarea
                                                                     class="form-control summernote_big"
-                                                                    name="faqs[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                                    name="faqs[</textarea>
                                                                 {!! CForm::inputGroupFooter() !!}
                                                             </div>
                                                             <hr/>
-                                                        @endforeach
+                                                        
                                                     @else
-                                                        <div class="alert alert-dark">{{__("common.np_faq_exist")}}!
+                                                        <div class="alert alert-dark">!
                                                         </div>
                                                     @endif
                                                 </div>
@@ -427,7 +427,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseSeven" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.toi")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -437,17 +437,17 @@
                                                 <div class="card-body yellow">
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.toi_heading"),"w-100","w-100") !!}
-                                                        @php $item_name = "toi_heading" ;@endphp
+                                                        
                                                         <textarea
                                                             class="form-control summernote_small"
-                                                            name="toi[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                            name="toi[</textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.toi_desc"),"w-100","w-100") !!}
-                                                        @php $item_name_desc = "toi_desc" ;@endphp
-                                                        <textarea name="toi[{{$item_name_desc}}]"
-                                                                  class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                        
+                                                        <textarea name="toi[]"
+                                                                  class="form-control summernote_big">
                                                             </textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
@@ -464,7 +464,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion"
                                                        href="#collapseEight" class="collapsed" aria-expanded="false">
                                                         <span class="float-left"
-                                                              style="line-height: 39px;">{{__("common.pp")}}</span>
+                                                              style="line-height: 39px;"></span>
                                                         <button class="btn float-right text-white"><i
                                                                 class="fas fa-chevron-circle-down"></i></button>
                                                     </a>
@@ -474,17 +474,17 @@
                                                 <div class="card-body yellow">
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.pp_heading"),"w-100","w-100") !!}
-                                                        @php $item_name = "pp_heading" ;@endphp
+                                                        
                                                         <textarea
                                                             class="form-control summernote_small"
-                                                            name="pp[{{$item_name}}]">{{old($item_name,isset($settings[$item_name]) ? $settings[$item_name]:"")}}</textarea>
+                                                            name="pp[</textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
                                                     <div class="mb-2">
                                                         {!! CForm::inputGroupHeader(__("common.pp_desc"),"w-100","w-100") !!}
-                                                        @php $item_name_desc = "pp_desc" ;@endphp
-                                                        <textarea name="pp[{{$item_name_desc}}]"
-                                                                  class="form-control summernote_big">{{old($item_name_desc,isset($settings[$item_name_desc]) ? $settings[$item_name_desc]:"")}}
+                                                        
+                                                        <textarea name="pp[]"
+                                                                  class="form-control summernote_big">
                                                             </textarea>
                                                         {!! CForm::inputGroupFooter() !!}
                                                     </div>
@@ -513,19 +513,19 @@
 
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                            class="fas fa-save mr-1"></i></button>
                                 </form>
                             </div>
                             <div id="org_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.org_details_setting")}}</h3>
-                                <p>{{__("common.pl_org_details_setting")}}</p>
-                                <form method="post" action="{{route("setting.store")}}" enctype="multipart/form-data">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="" enctype="multipart/form-data">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="org_setting"/>
 
                                     <div class="input-group mb-10">
                                         <div class="input-group-prepend"><span
-                                                class="input-group-text">{{__('common.web_ico')}}
+                                                class="input-group-text">
                                                 {!! CForm::generateInfoToolTip(__('common.pl_web_ico'),'mt-1 text-sm ml-2') !!}
                                        </span>
                                         </div>
@@ -535,7 +535,7 @@
 
                                     <div class="input-group mb-10">
                                         <div class="input-group-prepend">
-                                    <span class="input-group-text">{{__('common.org_logo')}}
+                                    <span class="input-group-text">
                                     </span></div>
                                         <input name="org_logo_tmp" accept=".jpg,jpeg,.png" type="file"
                                                class="form-control text-sm">
@@ -567,18 +567,18 @@
                                     <div class="mb-2">
                                         <div class="input-group">
                                             <div class="input-group-prepend"><span
-                                                    class="input-group-text">{{__('common.org_address')}}</span></div>
+                                                    class="input-group-text"></span></div>
                                             <textarea class="form-control" name="org_address" required
-                                            >{{old("org_address",isset($settings["org_address"])?$settings["org_address"]:"")}}</textarea>
+                                            ></textarea>
                                         </div>
                                     </div>
 
                                     <div class="mb-2">
                                         <div class="input-group">
                                             <div class="input-group-prepend"><span
-                                                    class="input-group-text">{{__('common.org_desc')}}</span></div>
+                                                    class="input-group-text"></span></div>
                                             <textarea class="form-control" name="org_desc" required
-                                            >{{old("org_desc",isset($settings["org_desc"])?$settings["org_desc"]:"")}}</textarea>
+                                            ></textarea>
                                         </div>
                                     </div>
 
@@ -605,14 +605,14 @@
 
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                            class="fas fa-save mr-1"></i></button>
                                 </form>
                             </div>
                             <div id="seo_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.seo_setting")}}</h3>
-                                <p>{{__("common.pl_seo_setting")}}</p>
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
 
-                                <form method="post" action="{{route("setting.store")}}">
+                                <form method="post" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="seo_setting"/>
 
@@ -623,9 +623,9 @@
 
                                     <div class="input-group mb-10">
                                         <div class="input-group-prepend"><span
-                                                class="input-group-text">{{__('common.seo_meta_desc')}}</span></div>
+                                                class="input-group-text"></span></div>
                                         <textarea rows="10" class="form-control" name="index_meta_desc" required
-                                        >{{old("index_meta_desc",isset($settings["index_meta_desc"])?$settings["index_meta_desc"]:"")}}</textarea>
+                                        ></textarea>
                                     </div>
 
                                     <div class="mb-2">
@@ -635,33 +635,33 @@
 
                                     <div class="input-group mb-10">
                                         <div class="input-group-prepend"><span
-                                                class="input-group-text">{{__('commonv2.google_analytics')}}</span></div>
+                                                class="input-group-text"></span></div>
                                         <textarea rows="10" class="form-control" name="google_analytics"
-                                        >{{old("google_analytics",isset($settings["google_analytics"])?$settings["google_analytics"]:"")}}</textarea>
+                                        ></textarea>
                                     </div>
 
 
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                            class="fas fa-save mr-1"></i></button>
                                 </form>
 
 
                             </div>
                             <div id="site_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.site_setting")}}</h3>
-                                <p>{{__("common.pl_site_setting")}}</p>
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
 
-                                <form method="post" class="mb-2" action="{{route('clear_cache')}}">
+                                <form method="post" class="mb-2" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="site_setting"/>
-                                    <button type="submit" href="{{route('clear_cache')}}"
+                                    <button type="submit" href=""
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-shoe-prints mr-1"></i>{{__("common.clear_cache")}}
+                                            class="fas fa-shoe-prints mr-1"></i>
                                     </button>
                                 </form>
 
-                                <form method="post" action="{{route("setting.store")}}" enctype="multipart/form-data">
+                                <form method="post" action="" enctype="multipart/form-data">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="site_setting"/>
 
@@ -784,13 +784,13 @@
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span
-                                                    class="input-group-text w-185">{{__("common.set_def_lang")}}</span>
+                                                    class="input-group-text w-185"></span>
                                             </div>
                                             <select required name="default_lang" class="form-control">
-                                                @foreach($util::getAllAvailableTrans() as $kv)
-                                                    <option value="{{$kv}}"
-                                                            @if($common::getDefaultLang()==$kv) selected @endif>{{$kv}}</option>
-                                                @endforeach
+                                                
+                                                    <option value=""
+                                                            @if($common::getDefaultLang()==$kv) selected @endif></option>
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -820,14 +820,14 @@
 
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                            class="fas fa-save mr-1"></i></button>
                                 </form>
 
                             </div>
                             <div id="payment_setting" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.payment_setting")}}</h3>
-                                <p>{{__("common.pl_payment_setting")}}</p>
-                                <form method="post" action="{{route("setting.store")}}">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="">
                                     @csrf
                                     <input name="frm_name" type="hidden" value="payment_setting"/>
 
@@ -853,29 +853,29 @@
 
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-save mr-1"></i>{{__("common.save_setting")}}</button>
+                                            class="fas fa-save mr-1"></i></button>
                                 </form>
                             </div>
                             <div id="backup" class="tabcontent">
-                                <h3 style="padding-top: 15px;">{{__("common.bck_res_db")}}</h3>
-                                <p>{{__("common.pl_bck_db")}}</p>
-                                <form method="post" action="{{route('file.db_mng')}}">
+                                <h3 style="padding-top: 15px;"></h3>
+                                <p></p>
+                                <form method="post" action="">
                                     @csrf
                                     <input name="do" type="hidden" value="backup">
                                     <input name="frm_name" type="hidden" value="backup">
                                     <button type="submit"
                                             class="btn btn-dark btn-sm mb-10"><i
-                                            class="fas fa-cloud-upload-alt mr-1"></i>{{__("common.create_db_bck")}}
+                                            class="fas fa-cloud-upload-alt mr-1"></i>
                                     </button>
                                 </form>
                                 <table class="table table-striped table-hover table-sm mt-2">
                                     <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">{{__("common.db_file_name")}}</th>
-                                        <th scope="col">{{__("common.file_size")}}</th>
-                                        <th scope="col">{{__("common.created_on")}}</th>
-                                        <th scope="col">{{__("common.action")}}</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -883,47 +883,47 @@
                                         $items = $util::getDbBackupFiles();
                                     @endphp
                                     @if(count($items))
-                                        @php $count = 1; @endphp
-                                        @foreach($items as $key=>$value)
+                                        
+                                        
                                             <tr>
-                                                <td>{{$count}}</td>
-                                                <td>{{$key}}</td>
-                                                <td>{{$value[0]}}</td>
-                                                <td>{{$value[1]}}</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                                 <td>
                                                     <form class="d-inline" method="post"
-                                                          action="{{route('file.db_mng')}}">
+                                                          action="">
                                                         @csrf
-                                                        <input type="hidden" name="filename" value="{{$key}}">
+                                                        <input type="hidden" name="filename" value="">
                                                         <input type="hidden" name="do" value="restore">
                                                         <input name="frm_name" type="hidden" value="backup"/>
                                                         <button class="btn p-2" type="submit" data-toggle="tooltip"
                                                                 data-placement="top"
-                                                                title="{{__("common.restore_db")}}"><i
+                                                                title=""><i
                                                                 class="fas fa-sync"></i></button>
                                                     </form>
-                                                    <form class="d-inline" method="post" id="delete_{{$count}}"
-                                                          action="{{route('file.db_mng')}}">
+                                                    <form class="d-inline" method="post" id="delete_"
+                                                          action="">
                                                         @csrf
-                                                        <input type="hidden" name="filename" value="{{$key}}">
+                                                        <input type="hidden" name="filename" value="">
                                                         <input type="hidden" name="do" value="delete">
                                                         <input name="frm_name" type="hidden" value="backup"/>
                                                         <button
-                                                            onclick="confirm_then_submit('{{__("common.cnf_del")}}','delete_{{$count}}')"
+                                                            onclick="confirm_then_submit('')"
                                                             class="btn p-2"
                                                             type="button" data-toggle="tooltip" data-placement="top"
-                                                            title="{{__("common.del_this_bck")}}"><i
+                                                            title=""><i
                                                                 class="far fa-trash-alt"></i></button>
                                                     </form>
                                                 </td>
-                                                @php $count = $count+1; @endphp
+                                                
                                             </tr>
-                                        @endforeach
+                                        
                                     @else
                                         <tr>
                                             <td colspan="100">
                                                 <div
-                                                    class="alert alert-dark col-12">{{__("common.no_bck_exist")}}</div>
+                                                    class="alert alert-dark col-12"></div>
                                             </td>
                                         </tr>
                                     @endif
@@ -940,14 +940,14 @@
 @endsection
 
 @section("css_loc")
-    <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/setting.css')}}">
-    <link href="{{asset('css/bootstrap-toggle.min.css')}}" rel="stylesheet">
-    <link href="{{asset('plugins/summernote/summernote-bs4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link href="" rel="stylesheet">
+    <link href="" rel="stylesheet">
 @endsection
 @section("js_loc")
-    <script type="text/javascript" src="{{asset("js/select2.min.js")}}"></script>
-    <script src="{{asset('js/bootstrap-toggle.min.js')}}"></script>
-    <script src="{{asset('plugins/summernote/summernote-bs4.js')}}"></script>
-    <script src="{{asset('js/setting.js')}}"></script>
+    <script type="text/javascript" src=""></script>
+    <script src=""></script>
+    <script src=""></script>
+    <script src=""></script>
 @endsection

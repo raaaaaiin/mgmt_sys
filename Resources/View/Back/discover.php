@@ -1,4 +1,4 @@
-{{-- @include("back.common.spinner") --}}
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @php
 $books = $common::getBooksDetailsForFrontEnd();
@@ -50,12 +50,12 @@ $unq_pref =  array_unique($unq_tag);
                                        <div style="height:60vh;overflow: hidden">
                                        <input type="radio" id="s-1" name="slider-control" checked="checked">
                                        @for($i=2; $i<=10; $i++)
-                                       <input type="radio" id="s-{{$i}}" name="slider-control">
+                                       <input type="radio" id="s-" name="slider-control">
                                        @endfor
                                        <div class="js-slider">
-                                          @php $counter =1; @endphp
-                                          @foreach($trendbooks as $book)
-                                          <figure class="js-slider_item img-{{$counter}}">
+                                          
+                                          
+                                          <figure class="js-slider_item img-">
                                              <div class="js-slider_img">
                                                 <img class="c-img-w-full" src="{{asset("uploads/".$util::fileChecker(public_path("uploads"),
                                                 $book["CIMG"],config("app.BOOK_IMG_NOT_FOUND")))}}" alt="">
@@ -67,30 +67,30 @@ $unq_pref =  array_unique($unq_tag);
                                              <div class="js-slider_nav_bot">
                                                 <div class="wo-caption">
                                                    <h3 class="wo-h3">
-                                                      <div class="c-label">{{$book["Frm"]}}</div>
-                                                      <br class="view-sm mb-s"><span class="s-label">{{ str_limit($book["TITLE"], $limit = 35, $end = '...') }}</span>
+                                                      <div class="c-label"></div>
+                                                      <br class="view-sm mb-s"><span class="s-label"></span>
                                                    </h3>
                                                    <ul class="wo-credit">
-                                                      <li class="s-label">{{implode(",",array_map(function ($data) use($common){return ucfirst($common::getAuthorName($data));},$book["AUTHOR"]))}}</li>
-                                                      <li class="s-label">{{Str::lower($common::getCatName($book["CATEGORY"]))}}</li>
-                                                      <li class="s-label">{{implode(",",array_map(function ($data) use($common){return ucfirst($common::getPublisherName($data));},$book["PUBLISHER"]))}}
-                                                         <span class="c-txt-s"> {{implode(",",array_map(function ($data) use($common){return ucfirst($common::getTagName($data));},$book["TAG"]))}}</span>
+                                                      <li class="s-label"></li>
+                                                      <li class="s-label"></li>
+                                                      <li class="s-label">
+                                                         <span class="c-txt-s"> </span>
                                                       </li>
                                                    </ul>
                                                 </div>
                                              </div>
                                           </figure>
-                                          @php $counter = $counter +1;@endphp
-                                          @endforeach
+                                          
+                                          
                                           <div class="js-slider_nav">
                                              @for($i=1; $i<=10; $i++)
-                                             <label class="js-slider_nav_item s-nav-{{$i}} prev" for="s-{{$i-1}}"></label>
-                                             <label class="js-slider_nav_item s-nav-{{$i}} next" for="s-{{$i+1 }}"></label>
+                                             <label class="js-slider_nav_item s-nav-"></label>
+                                             <label class="js-slider_nav_item s-nav-"></label>
                                              @endfor
                                           </div>
                                           <div class="js-slider_indicator">
                                              @for($i=1; $i<=10; $i++)
-                                             <div class="js-slider-indi indi-{{$i}}"></div>
+                                             <div class="js-slider-indi indi-"></div>
                                              @endfor
                                           </div>
                                        </div>
@@ -363,9 +363,9 @@ $unq_pref =  array_unique($unq_tag);
                                     
                                     
                                     <div id="newbooks" class="row">
-                                       @foreach($newbooks as $book)
-                                       <div  class="col-lg-2 col-6 {{$common::utf8Slug(isset($book["PARENT_CAT"])?"mkr-".$common::getCatName($book["PARENT_CAT"]):"everyone")}}">
-                                       <a data-toggle="tooltip" title="{{$book["TITLE"]}}" style=" padding:0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}
+                                       
+                                       <div  class="col-lg-2 col-6 ">
+                                       <a data-toggle="tooltip" title="
                                        ">
                                        <div class="yellow card pt-3 d-flex flex-column align-items-left overflow-hidden">
                                           <div class="d-flex w-100 align-items-center justify-content-center">
@@ -373,10 +373,10 @@ $unq_pref =  array_unique($unq_tag);
                                                 $book["CIMG"],config("app.BOOK_IMG_NOT_FOUND")))}}" alt="hatdog to"> 
                                              </div>
                                           </div>
-                                          <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span>{{ str_limit($book["TITLE"], $limit = 35, $end = '...') }}</span></div>
+                                          <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span></span></div>
                                           <div class="">
                                              <figcaption class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
-                                             <div class="text-muted text-center mt-auto">-{{str_limit(ucfirst(implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))), $limit = 17, $end = '...') }} </div>
+                                             <div class="text-muted text-center mt-auto">- </div>
                                              </figcaption>
                                              <figcaption
                                              class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
@@ -384,7 +384,7 @@ $unq_pref =  array_unique($unq_tag);
                                               @if($book["QTY"] - ($book["Request"] + $book["BORROWED"])==0)
                                              <div class="text-muted text-center mt-auto" style="color:red!important">Reserved</div>
                                              @else
-                                             <div class="text-muted text-center mt-auto">{{$book["QTY"] - ($book["Request"] + $book["BORROWED"])}} Book Available</div>
+                                             <div class="text-muted text-center mt-auto"> Book Available</div>
                                              @endif
 
 
@@ -398,14 +398,14 @@ $unq_pref =  array_unique($unq_tag);
                                        </div>
                                        </a>
                                        <div class="d-none title">
-                                          {{Str::lower($book["TITLE"])}},
-                                          {{Str::lower($common::getCatName($book["CATEGORY"]))}}
-                                          {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))}}
-                                          {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getPublisherName($data));},$book["PUBLISHER"]))}}
-                                          {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getTagName($data));},$book["TAG"]))}}
+                                          ,
+                                          
+                                          
+                                          
+                                          
                                        </div>
                                     </div>
-                                    @endforeach
+                                    
                                  </div>
 
 
@@ -428,9 +428,9 @@ $unq_pref =  array_unique($unq_tag);
                                  
                                  
                                  <div id="prefbook" class="row">
-                                    @foreach($prefbooks as $book)
-                                    <div  class="col-lg-2 col-6 {{$common::utf8Slug(isset($book["PARENT_CAT"])?"mkr-".$common::getCatName($book["PARENT_CAT"]):"everyone")}}">
-                                    <a data-toggle="tooltip" title="{{$book["TITLE"]}}" style=" padding:0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}
+                                    
+                                    <div  class="col-lg-2 col-6 ">
+                                    <a data-toggle="tooltip" title="
                                     ">
                                     <div class="yellow card pt-3 d-flex flex-column align-items-left overflow-hidden">
                                        <div class="d-flex w-100 align-items-center justify-content-center">
@@ -438,18 +438,18 @@ $unq_pref =  array_unique($unq_tag);
                                              $book["CIMG"],config("app.BOOK_IMG_NOT_FOUND")))}}" alt="hatdog to"> 
                                           </div>
                                        </div>
-                                       <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span>{{ str_limit($book["TITLE"], $limit = 35, $end = '...') }}</span></div>
+                                       <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span></span></div>
                                        <div class="">
                                           <figcaption
                                           class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
-                                          <div class="text-muted text-center mt-auto">-{{str_limit(ucfirst(implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))), $limit = 17, $end = '...') }}</div>
+                                          <div class="text-muted text-center mt-auto">-</div>
                                           </figcaption>
                                           <figcaption
                                           class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
                                           @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0)
                                           <div class="text-muted text-center mt-auto" style="color:red!important">Not Available</div>
                                           @else
-                                          <div class="text-muted text-center mt-auto">{{$book["QTY"] - $book["BORROWED"]}} Book Available</div>
+                                          <div class="text-muted text-center mt-auto"> Book Available</div>
                                           @endif
                                           </figcaption>
                                           <div class="d-flex align-items-center justify-content-center colors my-2">
@@ -458,14 +458,14 @@ $unq_pref =  array_unique($unq_tag);
                                     </div>
                                     </a>
                                     <div class="d-none title">
-                                       {{Str::lower($book["TITLE"])}},
-                                       {{Str::lower($common::getCatName($book["CATEGORY"]))}}
-                                       {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))}}
-                                       {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getPublisherName($data));},$book["PUBLISHER"]))}}
-                                       {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getTagName($data));},$book["TAG"]))}}
+                                       ,
+                                       
+                                       
+                                       
+                                       
                                     </div>
                                  </div>
-                                 @endforeach
+                                 
                                  </div>
 
 
@@ -489,9 +489,9 @@ $unq_pref =  array_unique($unq_tag);
                            <script>
                               $("#change").hide();
                            </script>
-                           @foreach($books as $book)
-                           <div  class="col-lg-2 col-6 {{$common::utf8Slug(isset($book["PARENT_CAT"])?"mkr-".$common::getCatName($book["PARENT_CAT"]):"everyone")}}">
-                           <a data-toggle="tooltip" title="{{$book["TITLE"]}}" style=" padding:0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}
+                           
+                           <div  class="col-lg-2 col-6 ">
+                           <a data-toggle="tooltip" title="
                            ">
                            <div class="yellow card pt-3 d-flex flex-column align-items-left overflow-hidden">
                               <div class="d-flex w-100 align-items-center justify-content-center">
@@ -499,18 +499,18 @@ $unq_pref =  array_unique($unq_tag);
                                     $book["CIMG"],config("app.BOOK_IMG_NOT_FOUND")))}}" alt="hatdog to"> 
                                  </div>
                               </div>
-                              <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span>{{ str_limit($book["TITLE"], $limit = 35, $end = '...') }}</span></div>
+                              <div class="d-flex pt-2 product-name align-items-left" style="height:68px"><span></span></div>
                               <div class="">
                                  <figcaption
                                  class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
-                                 <div class="text-muted text-center mt-auto">-{{str_limit(ucfirst(implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))), $limit = 17, $end = '...') }}</div>
+                                 <div class="text-muted text-center mt-auto">-</div>
                                  </figcaption>
                                  <figcaption
                                  class="fig_cap_holder @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0) all_issued @endif">
                                  @if(intval($book["TBOOKS"])-intval($book["BORROWED"])==0)
                                  <div class="text-muted text-center mt-auto" style="color:red!important">Not Available</div>
                                  @else
-                                 <div class="text-muted text-center mt-auto">{{$book["QTY"] - $book["BORROWED"]}} Book Available</div>
+                                 <div class="text-muted text-center mt-auto"> Book Available</div>
                                  @endif
                                  </figcaption>
                                  <div class="d-flex align-items-center justify-content-center colors my-2">
@@ -519,17 +519,17 @@ $unq_pref =  array_unique($unq_tag);
                            </div>
                            </a>
                            <div class="d-none title">
-                              {{Str::lower($book["TITLE"])}},
-                              {{Str::lower($common::getCatName($book["CATEGORY"]))}}
-                              {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getAuthorName($data));},$book["AUTHOR"]))}}
-                              {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getPublisherName($data));},$book["PUBLISHER"]))}}
-                              {{implode(",",array_map(function ($data) use($common){return Str::lower($common::getTagName($data));},$book["TAG"]))}}
+                              ,
+                              
+                              
+                              
+                              
                            </div>
                         </div>
-                        @endforeach
+                        
                      </div>
                      <center>  @if(isset($data))
-                        {{$data->links()}}
+                        
                         @endif
                      </center>
                   </div>

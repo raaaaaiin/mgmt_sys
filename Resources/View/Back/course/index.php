@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-header blue">
                     <span class="card-header-title">Course Yeasr</span>
-                    <a href="{{route("course.create")}}" class="btn btn-sm btn-dark float-right">
+                    <a href="" class="btn btn-sm btn-dark float-right">
                         <i class="fas fa-plus-circle mr-1"></i>Add Course
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -70,7 +70,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -90,7 +90,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -102,7 +102,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -122,7 +122,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -134,7 +134,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -154,7 +154,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -166,7 +166,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -186,7 +186,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -198,7 +198,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -218,7 +218,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -230,7 +230,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -250,7 +250,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -262,7 +262,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -282,7 +282,7 @@
                                                 <!-- if $obj->course_id -->
                                                     <li class="list-group-item">
                                                         <!-- $common::getCourseYearName($obj->course_year_id) -->
-                                                        <a href="{{route('user-mng.index')}}?page_mode=promotion&course_id={{$course->id}}&course_year={{$obj->course_year_id}}" style="font-size: 15px;float: right;"
+                                                        <a href="" style="font-size: 15px;float: right;"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="Promote the users to the next academic year Or Archive them">
                                                             <i class="fab fa-accessible-icon"></i> Promotions</a>
@@ -294,7 +294,7 @@
 
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course.edit', $course->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->

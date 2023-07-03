@@ -19,12 +19,12 @@
                                     Search User"<a data-toggle='tooltip' 
                                     data-placement='top' title='Try User Id : 370 or 369'
                                   class='pl-1'><i class='fas fa-info-circle'></i></a>") !!}
-                                    <input id="user_autocomplete" placeholder="{{__("common.ty_search")}}" type="text"
+                                    <input id="user_autocomplete" placeholder="" type="text"
                                            class="form-control">
                             </div>
                                 <div class="form-row">
                            <div class="col-md-3">
-                                        <img id="user_image" src="{{$util::fakeImage(400,400)}}"  class="ui-state-default img-thumbnail">
+                                        <img id="user_image" src=""  class="ui-state-default img-thumbnail">
                                     </div>
                                     <div class="col-md-9">
                                         <input type="hidden" id="user_id">
@@ -73,7 +73,7 @@
                                     <div wire:ignore class="form-row mb-10">
                                         Search Book.'<i class="fas fa-barcode ml-1"></i>
                                         <input id="book_ids" wire:model.defer="tmp_barcode_book_id"
-                                               placeholder="{{__("commonv2.pl_book_id_comma")}}" type="text"
+                                               placeholder="" type="text"
                                                class="form-control">
                                         <div class="input-group-append">
                                             <button class="btn btn-dark btn-sm" wire:click="attach()" type="button"><i
@@ -87,10 +87,10 @@
                                         
                                                 <li class="list-group-item" style="padding: 0.5rem;">
                                                     <button type="button" class="btn btn-danger btn-xs float-right"
-                                                            wire:click="deleteTmpSelectedBookId({{$book_obj->sub_book_id}})">
+                                                            wire:click="deleteTmpSelectedBookId()">
                                                         <i class="far fa-trash-alt"></i>
                                                     </button>
-                                                    <img class="img-thumbnail" src="{{$book_obj->book->cover_img()}}"
+                                                    <img class="img-thumbnail" src=""
                                                          style="width: 30px;display: block;float: left;margin-right: 2%;padding-top: 5px;"/>
                                                     <span class="text-sm">
                                                         Book TItle
@@ -105,7 +105,7 @@
                                 </div>
                                 <div wire:ignore class="mb-10 col-md col-6">
                                     <div class="form-row mb-10">
-                                        <input id="book_autocomplete" placeholder="{{__("common.ty_search")}}"
+                                        <input id="book_autocomplete" placeholder=""
                                                type="text" class="form-control">
                                     </div>
                                     <div class="form-row">
@@ -201,11 +201,11 @@
                                     <td>ID</td>
                                     <td>User ID</td>
                                     <td><img style="width: 50px;"
-                                             src="{{asset('uploads/'.$item->user->get_user_image())}}"
+                                             src=""
                                              class="img-thumbnail"/></td>
                                     <td>User Name</td>
                                     <td style="font-size: 20px;">Book Id</td>
-                                    <td><img style="width: 50px;" src="{{$item->sub_book->book->cover_img()}}"
+                                    <td><img style="width: 50px;" src=""
                                              class="img-thumbnail"/></td>
                                     <td>Book Title</td>
                                     <td>Created at</td>
@@ -216,10 +216,10 @@
                                     </script>
                                     <td>
                                         <button class="btn btn-dark btn-sm" type="button"
-                                                wire:click="issueBookRequested({{$item->user_id}},{{$item->sub_book->id}},{{$item->sub_book->book->id}})">
+                                                wire:click="issueBookRequested()">
                                             <i class="far fa-check-circle"></i></button>
                                         <button class="btn btn-danger btn-sm" type="button"
-                                                wire:click="cancelRequest({{$item->id}})"><i
+                                                wire:click="cancelRequest()"><i
                                                 class="far fa-times-circle"></i></button>
                                     </td>
                                 </tr>

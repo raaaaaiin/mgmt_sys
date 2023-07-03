@@ -27,15 +27,15 @@ $loading_target ="activeUser";
                                         <div class="user-profile">
                                             <div class="username-dt">
                                                 <div class="usr-pic">
-                                                    <img style="width:100%; height:100%" src="{{asset("uploads/".$photo_link)}}" alt="">
+                                                    <img style="width:100%; height:100%" src="" alt="">
                                                 </div>
                                             </div><!--username-dt end-->
                                             <div class="user-specs">
-                                                <h3>{{$this->name}}</h3>
-                                                 @foreach($current_user->roles as $role)
+                                                <h3></h3>
+                                                 
                                             <span
-                                                class="badge badge-dark">{{\Illuminate\Support\Str::title($role->name)}}</span>
-                                        @endforeach
+                                                class="badge badge-dark"></span>
+                                        
                                                 @php
                                             use App\Models\UserMeta as meta;
                                             $assigned_on = null;
@@ -45,8 +45,8 @@ $loading_target ="activeUser";
                                             }
                                         @endphp
                                         @if($assigned_on)
-                                            @foreach($assigned_on as $items)
-                                                @foreach($items as $std=>$div)
+                                            
+                                                
                                                 @php
                                                 $currentCourse = $std;
                                                 $currentYear = $div;
@@ -54,10 +54,10 @@ $loading_target ="activeUser";
                                                 @endphp
                                                     <span
                                                         class="badge badge-primary">
-                                                        {{Str::title($common::getCourseName($std))}} {{Str::title($common::getCourseYearName($div))}}</span>
+                                                        </span>
                                                     <br/>
-                                                @endforeach
-                                            @endforeach
+                                                
+                                            
                                         @endif
                                             </div>
                                         </div><!--user-profile end-->
@@ -66,8 +66,8 @@ $loading_target ="activeUser";
 
 
                                     @if(!empty($about_me))
-                                        <strong> {{__("common.about_me")}}</strong>
-                                        <p class="text-muted">{{$about_me}}</p>
+                                        <strong> </strong>
+                                        <p class="text-muted"></p>
                                     @endif
                                     </div>
 
@@ -95,17 +95,17 @@ $loading_target ="activeUser";
                                             </div>
                                             
 @endif
-                                        @foreach($clicked as $views)
-                                        <a wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug(App\Models\SubBook::get_directuniquebook_name($views->unique_id))])}}">
+                                        
+                                        <a wire:click="activeUser" class="p-0" href="">
                                             <div class="job-info">
                                                 <div class="job-details w-100">
-                                                    <h3>{{str_limit(Illuminate\Support\Str::limit(App\Models\SubBook::get_directuniquebook_name($views->unique_id), 45,), $limit = 20, $end = '...')}}</h3>
+                                                    <h3></h3>
 
                                                 </div>
 
                                             </div>
                                             </a>
-<!--job-info end-->                     @endforeach
+<!--job-info end-->                     
 
 <!--job-info end-->
                                         </div>
@@ -130,17 +130,17 @@ $loading_target ="activeUser";
                                             </div>
                                             </div>
                                             @endif
-                                        @foreach($clickeed as $views)
-                                        <a wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug(App\Models\SubBook::get_directuniquebook_name($views->unique_id))])}}">
+                                        
+                                        <a wire:click="activeUser" class="p-0" href="">
                                             <div class="job-info">
                                                 <div class="job-details w-100">
-                                                    <h3>{{str_limit(Illuminate\Support\Str::limit(App\Models\SubBook::get_directuniquebook_name($views->unique_id), 45,), $limit = 20, $end = '...')}}</h3>
+                                                    <h3></h3>
 
                                                 </div>
 
                                             </div>
                                             </a>
-<!--job-info end-->                     @endforeach
+<!--job-info end-->                     
 <!--job-info end-->
                                         </div>
                                         </div>
@@ -212,7 +212,7 @@ $loading_target ="activeUser";
                                      <img  style="width:100%     margin-top: 50px;
     padding: 0; ;cursor: pointer"  data-toggle="tooltip" data-placement="top"
                                              class="img-thumbnail"
-                                             src="{{asset('uploads/defaultcover.png')}}" />
+                                             src="" />
                                        
                                        <div class="job_descp">
                                           <center>
@@ -235,7 +235,7 @@ $loading_target ="activeUser";
                                     </div>
 @endif
 
-                                        @foreach($this->merged as $data)
+                                        
 
 
 
@@ -258,15 +258,15 @@ $loading_target ="activeUser";
                                             }
                                         @endphp
                                         @if($poster)
-                                            @foreach($poster as $items)
-                                                @foreach($items as $std=>$div)
+                                            
+                                                
                                                 @php
                                                 $pcurrentCourse = $std;
                                                 $pcurrentYear = $div;
                                                 $pcurrentSection = $std.$div;
                                                 @endphp
-                                                @endforeach
-                                            @endforeach
+                                                
+                                            
                                         @endif
                                         @endif
 
@@ -325,10 +325,10 @@ $loading_target ="activeUser";
                                        <div class="post_topbar">
                                           <div class="usy-dt">
                                              <img  style="width:50px;cursor: pointer"  data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data["Id"])])}}'"
-                                             src="{{asset($data["image"])}}" />
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src="" />
                                              <div class="usy-name">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data["Id"])])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin: 0;
     padding: 0;
     border: 0;
@@ -340,8 +340,8 @@ $loading_target ="activeUser";
     font-weight: 600;
     margin-bottom: 6px;
     margin-top: 2px;
-">{{$data["name"]}}</h5></a>
-                                                <span>{{$data["created_at"]->diffForHumans()}}&#9;&#9;
+"></h5></a>
+                                                <span>&#9;&#9;
                                                 @if($data["views"] ==1)
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16" >
                                                 <title>Shared with Everyone</title>
@@ -374,28 +374,28 @@ $loading_target ="activeUser";
                                           <center>
                                               <a  class="p-0 m-0" wire:click="activeUser" href="#" style="color:black"><img  style="width:200px;cursor: pointer;"  data-toggle="tooltip" data-placement="top"
                                              class="img-thumbnail"
-                                             src="{{asset(str_replace (array('[', ']','"', '"'), '' , $data["book_img"]))}}"
+                                             src=""
                                              /></a>
                                           </center>
                                           <br>
                                           <a  class="p-0 m-0" wire:click="activeUser" href="#" style="color:black"><h2>
-                                          {{$data["title"]}}</h2></a>
+                                          </h2></a>
                                           <p style="text-align: justify;text-justify: inter-word;">
                                           {!! str_limit($data["desc"], $limit = 350, $end = '...') !!}
-                                         {{-- <a wire:click="activeUser" href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" title="">{{$data["View"]}}</a>
+                                         </a>
                                           --}}</p>
                                           <ul class="skill-tags">
                                              <li></li>
                                           </ul>
                                        </div>
                                        <div class="job-status-bar">
-                                          {{--<a>{!! str_replace (array('[', ']','"'), '' , $data["isReturned"]) !!}</a>--}}
+                                          
                                        </div>
                                     </div>
 
                                     <!--post-bar end-->
                                      @endif
-                                    @endforeach
+                                    
                                         </div><!--post-bar end-->
 
                                         <!--post-bar end-->
@@ -427,18 +427,18 @@ $loading_target ="activeUser";
                                             </div>
                                             @endif
 
-                                    @foreach($trendbooks as $book)
-                                    <a wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}">
+                                    
+                                    <a wire:click="activeUser" class="p-0" href="">
                                             <div class="job-info">
                                                 <div class="job-details w-100">
-                                                    <h3>{{ str_limit($book["TITLE"], $limit = 20, $end = '...') }}</h3>
-                                                    <p>{{Ucfirst($common::getCatName($book["CATEGORY"]))}}</p>
+                                                    <h3></h3>
+                                                    <p></p>
                                                 </div>
 
                                             </div>
                                             </a>
 
-<!--job-info end-->             @endforeach
+<!--job-info end-->             
 
 <!--job-info end-->
                                         </div>
@@ -467,19 +467,19 @@ $loading_target ="activeUser";
                                                 </div>
                                             </div>
 @endif
-                                    @foreach(array_slice($prefbooks,10) as $book)
-                                    <a wire:click="activeUser" class="p-0" href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}">
+                                    
+                                    <a wire:click="activeUser" class="p-0" href="">
                                             <div class="job-info">
                                                 <div class="job-details w-100">
-                                                    <h3>{{ str_limit($book["TITLE"], $limit = 20, $end = '...') }}</h3>
-                                                    <p>{{Ucfirst($common::getCatName($book["CATEGORY"]))}}</p>
+                                                    <h3></h3>
+                                                    <p></p>
                                                 </div>
                                                 <div class="hr-rate">
 
                                                 </div>
                                             </div>
                                             </a>
-                                            @endforeach
+                                            
 
                                         </div>
 <!--jobs-list end-->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{isset($common) ? $common::getOrgName() : config("app.APP_NAME")}} | Log in</title>
+    <title> | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,13 +43,13 @@
 <div
     class="@if(request()->is('login') or request()->is('password/reset') )login-box @endif @if(request()->is('register')) register-box @endif">
     <div class="login-logo @if(request()->is('register')) register-logo @endif">
-        <a class="navbar-brand" href="{{config("app.APP_URL")}}" style="padding:0px;width:300px;">
+        <a class="navbar-brand" href="" style="padding:0px;width:300px;">
                        
-                            <img class="logo_img" href="{{config("app.APP_URL")}}"
+                            <img class="logo_img" href=""
                                  src="https://via.placeholder.com/250">
                        
                     </a>
-        <!--<a href="#">{{isset($common) ? $common::getOrgName() : config("app.APP_NAME")}}</a>-->
+        <!--<a href="#"></a>-->
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -60,7 +60,7 @@
     </div>
             <p class="login-box-msg">Sign in to start session</p>
             <br>
-            <form method="POST" action="{{ route('login') }}" id="loginForm">
+            <form method="POST" action="" id="loginForm">
                 
                 <div class="input-group mb-3">
                   <!-- class="form-control @error('email') is-invalid @enderror " -->
@@ -73,7 +73,7 @@
                     </div>
                     <!-- @error('email')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong></strong>
                                     </span>
                     @enderror -->
                 </div>
@@ -87,7 +87,7 @@
                     </div>
                     <!-- @error('password')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong></strong>
                                     </span>
                     @enderror -->
                 </div>
@@ -97,7 +97,7 @@
                 </p>
             
                 <!-- <p class="mb-0">
-                    <a href="{{route('register')}}" class="text-center">Register</a>
+                    <a href="" class="text-center">Register</a>
                 </p> -->
                 <br><br><br>
 
@@ -106,7 +106,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <input type="checkbox" id="remember" name="remember" >
                             <label for="remember">
                                 Remember Me
                             </label>

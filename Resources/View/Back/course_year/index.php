@@ -17,9 +17,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header blue">
-                    <span class="card-header-title">{{__("course_year.mng_cy")}}</span>
+                    <span class="card-header-title"></span>
                     <a href="" class="btn btn-sm btn-dark float-right">
-                        <i class="fas fa-plus-circle mr-1"></i>{{__("course_year.add_cy")}}
+                        <i class="fas fa-plus-circle mr-1"></i>
                     </a>
                 </div>
                 <div class="card-body pt-1">
@@ -48,7 +48,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -64,7 +64,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -80,7 +80,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -96,7 +96,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -112,7 +112,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -128,7 +128,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -144,7 +144,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -160,7 +160,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->
@@ -176,7 +176,7 @@
                                     <td>Year</td>
                                     <td>
                                         <div class="input-group">
-                                            <a href="{{ route('course-year.edit', $cy->id) }}" class="btn btn-sm btn-dark action_btn">
+                                            <a href="" class="btn btn-sm btn-dark action_btn">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                             <!-- Form open -->

@@ -14,7 +14,7 @@
                 <input type="email" name="email" required="true" wire:model.defer="email" class="form-control">
             </div>
 
-            <input type="hidden" name="page" value="{{request()->url()}}" class="form-control">
+            <input type="hidden" name="page" value="" class="form-control">
 
             <div class="form-group">
                 <label>Regarding</label>

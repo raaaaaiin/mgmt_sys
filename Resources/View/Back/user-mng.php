@@ -15,7 +15,7 @@
                     <form class="col-12 p-0" role="form" wire:submit.prevent="saveUser"><input type="hidden" wire:model="mode">
 
                         <div class="form-row">
-                            <div class="form-group col-md-3 col-12"><img wire:ignore="" src="{{$photo->temporaryUrl()}}" .="" class="img-thumbnail w-100"><br>
+                            <div class="form-group col-md-3 col-12"><img wire:ignore="" src="" .="" class="img-thumbnail w-100"><br>
                                 <input type="file" class="form-control mt-2  text-sm" wire:model.lazy="photo">
                             </div>
                             <div class="col-md-9 col-12">
@@ -39,7 +39,7 @@
                                     <div class="col-md-6 mb-2">Course<select wire:model="selcourse" class="form-control">
                                             <option value="">-Course Name</option>
                                          
-                                                <option value="{{$course->id}}">Course Name</option>
+                                                <option value="">Course Name</option>
                                          
                                         </select></div>
 
@@ -52,7 +52,7 @@
                                             <select wire:model.defer="sel_year" class="form-control">
                                                 <option value="">Course Year</option>
                                                
-                                                           <option value="{{$obj->course_year_id}}">Course Year</option>
+                                                           <option value="">Course Year</option>
 
                                             </select>
 
@@ -78,13 +78,13 @@
                                                 <span class="input-group-text">Attach Role</span>
                                             </div>
                                             <div class="form-control" style="display: inline-table;"><div class="custom-control custom-checkbox custom-control-inline">
-                                                        <input type="radio" id="chk_{{$role->id}}" name="attached_role_ids" class="custom-control-input" wire:model.defer="attached_role_ids" value="{{$role->id}}" @if($mode="=&quot;edit&quot;" &&="" gettype($attached_role_ids)="=" "object"="" $attached_role_ids-=""><label for="chk_{{$role->id}}" class="custom-control-label">Student</label>
+                                                        <input type="radio" id="chk_" class="custom-control-label">Student</label>
                                                     </div><div class="custom-control custom-checkbox custom-control-inline">
-                                                        <input type="radio" id="chk_{{$role->id}}" name="attached_role_ids" class="custom-control-input" wire:model.defer="attached_role_ids" value="{{$role->id}}" @if($mode="=&quot;edit&quot;" &&="" gettype($attached_role_ids)="=" "object"="" $attached_role_ids-=""><label for="chk_{{$role->id}}" class="custom-control-label">Teacher</label>
+                                                        <input type="radio" id="chk_" class="custom-control-label">Teacher</label>
                                                     </div><div class="custom-control custom-checkbox custom-control-inline">
-                                                        <input type="radio" id="chk_{{$role->id}}" name="attached_role_ids" class="custom-control-input" wire:model.defer="attached_role_ids" value="{{$role->id}}" @if($mode="=&quot;edit&quot;" &&="" gettype($attached_role_ids)="=" "object"="" $attached_role_ids-=""><label for="chk_{{$role->id}}" class="custom-control-label">S.A</label>
+                                                        <input type="radio" id="chk_" class="custom-control-label">S.A</label>
                                                     </div><div class="custom-control custom-checkbox custom-control-inline">
-                                                        <input type="radio" id="chk_{{$role->id}}" name="attached_role_ids" class="custom-control-input" wire:model.defer="attached_role_ids" value="{{$role->id}}" @if($mode="=&quot;edit&quot;" &&="" gettype($attached_role_ids)="=" "object"="" $attached_role_ids-=""><label for="chk_{{$role->id}}" class="custom-control-label">Admin</label>
+                                                        <input type="radio" id="chk_" class="custom-control-label">Admin</label>
                                                     </div></div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                                 <td>Course Name</td>
                                                 <td>Course Year </td>
                                                 <td>
-                                                    <button onclick="lv_confirm_then_submit(this,'{{__(" common.cnf_del")}}','deletethisentry','{\'cs_id\':{{$course}},\'cy_id\':{{$year}}}')"="" type="button" class="btn btn-sm btn-danger">
+                                                    <button onclick="lv_confirm_then_submit(this,'')"="" type="button" class="btn btn-sm btn-danger">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </td>
@@ -123,7 +123,7 @@
 
                         <div class="form-row">
                             <button class="btn btn-sm btn-dark" @if(!$submit_status)="" disabled="" @endif="" type="submit"><i class="fas fa-save mr-1"></i>Save</button>
-                            <button class="btn btn-sm btn-danger ml-1" data-toggle="tooltip" data-placement="top" title="{{__(" common.clear_form")}}"="" wire:click="clearAll">
+                            <button class="btn btn-sm btn-danger ml-1" data-toggle="tooltip" data-placement="top" title=""="" wire:click="clearAll">
                                 <i class="far fa-trash-alt"></i>
                             </button>
                         </div>
@@ -140,17 +140,17 @@
                     <div class="form-group col-md-5 col-12 mb-2">
                         <label>Course</label>
                         <select class="form-control" wire:model="selected_course_id">
-                            <option value="">{{__("common.select")}}</option>
-                            @foreach($all_courses as $item)
-                                <option value="{{$item->id}}">{{$item-&gt;name}}</option>
-                            @endforeach
+                            <option value=""></option>
+                            
+                                <option value="</option>
+                            
                         </select>
                     </div>
                     <div class="form-group col-md-5 col-12 mb-2">
                         <label>Year</label>
                         <select class="form-control" wire:model="selected_course_year_id">
                             <option value="">Course Year</option>
-                                <option value="{{$item->course_year_id}}">Course Year ID</option>
+                                <option value="">Course Year ID</option>
                         </select>
                     </div>
                     <div class="form-group col-md-2 col-12 mb-2">
@@ -164,27 +164,27 @@
             <div class="form-row">
                 <div class="form-group col-md-8 col-12">
                     <label>Advance FIlter</label>
-                    <input type="text" class="form-control" wire:model.lazy="filter_keyword" placeholder="{{__(" common.ty_and_tab")}}"="">
+                    <input type="text" class="form-control" wire:model.lazy="filter_keyword" placeholder=""="">
                 </div>
                 <div class="form-group col-md-4 col-12">
                     <label>Filter by ROle</label>
                     <select class="form-control" wire:model="filter_role">
                         <option value="" selected="">Non Active User</option>
                         <option value="in_active">Show non active user</option>
-                        @foreach(\Spatie\Permission\Models\Role::all() as $rl)
-                            <option value="{{$rl->name}}"> {{Str::title($rl-&gt;name)}}</option>
-                        @endforeach
+                        
+                            <option value="</option>
+                        
                     </select>
                 </div>
                 <div class="form-group col-12"><button type="button" onclick="confirm_and_submit(this,'deleteBulk')" class="btn btn-sm btn-dark mb-3"><i class="far fa-trash-alt mr-1"></i>Delete User</button>
                     <button type="button" wire:click="toggleUserStatus()" class="btn btn-sm btn-dark mb-3"><i class="fas fa-sort mr-1"></i>Toggle Stats</button>
-                    <button type="button" wire:click="printIdCards()" class="btn btn-sm btn-dark mb-3 d-none"><i class="far fa-id-card mr-1"></i>{{__("commonv2.print_id_cards")}}
+                    <button type="button" wire:click="printIdCards()" class="btn btn-sm btn-dark mb-3 d-none"><i class="far fa-id-card mr-1"></i>
                     </button>
 
-                    <form method="post" class="float-right mb-3" action="{{route('users.import')}}" enctype="multipart/form-data"><div class="d-inline">Input User<input type="file" name="file" class="form-control text-sm">
+                    <form method="post" class="float-right mb-3" action="" enctype="multipart/form-data"><div class="d-inline">Input User<input type="file" name="file" class="form-control text-sm">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-sm btn-dark mr-1"><i class="fas fa-upload mr-1"></i>Import User</button>
-                                <a href="{{asset('uploads/users_list.csv')}}" style="padding-top: 7px;" data-toggle="tooltip" data-placement="left" title="{{__(" common.download_template")}}"="" class="btn btn-sm btn-dark"><i class="fas fa-download"></i>
+                                <a href=""="" class="btn btn-sm btn-dark"><i class="fas fa-download"></i>
                                 </a>
                             </div></div>
                     </form>
@@ -206,30 +206,30 @@
                             </thead>
                             <tbody><tr>
 
-                                        <td><input type="checkbox" wire:model.defer="sel_uid" ,="" value="{{$user->id}}"></td>
+                                        <td><input type="checkbox" wire:model.defer="sel_uid" ,="" value=""></td>
                                         <td>ID</td>
 
                                         <td class="text-center"><img style="width: 50px;" src="{{asset(" uploads="" ".$user-=""></td>
 
-                                        <td>Raineer<a target="_blank" href="{{asset('uploads/'.$proof)}}" class="btn btn-link ml-1"><i class="fas fa-paperclip"></i></a></td>
+                                        <td>Raineer<a target="_blank" href="" class="btn btn-link ml-1"><i class="fas fa-paperclip"></i></a></td>
                                         <td>Raineer@gmail.com</td>
                                         <td><span class="badge badge-dark">Role Name</span><span class="badge badge-dark">Course : BSCS</span>
                                                         <br></td>
                                         <td>Created At</td>
                                         <td>
 
-                                            <button data-toggle="tooltip" data-placement="top" title="{{__(" common.pl_click_to_a_d")}}"="" @if(in_array("super="" admin",$user-=""><i class="far fa-thumbs-up"></i>
+                                            <button data-toggle="tooltip" data-placement="top" title=""="" @if(in_array("super="" admin",$user-=""><i class="far fa-thumbs-up"></i>
                                                 @else
                                                     <i class="far fa-thumbs-down"></i>
                                                 @endif
                                             </button>
 
-                                            <button type="button" wire:click="editUser('{{$user->id}}')" class="btn btn-sm btn-dark float-left action_btn">
+                                            <button type="button" wire:click="editUser('')" class="btn btn-sm btn-dark float-left action_btn">
                                                 <i class="far fa-edit"></i>
                                             </button>
                                             <button 
-                                                onclick="lv_confirm_then_submit(this,'{{__("common.cnf_del")}}'
-                                                    ,'deleteUser','{\'id\':{{$user-&gt;id}}}')" type="button"
+                                                onclick="lv_confirm_then_submit(this,''
+                                                    ,'deleteUser','{\'id\':')" type="button"
                                                 class="btn btn-sm btn-danger float-left action_btn"&gt;
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

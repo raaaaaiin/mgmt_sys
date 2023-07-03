@@ -27,9 +27,9 @@
                 <div class="dashcard yellow">
                   <div class="dashcard-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                      <img src="{{$photo_link}}" alt="Admin" class="rounded-circle" width="150">
+                      <img src="" alt="Admin" class="rounded-circle" width="150">
                       <div class="mt-3">
-                        <h4>{{$name}}</h4>
+                        <h4></h4>
                         <p class="text-secondary mb-1">Check all attachment to</p>
                         <p class="text-muted font-size-sm">Accept Name Request</p>
                       </div>
@@ -122,7 +122,7 @@
                     <div class="additional">
                       <div class="user-card">
                         <img style="    width: 150px;
-                        height: 100%;" src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data[" book_img"]))}}"="">
+                        height: 100%;" src=""="">
                       </div>
                       <div class="more-info">
                         <div class="coords p-2 m-0">
@@ -172,19 +172,19 @@
                         </span>
                       </div>
                       <div class="d-flex ml-auto">
-                                            <button type="button" onclick="lv_confirm_then_submit(this,'{{__(" confirm="" to="" renew="" this="" loan="" for="" another="" 5="" days")}}','renewloan','{\'id\':{{$data["origid"]}}}');"="" class="btn btn-xs btn-dark mb-1 m-1">Renew
+                                            <button type="button" onclick="lv_confirm_then_submit(this,'');"="" class="btn btn-xs btn-dark mb-1 m-1">Renew
                                             </button>
-											<button type="button" onclick="lv_confirm_then_submit(this,'{{__(" common.cnf_mark_lost")}}','marklostbook','{\'id\':{{$data["sub_book_origid"]}},\'uid\':{{$data["user_id"]}}}')"="" class="btn btn-xs btn-dark mb-1 m-1">Lost
+											<button type="button" onclick="lv_confirm_then_submit(this,'')"="" class="btn btn-xs btn-dark mb-1 m-1">Lost
                                             </button>
                                             
-                                            <button type="button" onclick="lv_confirm_then_submit(this,'{{__(" commonv2.cnf_mark_damage")}}','markdamagebook',="" '{\'id\':{{$data["sub_book_origid"]}},\'uid\':{{$data["user_id"]}}}')"="" class="btn btn-xs btn-dark mb-1 m-1">Damaged
+                                            <button type="button" onclick="lv_confirm_then_submit(this,'')"="" class="btn btn-xs btn-dark mb-1 m-1">Damaged
                                             </button>
-											<button type="button" onclick="flush_data({{$data[" id"]}});lv_confirm_then_submit(this,'{{__("common.cnf_receive_of_book")}}','receivebook','{\'id\':{{$data["origid"]}}}');"="" class="btn btn-xs btn-dark mb-1 m-1">Recieved
+											<button type="button" onclick="flush_data(');"="" class="btn btn-xs btn-dark mb-1 m-1">Recieved
                                             </button>
                                        
                       </div>
                     </div>
-                  </div> @php $counter += 1; $notfullyrendered = 1; @endphp @endforeach
+                  </div>  
                 </div>
               </div>
               <script>
@@ -320,7 +320,7 @@
                               <div class="row usy-dt w-100" style="align-items: center;">
                               
                                 <div class="col-md-9 usy-name m-0">
-                                  <a href="{{route(" details",="" ['page_slug'=""> $common::utf8Slug($data["title"])])}}" style="color:#000;padding:0;"&gt;
+                                  <a href="" style="color:#000;padding:0;"&gt;
                                     <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;

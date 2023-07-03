@@ -22,11 +22,11 @@
                 <div class="dashcard yellow">
                   <div class="dashcard-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                      <img src="{{$photo_link}}" alt="Admin" class="rounded-circle" width="150">
+                      <img src="" alt="Admin" class="rounded-circle" width="150">
                       <div class="mt-3">
                         <h4>Raineer</h4>
                         <p class="text-secondary mb-1">Check all attachment to</p>
-                        <p class="text-muted font-size-sm">Accept {{Raineer}}'s Request</p>
+                        <p class="text-muted font-size-sm">Accept 's Request</p>
                       </div>
                     </div>
                   </div>
@@ -201,7 +201,7 @@
                     <div class="additional">
                       <div class="user-card">
                         <img style="    width: 150px;
-                         height: 100%;" src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data[" book_img"]))}}"="">
+                         height: 100%;" src=""="">
                       </div>
                       <div class="more-info">
                         <div class="coords p-2 m-0">
@@ -240,9 +240,9 @@
                         <br>
                       </div>
                       <div class="d-flex">
-                        <div style="width:25px;height:15px;"><input class="m-1 form-check-input" value="{{$data[" accession"]}}"="" type="checkbox" disabled=""><input class="m-1 form-check-input" value="{{$data[" accession"]}}"="" type="checkbox" checked="">
+                        <div style="width:25px;height:15px;"><input class="m-1 form-check-input" value=""="" type="checkbox" checked="">
                           <script>
-                            builder = builder+{{$data["Accession"]}}+",";
+                            builder = builder++",";
                           </script></div>
                         <div>
                           <label class="form-check-label pull-left" for="flexCheckChecked"> Include on transaction </label>

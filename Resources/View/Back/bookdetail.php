@@ -21,7 +21,7 @@
                 
               <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides d-flex" style="justify-content: center;width: 100%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
                   <li class="flex-active-slide" style="width: 200px; margin-right: 0px; float: left; display: block;">
-                  <img alt={{$book_obj->title}} src="{{$book_obj->cover_img()}}" draggable="false">
+                  <img alt=" draggable="false">
                   </li>
                   
                   <!-- items mirrored twice, total of 12 -->
@@ -46,13 +46,13 @@
                             <strong>By </strong><span class="">
                                 
                                         <a class="btn-link"
-                                           href="{{url("/")."?search=".$author."#books"}}">Author 1</a>
+                                           href="">Author 1</a>
                                            
                                         <a class="btn-link"
-                                           href="{{url("/")."?search=".$author."#books"}}">Author 2</a>
+                                           href="">Author 2</a>
                                            
                                         <a class="btn-link"
-                                           href="{{url("/")."?search=".$author."#books"}}">Author 3</a>
+                                           href="">Author 3</a>
                                         
                         </span><br>
                        
@@ -60,11 +60,11 @@
                                             - </strong>
                                         
                                                 <a class="btn-link"
-                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 1</a>
+                                                   href="">Publisher 1</a>
                                                    <a class="btn-link"
-                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 2</a>
+                                                   href="">Publisher 2</a>
                                                    <a class="btn-link"
-                                                   href="{{url("/")."?search=".$publisher."#books"}}">Publisher 3</a>
+                                                   href="">Publisher 3</a>
               
               <p></p>
                                     
@@ -162,7 +162,7 @@
             <div class="owl-carousel owl-theme">
 
           
-              <a href="{{route("details", ['page_slug' => $common::utf8Slug($book["TITLE"])])}}
+              <a href="
                                  ">
                 <div class="featured-item">
                   <img style="width:250px;height:300px;" src="{{asset("uploads/".$util::fileChecker(public_path("uploads"),

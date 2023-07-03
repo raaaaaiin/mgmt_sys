@@ -33,15 +33,15 @@ $lockvalidator = false;
                                             }
                                         @endphp
                                         @if($assigned_on)
-                                            @foreach($assigned_on as $items)
-                                                @foreach($items as $std=>$div)
+                                            
+                                                
                                                 @php
                                                 $currentCourse = $std;
                                                 $currentYear = $div;
                                                 $currentSection = $std.$div;
                                                 @endphp
-                                                @endforeach
-                                            @endforeach
+                                                
+                                            
                                         @endif
 
 
@@ -64,15 +64,15 @@ $lockvalidator = false;
                                             }
                                         @endphp
     @if($poster)
-                                            @foreach($poster as $items)
-                                                @foreach($items as $std=>$div)
+                                            
+                                                
                                                 @php
                                                 $pcurrentCourse = $std;
                                                 $pcurrentYear = $div;
                                                 $pcurrentSection = $std.$div;
                                                 @endphp
-                                                @endforeach
-                                            @endforeach
+                                                
+                                            
     @endif
   @endif
 
@@ -127,11 +127,11 @@ $lockvalidator = false;
           <ul class="nav nav-pills w-100 ">
 
             <li class="nav-item m-1">
-              <a class="nav-link {{$tab==1?'active':''}}" wire:click="$set('tab', 1)" href="#" data-toggle="tab">{{__('common.edit_profile')}}</a>
+              <a class="nav-link </a>
 
             </li>
             <li class="nav-item m-1">
-              <a class="nav-link {{$tab==1?'active':''}}" id="closeprivacy" href="#" data-toggle="myModal">Edit Privacy</a>
+              <a class="nav-link " id="closeprivacy" href="#" data-toggle="myModal">Edit Privacy</a>
 
             </li>
 
@@ -146,7 +146,7 @@ $lockvalidator = false;
         <!-- /.card-header -->
         <div class="card-body modal-body">
           <div class="tab-content">
-            <div class="tab-pane {{$tab==1?'active':''}}"> @if(session()->has("form_profile") && session()->get("form_profile")) <div class="row">
+            <div class="tab-pane "> @if(session()->has("form_profile") && session()->get("form_profile")) <div class="row">
                 <div class="col-12"> @include("common.messages") </div>
               </div> @endif
 
@@ -155,7 +155,7 @@ $lockvalidator = false;
 
 
              <div class="cover-sec ">
-                    <img class="hatdog h-100 w-100" src="{{$cover_link}}" alt="">
+                    <img class="hatdog h-100 w-100" src="" alt="">
                     <a id="coverclick" class="d-flex" href="#" title="" style="height:100%;width:100%;top:0px!important;margin-right:0px!important;border:0px!important;background-color:#000000b5!important;">
                       <div class="d-flex" style="height:25%;width:25%;opacity: 0.75;-webkit-box-align: stretch;align-items: stretch;-webkit-box-pack: center;justify-content: center;height: 100%;-webkit-box-direction: normal;-webkit-box-orient: vertical;flex-direction: column;width: 100%;position: relative;top: 0px;-ms-flex-align: stretch;-ms-flex-direction: column;-ms-flex-negative: 0;-ms-flex-preferred-size: auto;-webkit-align-items: stretch;-webkit-flex-basis: auto;-webkit-flex-direction: column;-webkit-flex-shrink: 0;border: 0 solid black;box-sizing: border-box;display: flex;flex-basis: auto;flex-shrink: 0;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;min-height: 0px;min-width: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;z-index: 0;">
 
@@ -189,7 +189,7 @@ $lockvalidator = false;
 
                <div class="user-pro-img" style="width:135px;height:135px;margin-bottom: 0!important;" >
 
-               <img class="h-100 w-100" id='pht' src="{{$photo_link}}" class="cheesedog">
+               <img class="h-100 w-100" id='pht' src="" class="cheesedog">
                <a id="photoclick" class="d-flex h-100 w-100" href="#" title="" style="height:100%;width:100%;top:0px!important;margin-right:0px!important;border:0px!important;background-color:#02000b4f!important;">
                       <div class="d-flex" style="height:25%;width:25%;opacity: 0.75;-webkit-box-align: stretch;align-items: stretch;-webkit-box-pack: center;justify-content: center;height: 100%;-webkit-box-direction: normal;-webkit-box-orient: vertical;flex-direction: column;width: 100%;position: relative;top: 0px;-ms-flex-align: stretch;-ms-flex-direction: column;-ms-flex-negative: 0;-ms-flex-preferred-size: auto;-webkit-align-items: stretch;-webkit-flex-basis: auto;-webkit-flex-direction: column;-webkit-flex-shrink: 0;border: 0 solid black;box-sizing: border-box;display: flex;flex-basis: auto;flex-shrink: 0;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;margin-top: 0px;min-height: 0px;min-width: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;z-index: 0;">
 
@@ -246,7 +246,7 @@ $lockvalidator = false;
               <div class="mb-2">
                 <div class="input-group">
                   <button id="save" type="submit" class="btn btn-sm btn-dark" data-dismiss="MyModal">
-                    <i class="fas fa-save mr-1"></i>{{__("common.save_profile")}}
+                    <i class="fas fa-save mr-1"></i>
                   </button><button  class="btn btn-sm btn-dark ml-2" id="qr" wire:click="qrgenerate" wire:loading.attr="disabled">
                     <i class="fas fa-save mr-1"></i>Download QR
                   </button>
@@ -278,11 +278,11 @@ $lockvalidator = false;
         <div class="card-header p-2 modal-header">
           <ul class="nav nav-pills w-100 ">
             <li class="nav-item m-1">
-              <a class="nav-link {{$tab==1?'active':''}}" id="closeprivacytab" wire:click="$set('tab', 1)" href="#" data-toggle="tab">{{__('common.edit_profile')}}</a>
+              <a class="nav-link </a>
 
             </li>
             <li class="nav-item m-1">
-              <a class="nav-link {{$tab==1?'active':''}}"  href="#" data-toggle="myModal">Edit Privacy</a>
+              <a class="nav-link "  href="#" data-toggle="myModal">Edit Privacy</a>
 
             </li>
             <li class="nav-item ml-auto">
@@ -436,7 +436,7 @@ $lockvalidator = false;
                                                 <div class="mb-2">
                                                     <div class="input-group">
                                                         <button id="savedupe" type="submit" class="btn btn-sm btn-dark" data-dismiss="MyModal">
-                    <i class="fas fa-save mr-1"></i>{{__("common.save_profile")}}
+                    <i class="fas fa-save mr-1"></i>
                   </button><button  class="btn btn-sm btn-dark ml-2" id="qrdupe" wire:click="qrgenerate" wire:loading.attr="disabled">
                     <i class="fas fa-save mr-1"></i>Download QR
                   </button>
@@ -474,7 +474,7 @@ $lockvalidator = false;
               <div class="main-section-data ">
                 <div class="row">
                   <section class="cover-sec">
-                    <img class="hatdog" src="{{$cover_link}}" alt=""> @if($isOwner) <a id="changecoverphoto" href="#" title="">
+                    <img class="hatdog" src="" alt=""> @if($isOwner) <a id="changecoverphoto" href="#" title="">
                       <!-- <i class="fa fa-camera"></i> Font Awesome fontawesome.com --> Edit profile
                     </a>  @endif
                   </section>
@@ -484,11 +484,11 @@ $lockvalidator = false;
                       <div class="main-left-sidebar">
                         <div class="user_profile">
                           <div class="user-pro-img" >
-                            <img src="{{$photo_link}}" class="cheesedog">
+                            <img src="" class="cheesedog">
                           </div>
                           <!--user-pro-img end-->
                           <div class="user-specs">
-                            <h3>{{$name}}</h3>
+                            <h3></h3>
 
 
 
@@ -577,25 +577,25 @@ $lockvalidator = false;
 
 
                             <p class="text-muted text-center">
-                            @foreach($current_user->roles as $role)
-                                            <span class="badge badge-dark">{{\Illuminate\Support\Str::title($role->name)}}</span>
-                            @endforeach
+                            
+                                            <span class="badge badge-dark"></span>
+                            
                             @if($assigned_on)
-                                @foreach($assigned_on as $items)
-                                    @foreach($items as $course=>$year)
+                                
+                                    
                                         <span
                                             class="badge badge-primary">
-                                            {{Str::title($common::getCourseName($course))}}  {{$common::getCourseYearName($year)}}</span>
+                                            </span>
                                         <br/>
-                                    @endforeach
-                                @endforeach
+                                    
+                                
                             @endif
                             </p> @if(!empty($education))
-                            <hr> @endif @if(!empty($address)) <strong> {{__("common.location")}}
+                            <hr> @endif @if(!empty($address)) <strong> 
                             </strong>
-                            <p class="text-muted">{{$address}}</p>
-                            <hr> @endif @if(!empty($about_me)) <strong> {{__("common.about_me")}}</strong>
-                            <p class="text-muted">{{$about_me}}</p> @endif
+                            <p class="text-muted"></p>
+                            <hr> @endif @if(!empty($about_me)) <strong> </strong>
+                            <p class="text-muted"></p> @endif
                             <br>
 
                             @else
@@ -650,16 +650,16 @@ $lockvalidator = false;
                             <img src="images/photo-icon.png" alt="">
                           </div>
                           @if(isset($this->request))
-                           @foreach($this->request as $key => $data)
+                           
                           <div class="pf-gallery">
 
                           <div class=" post_topbar p-0">
                                           <div class="row usy-dt w-100" style="align-items: center;">
                                              <img  class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}'"
-                                            src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data["book_img"]))}}"/>
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                            src=""/>
                                              <div class="col-md-9 usy-name m-0">
-                                                <a href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
     border: 0;
@@ -669,7 +669,7 @@ $lockvalidator = false;
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data["title"]}}</h5>
+"></h5>
 
 <h5 style="
     margin-left:10px!important;margin: 0;
@@ -680,7 +680,7 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Accession:{{$data["Accession"]}}</h5>
+">Accession:</h5>
 
 <h5 style="
     margin-left:10px!important;margin: 0;
@@ -691,7 +691,7 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Claim On: {{$data["Borrowed"]}}</h5>
+">Claim On: </h5>
 <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -701,12 +701,12 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Expires On: {{$data["Borrowed"]}}</h5></a>
+">Expires On: </h5></a>
 
                                              </div>
                                              <div class="col-md-1 usy-name m-0">
                                               <button
-                                              wire:click="cancelRequest({{$data["id"]}})"
+                                              wire:click="cancelRequest()"
                                             type="button"
                                             class="btn float-left btn-sm btn-danger action_btn">
                                             <i class="fas fa-trash-alt"></i>
@@ -717,12 +717,12 @@ $lockvalidator = false;
 
 
                           </div>
-                          @endforeach
+                          
                           @else
 
 
 
-                           @foreach($this->request as $key => $data)
+                           
                           <div class="pf-gallery">
 
                           <div class=" post_topbar p-0">
@@ -752,7 +752,7 @@ $lockvalidator = false;
 
 
                           </div>
-                          @endforeach
+                          
                           @endif
 
                           <!--pf-gallery end-->
@@ -875,14 +875,14 @@ $lockvalidator = false;
  @if($lockvalidator == true)
 
 @if($borrowvalidator == true)
-                          @foreach($merged_post as $key => $data) <div class="yellow post-bar">
+                           <div class="yellow post-bar">
                               <div class="post_topbar">
                                 <div class="usy-dt">
 
-                                  <img style="width:50px" data-toggle="tooltip" data-placement="top" class="img-thumbnail" src="{{asset($data["image"])}}" />
+                                  <img style="width:50px" data-toggle="tooltip" data-placement="top" class="img-thumbnail" src="" />
                                   <div class="usy-name">
-                                    <h3>{{$data["name"]}}</h3>
-                                    <span>{{$data["created_at"]->diffForHumans()}}</span>
+                                    <h3></h3>
+                                    <span></span>
                                   </div>
                                 </div>
                               </div>
@@ -892,15 +892,15 @@ $lockvalidator = false;
                                 @if(asset(str_replace (array('[', ']',chr(34)), '' , $data["book_img"])) == asset("uploads/"."antiplaceholder"))
 
                                 @else
-                                    <img style="width:200px" data-toggle="tooltip" data-placement="top" class="img-thumbnail" src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data["book_img"]))}}" />
+                                    <img style="width:200px" data-toggle="tooltip" data-placement="top" class="img-thumbnail" src="" />
                                 @endif
 
                                 </center>
                                 <br>
                                 <h2>
-                                  {{$data["title"]}}
+                                  
                                   </h2>
-                                  <p style="text-align: justify;text-justify: inter-word;"> {!! str_limit($data["desc"], $limit = 350, $end = '...') !!} <a href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" title="">view more</a>
+                                  <p style="text-align: justify;text-justify: inter-word;"> {!! str_limit($data["desc"], $limit = 350, $end = '...') !!} <a href="" title="">view more</a>
                                   </p>
                                   <ul class="skill-tags">
                                     <li>{!! str_replace (array('[', ']','"'), '' , $data["isReturned"]) !!}</li>
@@ -934,7 +934,7 @@ $lockvalidator = false;
                                   </a>
                               </div>
                             </div>
-                            <!--post-bar end--> @endforeach
+                            <!--post-bar end--> 
                             @else
                             <div class="yellow post-bar">
 
@@ -1027,16 +1027,16 @@ $lockvalidator = false;
 
                             <img src="images/photo-icon.png" alt="">
                           </div>
-                          @foreach($this->awards as $data)
+                          
                           <div class="pf-gallery">
 
                           <div class=" post_topbar p-0">
                                           <div class="row usy-dt w-100" style="align-items: center;">
                                              <img  class="col-md-2" height:50px;width:50px;cursor: pointer data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("profile", ['v_id' => $common::utf8Slug($data->user_id)])}}'"
-                                             src="{{asset("uploads/".$data->img.".png")}}"/>
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                             src=""/>
                                              <div class="col-md-10 usy-name m-0">
-                                                <a href="{{route("profile", ['v_id' => $common::utf8Slug($data->user_id)])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
     border: 0;
@@ -1046,7 +1046,7 @@ $lockvalidator = false;
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data->noticetitle}}</h5></a>
+"></h5></a>
 
                                              </div>
                                           </div>
@@ -1054,7 +1054,7 @@ $lockvalidator = false;
 
 
                           </div>
-                          @endforeach
+                          
                           <!--pf-gallery end-->
                         </div>
 
@@ -1091,16 +1091,16 @@ $lockvalidator = false;
                           @php
                           $this->loadCurrentlyborrowed();
                           @endphp
-                          @foreach($this->currentlyBorrowed as $key => $data)
+                          
                           <div class="pf-gallery">
 
                           <div class=" post_topbar p-0">
                                           <div class="row usy-dt w-100" style="align-items: center;">
                                              <img  class="col-md-2" style="height:100%;width:100%;cursor: pointer;border-radius: 0px!important" data-toggle="tooltip" data-placement="top"
-                                             class="img-thumbnail" wire:click="activeUser" onclick="location='{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}'"
-                                            src="{{asset(str_replace (array('[', ']',chr(34)), '' , $data["book_img"]))}}"/>
+                                             class="img-thumbnail" wire:click="activeUser" onclick="location=''"
+                                            src=""/>
                                              <div class="col-md-9 usy-name m-0">
-                                                <a href="{{route("details", ['page_slug' => $common::utf8Slug($data["title"])])}}" style="color:#000;padding:0;"><h5 style="
+                                                <a href="" style="color:#000;padding:0;"><h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
     border: 0;
@@ -1110,7 +1110,7 @@ $lockvalidator = false;
     color: #000;
     text-transform: capitalize;
     font-weight: 600;
-">{{$data["title"]}}</h5>
+"></h5>
 
 <h5 style="
     margin-left:10px!important;margin: 0;
@@ -1121,7 +1121,7 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Accession:{{$data["Accession"]}}</h5>
+">Accession:</h5>
 
 <h5 style="
     margin-left:10px!important;margin: 0;
@@ -1132,7 +1132,7 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Claim On: {{$data["Borrowed"]}}</h5>
+">Claim On: </h5>
 <h5 style="
     margin-left:10px!important;margin: 0;
     padding: 0;
@@ -1142,7 +1142,7 @@ $lockvalidator = false;
     vertical-align: baseline;
     color: #000;
     text-transform: capitalize;
-">Must Return : {{$data["Valid"]}}</h5></a>
+">Must Return : </h5></a>
 
                                              </div>
 
@@ -1151,7 +1151,7 @@ $lockvalidator = false;
 
 
                           </div>
-                          @endforeach
+                          
                           <!--pf-gallery end-->
                         </div>
 
@@ -1232,7 +1232,7 @@ h1{
   overflow-y:auto;
 }
 </style>
- <script src="{{asset('front/js/vendor/jquery-1.12.4.min.js')}}"></script>
+ <script src=""></script>
 <script>
 const submit = document.getElementById('save');
 const close = document.getElementById('close');

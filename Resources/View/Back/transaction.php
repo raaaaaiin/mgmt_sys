@@ -13,15 +13,15 @@
                         <div class="input-group-append">
 
                             <select class="form-control" wire:model="sel_payment_type">
-                                <option value="">{{__("common.select")}}</option>
-                                <option value="refund">{{__("common.refund")}}</option>
-                                <option value="all">{{__("common.all_trans")}}</option>
+                                <option value=""></option>
+                                <option value="refund"></option>
+                                <option value="all"></option>
                             </select>
                             <select class="form-control" wire:model="sel_working_year">
-                                <option value="">{{__("common.select")}}</option>
-                                @foreach($common::getAllYears() as $year)
-                                    <option value="{{$year->id}}">{{$year->year_from}}</option>
-                                @endforeach
+                                <option value=""></option>
+                                
+                                    <option value="</option>
+                                
                             </select>
                         </div>
                         {!! CForm::inputGroupFooter() !!}
@@ -34,19 +34,19 @@
                     <tr class="text-sm">
                         <th scope="col">#</th>
 
-                        <th scope="col">{{__("common.inv_no")}}</th>
+                        <th scope="col"></th>
                         <th scope="col"
                             style="width: 60px;">{!!__("common.uid").CForm::generateInfoToolTip(__("common.user_id"),'','left')!!}</th>
-                        <th scope="col">{{__("common.name")}}</th>
-                        <th scope="col">{{__("common.course")}}</th>
-                        <th scope="col">{{__("common.year")}}</th>
-                        <th scope="col">{{__("common.paid_for")}}</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                         @can("mng-transaction")
-                            <th scope="col">{{__("common.currency")}}</th>
+                            <th scope="col"></th>
                             <th scope="col">{!!__("common.fee_payer_id").CForm::generateInfoToolTip(__("common.pl_payer_id"),'','left')!!}</th>
                             <th scope="col">{!!__("common.fee_paid_by_email").CForm::generateInfoToolTip(__("common.pl_fee_paid_by_email"),'','left')!!}</th>
                             <th scope="col">{!!__("common.pl_ref_url").CForm::generateInfoToolTip(__("common.ref_url"),'','left')!!}</th>
-                            <th scope="col">{{__("common.phone")}}</th>
+                            <th scope="col"></th>
                             <th scope="col">{!!__("common.pl_payer_name").CForm::generateInfoToolTip(__("common.payer_name"),'','left')!!}</th>
                             <th scope="col">{!!__("common.pay_id").CForm::generateInfoToolTip(__("common.pl_payer_id"),'','left')!!}</th>
                         @endcan
@@ -58,87 +58,87 @@
 
                         <th scope="col"
                             style="width: 81px;">{!!__("common.pl_working_year").CForm::generateInfoToolTip(__("common.working_year"),'','left')!!}</th>
-                        <th scope="col">{{__("common.date")}}</th>
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
                     @if(isset($receipts) && $receipts->count()>0)
-                        @foreach($receipts as $receipt)
+                        
                             <tr>
-                                <td>{{$receipt->id}}</td>
+                                <td></td>
                                 <td class="text-sm" style="width: 85px;"><span
-                                        class="p_email_wrap">{{$receipt->invoice_no}}</span>
+                                        class="p_email_wrap"></span>
                                     @if(isset($receipt->refund_amount) && $receipt->refund_amount)
-                                        <span data-toggle="tooltip" data-placement="top" title="{{__("common.r_id")}}"
-                                              class="badge badge-warning">{{$receipt->refund_id}}</span>
+                                        <span data-toggle="tooltip" data-placement="top" title=""
+                                              class="badge badge-warning"></span>
                                         <span data-toggle="tooltip" data-placement="top"
-                                              title="{{__("common.r_status")}}"
-                                              class="badge badge-success">{{Str::title($receipt->refund_status)}}</span>
-                                        <span data-toggle="tooltip" data-placement="top" title="{{__("common.r_amt")}}"
-                                              class="badge badge-success">{{$common::getSiteSettings("currency_symbol")}}{{$receipt->refund_amount}}</span>
+                                              title=""
+                                              class="badge badge-success"></span>
+                                        <span data-toggle="tooltip" data-placement="top" title=""
+                                              class="badge badge-success"></span>
                                     @endif
                                 </td>
                                 <td class="text-sm">
-                                    {{$receipt->uid?$receipt->uid:"N/A"}}
+                                    
                                     @can("mng-transaction")
                                         {!! CForm::generateInfoToolTip(__('common.tp_assign_trans')) !!}
-                                        <input type="text" class="form-control" id="assign_{{$receipt->id}}">
+                                        <input type="text" class="form-control" id="assign_">
                                         <button class="btn btn-dark btn-xs"
-                                                onclick="flush_before({{$receipt->id}});lv_confirm_then_submit(this,'{{__("common.cnf_are_you_sure")}}','assignTrans','{\'id\':{{$receipt->id}}}')"
+                                                onclick="flush_before(')"
                                                 type="button"
-                                        >{{__("common.assign")}}</button>
+                                        ></button>
 
                                     @endcan
                                 </td>
-                                <td class="text-sm">{{$receipt->uid?\App\Models\User::get_user_name($receipt->uid):"N/A"}}</td>
-                                <td>{{$receipt->course_id ? $common::getCourseName($receipt->course_id) :"N/A"}}</td>
-                                <td>{{$receipt->course_year_id ? $common::getCourseYearName($receipt->course_year_id):"N/A"}}</td>
+                                <td class="text-sm"></td>
+                                <td></td>
+                                <td></td>
 
                                 <td class="text-sm"><span
-                                        class="badge badge-dark w-100">{{__("common.bid")}}</span>{{$receipt->borrowed->sub_book->sub_book_id}}
+                                        class="badge badge-dark w-100">
                                     <span
-                                        class="badge badge-dark w-100">{{__("common.book_title")}}</span>{{$receipt->borrowed->book->title}}
+                                        class="badge badge-dark w-100">
                                 </td>
                                 @can("mng-transaction")
-                                    <td>{{$receipt->currency}}</td>
-                                    <td>{{$receipt->payer_id}}</td>
-                                    <td class="text-sm"><span class="p_email_wrap">{{$receipt->payer_email}}</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-sm"><span class="p_email_wrap"></span></td>
                                     <td class="text-sm">
                                         @if($receipt->refund_status=="completed")
-                                            <span class="badge badge-warning">{{__("common.refunded")}}</span>
-                                            <span class="p_email_wrap p_refund_wrap">{{$receipt->refund_id}} </span>
+                                            <span class="badge badge-warning"></span>
+                                            <span class="p_email_wrap p_refund_wrap"> </span>
                                         @else
                                             <input class="form-control" data-toggle="tooltip" data-placement="left"
-                                                   title="{{__("common.pl_amount_to_refund")}}" type="text"
-                                                   id="refund_{{$receipt->id}}">
+                                                   title="" type="text"
+                                                   id="refund_">
                                             <button class="btn btn-danger btn-xs"
-                                                    onclick="start_refund('{{route('gateway.refund_fine')}}?payment_id={{$receipt->id}}',{{$receipt->id}});">{{__("common.refund")}}</button>
+                                                    onclick="start_refund('</button>
                                         @endif
                                     </td>
-                                    <td>{{$receipt->payer_phone}}</td>
-                                    <td>{{$receipt->payer_name}}</td>
-                                    <td class="text-sm"><span class="p_email_wrap">{{$receipt->payment_id}}</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-sm"><span class="p_email_wrap"></span></td>
                                 @endcan
-                                <td><span id="payed_amt_{{$receipt->id}}">{{$receipt->payed_amount}}</span></td>
-                                <td>{{$receipt->payment_status}}</td>
+                                <td><span id="payed_amt_</span></td>
+                                <td></td>
 
 
-                                <td>{{$common::getYearName($common::getWorkingYear())}}</td>
-                                <td>{{$util::goodDate($receipt->created_at)}}</td>
+                                <td></td>
+                                <td></td>
 
                             </tr>
-                        @endforeach
+                        
                     @else
                         <tr>
                             <td colspan="100">
-                                <div class="alert alert-dark">{{__("common.no_data_exist")}}</div>
+                                <div class="alert alert-dark"></div>
                             </td>
                         </tr>
                     @endif
                     </tbody>
                 </table>
             </div>
-            {{$receipts->links()}}
+            
         </div>
     </div>
 </div>
