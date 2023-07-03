@@ -9,8 +9,7 @@ class AuthorController{
     }
     function render(): void
     {
-        $Authors = new Author;
-        $ha = $Authors->get();
+        $Authorlist =(new Author)->get();
         
         
         require_once 'Resources/View/Back/author-mng.php';

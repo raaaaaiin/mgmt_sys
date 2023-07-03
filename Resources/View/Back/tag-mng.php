@@ -76,236 +76,43 @@
         <!-- Placeholder for items -->
         <!-- If $items->total() -->
         <!-- foreach $items as $item -->
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
+        <?php
+        if(empty($Taglist)){
+echo'<tr>
+<td colspan="10">
+    <div class="alert alert-dark"><!-- __("commonv2.no_tag_exist") --></div>
+</td>
+</tr>';
+        }else{
+            
+            foreach($Taglist as $Data){
+                echo '<tr>
+                <td>'.$Data['id'].'</td>
+                <td>'.$Data['name'].'</td>
+                <td style="border-right: 1px solid lightgray;">
+                    '.$Data['book_id'].'
+                </td>
+                <td>
+                    <button type="button" class="btn float-left btn-sm btn-dark action_btn">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button type="button" class="btn float-left btn-sm btn-danger action_btn">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
+            </tr>';
+            }
+            
+        }
+        ?>
+        
         <!-- endforeach -->
         <!-- else -->
       
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>a</td>
-            <td>b</td>
-            <td style="border-right: 1px solid lightgray;">
-                <!-- Placeholder for books_titles -->
-                <!-- If count($books_titles) -->
-                <!-- foreach $books_titles as $book -->
-                <!-- if not $loop->last --><!-- endif -->
-                <!-- endforeach -->
-                <!-- else -->
-                <span class="text-sm">C</span>
-                <!-- endif -->
-            </td>
-            <td>
-                <button type="button" class="btn float-left btn-sm btn-dark action_btn">
-                    <i class="far fa-edit"></i>
-                </button>
-                <button type="button" class="btn float-left btn-sm btn-danger action_btn">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </td>
-        </tr>
+     
         <!-- endforeach -->
         <!-- else -->
-        <tr>
-            <td colspan="10">
-                <div class="alert alert-dark"><!-- __("commonv2.no_tag_exist") --></div>
-            </td>
-        </tr>
+        
         <!-- endif -->
     </tbody>
 </table>
