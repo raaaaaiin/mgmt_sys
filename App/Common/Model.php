@@ -13,7 +13,9 @@ abstract class Model{
         $this->connection = new Connection();
     }
 
-    public function table($columns = ['']){
+    public function table($tableName){
+        $this->table = $tableName;
+        return $this;
     }
     
     public function get(...$columns)
@@ -66,13 +68,10 @@ abstract class Model{
     }
     public function orderBy($order)
 {
-    if (empty($this->query)) {
-        $this->query .= " ORDER BY ASC";
-    } else {
         $this->query .= " ORDER BY ";
-    }
+    
 
-    $this->query .= $order;
+    $this->query .= "'" . $order ."'";
     return $this;
 }
 

@@ -10,7 +10,7 @@ class CourseYearController{
     function render(): void
     {
         $CourseYearList = (new Course_Year)->get();
-        
+        var_dump($CourseYearList);
         require_once 'Resources\View\Back\course_year\index.php';
     }
 }
