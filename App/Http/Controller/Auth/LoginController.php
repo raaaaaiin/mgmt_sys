@@ -13,9 +13,10 @@ class LoginController
     public $Session;
     public function __construct()
     {
-        $Auth = new Authentication;
-        $Session = new Session;
+        $this->Auth = new Authentication();
+        $this->Session = new Session();
         $this->render();
+        $this->handleLogin();
     }
 
     public function render()
@@ -23,12 +24,14 @@ class LoginController
         require_once 'Resources/View/Auth/LoginView.php';
     }
 
-    public static function handleLogin()
+    public function handleLogin()
     {
-        $request = $_POST;
-       
-        if(self::$Auth->validate($request)){
-            self::$Session->initiate(self::$Auth->getID());
+        $request = ['user' => '12000140442', 'password' => '1231345678'];
+
+      
+        if($this->Auth->validate($request)){
+            $this->Session->initiate($this->Auth->getID());
+            echo("Log in success");
         }else{
            echo("Wrong Credentials");
         }

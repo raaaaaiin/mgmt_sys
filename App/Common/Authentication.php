@@ -20,13 +20,18 @@ class Authentication extends Model{
     }
 
     public static function compare($data): bool {
+        $pass = null;
         $user = new User;
         $list = $user->where(['id'], ['='], [$data['user']])->get(['id', 'email', 'password']);
-        return password_verify($data['pass'], $data);
+        foreach($list as $dbdata){
+            self::$userID = $dbdata['id'];  
+            $pass = $dbdata['password'];
+        }
+        return password_verify($data['password'],$pass);
         
     }
     public static function getID(){
-        return /*self::userID*/1;
+        return self::$userID;
     }
     public static function make($args){
         return password_hash($args,PASSWORD_BCRYPT,  self::$options);

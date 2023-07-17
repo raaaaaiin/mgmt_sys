@@ -18,7 +18,7 @@
         },
         dataType: "text",
         success: function (response) {
-            window.location = "index";
+            console.log(response);
         },
         error: function (xhr, status, error) {
             // Handle the error case and display the exception message
