@@ -38,96 +38,53 @@
 
     </script>
 </head>
-<body
-    class="hold-transition @if(request()->is('login') or request()->is('password/reset'))login-page @endif @if(request()->is('register')) register-page @endif" style="background-color:#0b5793;height: 75vh;">
-<div
-    class="@if(request()->is('login') or request()->is('password/reset') )login-box @endif @if(request()->is('register')) register-box @endif">
-    <div class="login-logo @if(request()->is('register')) register-logo @endif">
-        <a class="navbar-brand" href="" style="padding:0px;width:300px;">
-                       
-                            <img class="logo_img" href=""
-                                 src="https://via.placeholder.com/250">
-                       
-                    </a>
-        <!--<a href="#"></a>-->
-    </div>
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="ca rd-body login-card-body yellow">
-        <div class="login-logo @if(request()->is('register')) register-logo @endif">
-
-        <a href="#">Elib IGC</a>
-    </div>
-            <p class="login-box-msg">Sign in to start session</p>
-            <br>
-            <form method="POST" action="" id="loginForm">
-                
-                <div class="input-group mb-3">
-                  <!-- class="form-control @error('email') is-invalid @enderror " -->
-                    <input id="email" type="text" class="form-control" name="email" " autofocus
-                           placeholder="Enter your Student ID">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-
-                        </div>
-                    </div>
-                    <!-- @error('email')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-                    @enderror -->
-                </div>
-                <div class="input-group mb-3">
-                    <input id="password" type="password" class="form-control " name="password"
-                           required autocomplete="current-password" placeholder="Enter your password">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-
-                        </div>
-                    </div>
-                    <!-- @error('password')
-                    <span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-                    @enderror -->
-                </div>
-               
-                <p class="mb-1">
-                   <br>
-                </p>
-            
-                <!-- <p class="mb-0">
-                    <a href="" class="text-center">Register</a>
-                </p> -->
-                <br><br><br>
-
-            <!-- /.social-auth-links -->
-
-                <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember" name="remember" >
-                            <label for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-sm btn-dark btn-block">Sign In</button>
-                    </div>
-
-                    <!-- /.col -->
-                </div>
-            </form>
-
-
+<body>
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#">
+                <img class="logo_img" src="https://via.placeholder.com/250" alt="Logo">
+            </a>
         </div>
-        <!-- /.login-card-body -->
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <h3 class="login-box-msg">Sign in to start session</h3>
+                <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
+                    <p class="error-msg">Invalid credentials. Please try again.</p>
+                <?php endif; ?>
+                <form id="loginForm" method="POST" action="">
+                    <div class="input-group mb-3">
+                        <input id="email" type="text" class="form-control" name="email" autofocus placeholder="Enter your Student ID">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input id="password" type="password" class="form-control" name="password" required autocomplete="current-password" placeholder="Enter your password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Remember Me</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
     </div>
-</div>
-<!-- /.login-box -->
-
-
+    <script src="Resources/JS/LoginJs.js"></script>
 </body>
 </html>
