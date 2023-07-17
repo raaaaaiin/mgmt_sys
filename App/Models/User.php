@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
+use App\Common\Authentication;
+use App\Common\Model;
 
-
-
-class User 
-{
+class User extends Authentication{
     protected $table = "users";
   
    

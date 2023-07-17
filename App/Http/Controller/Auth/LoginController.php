@@ -12,7 +12,7 @@ session_start();
     {
         require_once 'Resources/View/Auth/LoginView.php';
     }
-
+    public function 
 
 }
 
